@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        section {
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 48px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+            min-height: 65vh;
+            margin-top: 60px;
+        }
+
+        .content-left {
+            flex: 1;
+            max-width: 600px;
+            margin-top: 0;
+        }
+
+        .hero-image {
+            flex: 1;
+            max-width: 400px;
+            height: auto;
+            margin-top: -40px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .main-header {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 42px;
+            color: #123B27;
+            margin-top: 0;
+        }
+
+        .sub-header {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 20px;
+            color: #6F6F77;
+            max-width: 450px;
+            margin-top: 20px;
+        }
+
+        .pill-container {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 30px;
+        }
+
+        .pill {
+            height: 40px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            color: white;
+            padding: 0 24px;
+        }
+
+        .pill-dark-blue {
+            background-color: #1A3D6B;
+            width: 140px;
+        }
+
+        .pill-medium-blue {
+            background-color: #9EC7DE;
+            width: 140px;
+        }
+
+        .pill-light-blue {
+            background-color: #CBE1EE;
+            width: 140px;
+        }
+
+        .pill-blue {
+            background-color: #1B84C0;
+            width: 180px;
+        }
+
+        .pill-row {
+            display: flex;
+            gap: 16px;
+        }
+
+        .logo {
+            position: absolute;
+            top: -100px;
+            left: 48px;
+            width: 200px;
+            height: auto;
+        }
+
+        #section1 {
+            background-color: #FFFFFF;
+            position: relative;
+        }
+
+        #section2 {
+            background-color: #CCE1EE;
+            padding: 60px 0;
+        }
+
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 48px;
+            color: #123B27;
+            margin-bottom: 40px;
+            max-width: 1200px;
+            margin: 0 auto 40px;
+            padding: 0 48px;
+        }
+
+        .courses-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 48px;
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 45px;
+            width: 400px;
+            height: 500px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .course-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            opacity: 0.5;
+        }
+
+        .enrollment-status {
+            position: absolute;
+            top: 30px;
+            left: 25px;
+            background: #1E1E1E;
+            border-radius: 45px;
+            padding: 8px 20px;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .course-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            line-height: 1.3;
+            color: #1E1E1E;
+            opacity: 0.5;
+            padding: 20px 35px 0;
+            margin-top: 0;
+            height: 80px;
+            max-width: 350px;
+        }
+
+        .instructor-section {
+            padding: 0 35px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            position: absolute;
+            top: 290px;
+            left: 0;
+            right: 0;
+        }
+
+        .instructor-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .instructor-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .taught-by {
+            font-family: 'Poppins', sans-serif;
+            color: #929299;
+            font-size: 10px;
+            margin-bottom: 2px;
+            font-weight: 300;
+            opacity: 1;
+            letter-spacing: 0.2px;
+        }
+
+        .instructor-name {
+            font-family: 'Poppins', sans-serif;
+            color: #6F6F77;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .course-footer {
+            position: absolute;
+            bottom: 25px;
+            left: 35px;
+            right: 35px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            align-items: flex-start;
+        }
+
+        .next-batch {
+            background: #505050;
+            color: white;
+            padding: 8px 0;
+            text-align: center;
+            border-radius: 45px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 12px;
+            width: 240px;
+            margin-left: 0;
+        }
+
+        .enroll-button {
+            background: #28B1FF;
+            color: white;
+            padding: 12px 0;
+            text-align: center;
+            border-radius: 45px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            width: 240px;
+            margin-left: 0;
+            opacity: 1 !important;
+        }
+
+        /* Specific styles for the second card */
+        .course-card:nth-child(2) .enrollment-status {
+            background: #E1F7DB;
+            color: #1A3D6B;
+            width: fit-content;
+        }
+
+        .course-card:nth-child(2) .next-batch {
+            background: #123B27;
+            padding: 8px 0;
+        }
+
+        /* Specific styles for the third card */
+        .course-card:nth-child(3) .enroll-button {
+            opacity: 0.45;
+        }
+
+        /* Update the titles to be on one line */
+        .course-card:nth-child(2) .course-title {
+            white-space: normal;
+            overflow: visible;
+            max-width: 350px;
+            padding: 20px 35px 0;
+        }
+
+        /* First and third card opacity */
+        .course-card:nth-child(1) .course-image,
+        .course-card:nth-child(1) .course-title,
+        .course-card:nth-child(1) .instructor-section,
+        .course-card:nth-child(1) .instructor-name,
+        .course-card:nth-child(1) .next-batch,
+        .course-card:nth-child(1) .enroll-button,
+        .course-card:nth-child(3) .course-image,
+        .course-card:nth-child(3) .course-title,
+        .course-card:nth-child(3) .instructor-section,
+        .course-card:nth-child(3) .instructor-name,
+        .course-card:nth-child(3) .next-batch,
+        .course-card:nth-child(3) .enroll-button {
+            opacity: 0.75;
+        }
+
+        /* Keep enrollment status at full opacity */
+        .enrollment-status {
+            opacity: 1 !important;
+        }
+
+        /* Ensure the middle card stays at full opacity */
+        .course-card:nth-child(2) * {
+            opacity: 1;
+        }
+
+        /* Specific color for the enroll buttons */
+        .course-card:nth-child(1) .enroll-button,
+        .course-card:nth-child(3) .enroll-button {
+            background-color: #D9EFFF;
+        }
+
+        /* Adjust image opacity specifically */
+        .course-card:nth-child(1) .course-image,
+        .course-card:nth-child(3) .course-image {
+            opacity: 0.5;  /* Increased transparency */
+        }
+
+        /* Keep other elements at previous opacity */
+        .course-card:nth-child(1) .course-title,
+        .course-card:nth-child(1) .instructor-section,
+        .course-card:nth-child(1) .instructor-name,
+        .course-card:nth-child(1) .next-batch,
+        .course-card:nth-child(1) .enroll-button,
+        .course-card:nth-child(3) .course-title,
+        .course-card:nth-child(3) .instructor-section,
+        .course-card:nth-child(3) .instructor-name,
+        .course-card:nth-child(3) .next-batch,
+        .course-card:nth-child(3) .enroll-button {
+            opacity: 0.75;  /* Keep previous opacity */
+        }
+
+        /* Increased opacity for third card footer elements */
+        .course-card:nth-child(3) .next-batch,
+        .course-card:nth-child(3) .enroll-button {
+            opacity: 1;
+        }
+
+        /* Reset all specific opacity rules */
+        .course-card:nth-child(1) .course-image,
+        .course-card:nth-child(3) .course-image {
+            opacity: 0.5;  /* Keep images faded */
+        }
+
+        /* Set buttons to full opacity with correct color */
+        .course-card:nth-child(1) .next-batch,
+        .course-card:nth-child(1) .enroll-button,
+        .course-card:nth-child(3) .next-batch,
+        .course-card:nth-child(3) .enroll-button {
+            opacity: 1;
+        }
+
+        /* Set enroll button color */
+        .course-card:nth-child(1) .enroll-button,
+        .course-card:nth-child(3) .enroll-button {
+            background-color: #D9EFFF;
+        }
+
+        /* Keep middle card elements at full opacity */
+        .course-card:nth-child(2) * {
+            opacity: 1;
+        }
+
+        /* Clear all previous opacity rules first */
+        .course-card * {
+            opacity: 1;
+        }
+
+        /* Style for the enroll buttons */
+        .enroll-button {
+            background: #28B1FF;  /* Default blue for middle card */
+            color: white;
+            padding: 12px 0;
+            text-align: center;
+            border-radius: 45px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            width: 240px;
+            opacity: 1 !important;
+        }
+
+        /* Specific color for first and third cards */
+        .course-card:nth-child(1) .enroll-button,
+        .course-card:nth-child(3) .enroll-button {
+            background-color: #D9EFFF;
+        }
+
+        /* Next batch styling */
+        .next-batch {
+            background: #505050;  /* Default gray for first and third cards */
+            color: white;
+            padding: 8px 0;
+            text-align: center;
+            border-radius: 45px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 12px;
+            width: 240px;
+        }
+
+        /* Specific style for middle card next batch */
+        .course-card:nth-child(2) .next-batch {
+            background: #123B27;
+        }
+
+        .mentors-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #F8F8F8;
+            border-radius: 20px;
+        }
+
+        .mentors-title {
+            text-align: center;
+            color: #666666;
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 30px;
+        }
+
+        .university-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 35px;
+            flex-wrap: nowrap;
+            padding: 0;
+            margin-left: -60px;
+        }
+
+        .university-logos img {
+            height: 50px;
+            width: auto;   
+            object-fit: contain;
+        }
+
+        /* Logo-specific sizes */
+        .university-logos img[alt="Stanford University"] {
+            height: 75px;
+        }
+
+        .university-logos img[alt="UC Berkeley"] {
+            height: 75px;
+        }
+
+        .university-logos img[alt="Dartmouth"] {
+            height: 60px;
+        }
+
+        .university-logos img[alt="Harvard University"] {
+            height: 65px;
+        }
+
+        .university-logos img[alt="Georgia Institute of Technology"] {
+            height: 40px;
+        }
+
+        .university-logos img[alt="UCLA"] {
+            height: 45px;
+        }
+    </style>
+</head>
+<body>
+    <section id="section1">
+        <img src="./images/EliteMinds logo.png" alt="EliteMinds Logo" class="logo">
+        <div class="container">
+            <div class="content-left">
+                <h1 class="main-header">Nurture Bright<br>Young Minds</h1>
+                <h2 class="sub-header">Build unique stem projects with world-class mentors and alongside peers who share your passion.</h2>
+                
+                <div class="pill-container">
+                    <div class="pill-row">
+                        <div class="pill pill-dark-blue">Biology</div>
+                        <div class="pill pill-medium-blue">Nonprofit</div>
+                        <div class="pill pill-light-blue">Arts</div>
+                    </div>
+                    <div class="pill-row">
+                        <div class="pill pill-dark-blue">STEM</div>
+                        <div class="pill pill-blue">Entrepreneurship</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <img src="./images/EMfront.png" alt="Student with headphones">
+            </div>
+        </div>
+
+        <div class="mentors-container">
+            <h2 class="mentors-title">Mentors from</h2>
+            <div class="university-logos">
+                <img src="images/stanfordlogo.png" alt="Stanford University">
+                <img src="images/cal.png" alt="UC Berkeley">
+                <img src="images/harvardlogo.png" alt="Harvard University">
+                <img src="images/dartmouth.png" alt="Dartmouth">
+                <img src="images/cm.jpg" alt="Carnegie Mellon University">
+                <img src="images/gtlogo.png" alt="Georgia Institute of Technology">
+                <img src="images/ucla.png" alt="UCLA">
+            </div>
+        </div>
+    </section>
+    <section id="section2">
+        <h2 class="section-title">Elite Courses</h2>
+        <div class="courses-container">
+            <!-- Course Card 1 -->
+            <div class="course-card">
+                <img src="./images/AI Course.png" alt="AI Course" class="course-image">
+                <div class="enrollment-status">enrollment full!</div>
+                <h3 class="course-title">Zero to One AI Launch Lab</h3>
+                <div class="instructor-section">
+                    <img src="./images/Austin.png" alt="Austin" class="instructor-image">
+                    <div class="instructor-info">
+                        <span class="taught-by">Taught By</span>
+                        <span class="instructor-name">Austin Woo</span>
+                    </div>
+                </div>
+                <div class="course-footer">
+                    <div class="next-batch">Next batch December 1, 2024</div>
+                    <div class="enroll-button">Learn More & Enroll</div>
+                </div>
+            </div>
+
+            <!-- Course Card 2 -->
+            <div class="course-card">
+                <img src="./images/entrepreneurship course.png" alt="Entrepreneurship Course" class="course-image">
+                <div class="enrollment-status" style="background: #E1F7DB; color: #1A3D6B;">3 seats remaining</div>
+                <h3 class="course-title">
+                    The Art of Entrepreneurship:<br>
+                    Designing Your First Startup
+                </h3>
+                <div class="instructor-section">
+                    <img src="./images/Keerti.png" alt="Keerti" class="instructor-image">
+                    <div class="instructor-info">
+                        <span class="taught-by">Taught By</span>
+                        <span class="instructor-name">Keerti Jeeva</span>
+                    </div>
+                </div>
+                <div class="course-footer">
+                    <div class="next-batch" style="background: #123B27;">Next batch December 5, 2024</div>
+                    <a href="entrepreneurship.html" target="_blank" class="enroll-button" style="text-decoration: none;">
+                        Learn More & Enroll
+                    </a>
+                </div>
+            </div>
+
+            <!-- Course Card 3 -->
+            <div class="course-card">
+                <img src="./images/cancer research.png" alt="Cancer Research Course" class="course-image">
+                <div class="enrollment-status">enrollment full!</div>
+                <h3 class="course-title">Cancer Research: Discovering How Scientists Fight Disease</h3>
+                <div class="instructor-section">
+                    <img src="./images/Nikita.png" alt="Nikita" class="instructor-image">
+                    <div class="instructor-info">
+                        <span class="taught-by">Taught By</span>
+                        <span class="instructor-name">Nikita Katukota</span>
+                    </div>
+                </div>
+                <div class="course-footer">
+                    <div class="next-batch">Next batch November 28, 2024</div>
+                    <div class="enroll-button" style="opacity: 0.45;">Learn More & Enroll</div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
