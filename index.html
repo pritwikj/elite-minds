@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
+    <title>Elite Minds</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
@@ -20,16 +20,21 @@
             min-height: 100vh;
         }
 
+        #section1 {
+            background-color: #FFFFFF;
+            position: relative;
+            padding-top: 50px; /* Add this line - adjust value as needed */
+        }
+
         .container {
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 60px auto 0;  /* Combined margin: top right/left bottom */
             padding: 0 48px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 60px;
             min-height: 65vh;
-            margin-top: 60px;
         }
 
         .content-left {
@@ -40,7 +45,7 @@
 
         .hero-image {
             flex: 1;
-            max-width: 400px;
+            max-width: 500px;  /* Increased from 400px */
             height: auto;
             margin-top: -40px;
         }
@@ -49,14 +54,39 @@
             width: 100%;
             height: auto;
             object-fit: contain;
+            transform: scale(0.85);  /* Added to make the image 10% bigger */
+        }
+
+        .hero-section {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .reviews-container {
+            width: 100%;
+            display: flex;
+            justify-content: left;
+            margin-top: 40px;
+            /* Removed position: absolute and bottom property since we want it to flow naturally in the document */
+        }
+
+        .reviews-image {
+            max-width: 330px;
+            height: auto;
         }
 
         .main-header {
             font-family: 'Poppins', sans-serif;
             font-weight: 600;
-            font-size: 42px;
+            font-size: 47px;
             color: #123B27;
             margin-top: 0;
+            line-height: 1.3; /* Add this line - reduces the gap between lines */
+        }
+
+        .bright {
+            color: #00BF63;
         }
 
         .sub-header {
@@ -71,54 +101,83 @@
         .pill-container {
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 12px;  /* Reduced from 16px */
             margin-top: 30px;
         }
 
         .pill {
-            height: 40px;
-            border-radius: 30px;
+            height: 34px;  /* Reduced from 40px */
+            border-radius: 6px;  /* Reduced from 7.5px */
             display: flex;
             align-items: center;
             justify-content: center;
             font-family: 'Poppins', sans-serif;
             font-weight: 600;
-            font-size: 16px;
+            font-size: 14px;  /* Reduced from 16px */
             color: white;
-            padding: 0 24px;
+            padding: 0 20px;  /* Reduced from 24px */
         }
 
         .pill-dark-blue {
             background-color: #1A3D6B;
-            width: 140px;
+            width: 120px;  /* Reduced from 140px */
         }
 
         .pill-medium-blue {
-            background-color: #9EC7DE;
-            width: 140px;
+            background-color: #9ebae2;
+            width: 120px;  /* Reduced from 140px */
         }
 
         .pill-light-blue {
-            background-color: #CBE1EE;
-            width: 140px;
+            background-color: #cbd7e9;
+            width: 120px;  /* Reduced from 140px */
         }
 
         .pill-blue {
-            background-color: #1B84C0;
-            width: 180px;
+            background-color: #6f96d1;
+            width: 160px;  /* Reduced from 180px */
         }
 
         .pill-row {
             display: flex;
-            gap: 16px;
+            gap: 12px;  /* Reduced from 16px */
         }
 
         .logo {
             position: absolute;
-            top: -100px;
+            top: -40px;
             left: 48px;
             width: 200px;
             height: auto;
+        }
+        
+        .enroll-now-btn {
+            display: block;
+            width: 100%;
+            max-width: 180px;
+            margin: 32px 0 0 0;
+            padding: 10px 40px;
+            background-color: #00d76f;
+            color: black;
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            border: 2px solid black;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;  /* Removed box-shadow from transition */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .enroll-now-btn:hover {
+            background-color: #00a857;
+            transform: translateY(-2px);
+        }
+
+        .enroll-now-btn:active {
+            transform: translateY(0);
         }
 
         #section1 {
@@ -128,7 +187,8 @@
 
         #section2 {
             background-color: #CCE1EE;
-            padding: 60px 0;
+            padding: 40px 0 100px; /* Adjusted padding to be shorter at bottom */
+            min-height: auto; /* Remove minimum height requirement */
         }
 
         .section-title {
@@ -423,11 +483,11 @@
         }
 
         .mentors-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 30px;
+            max-width: 1100px;
+            margin: 30px auto 0;
+            padding: 5px;
             background-color: #F8F8F8;
-            border-radius: 20px;
+            border-radius: 25px;
         }
 
         .mentors-title {
@@ -435,91 +495,105 @@
             color: #666666;
             font-family: 'Poppins', sans-serif;
             font-size: 24px;
-            font-weight: 500;
-            margin-bottom: 30px;
+            font-weight: 1000;
+            margin-top: 25px;
+            margin-bottom: 10px;
         }
 
         .university-logos {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 35px;
             flex-wrap: nowrap;
             padding: 0;
             margin-left: -60px;
         }
 
         .university-logos img {
-            height: 50px;
+            height: 55px; /* Reduced from 65px */
             width: auto;   
             object-fit: contain;
         }
 
-        /* Logo-specific sizes */
+        /* Updated logo-specific sizes */
         .university-logos img[alt="Stanford University"] {
-            height: 75px;
-        }
-
-        .university-logos img[alt="UC Berkeley"] {
-            height: 75px;
-        }
-
-        .university-logos img[alt="Dartmouth"] {
-            height: 60px;
+            height: 105px;
+            margin-right: 10px; /* Adjust spacing after Stanford */
         }
 
         .university-logos img[alt="Harvard University"] {
-            height: 65px;
+            height: 80px;
+            margin-right: 50px; /* Adjust spacing after Harvard */
+        }
+
+        .university-logos img[alt="UC Berkeley"] {
+            height: 105px;
+            margin-right: 15px; /* Adjust spacing after Berkeley */
+        }
+
+        .university-logos img[alt="Dartmouth"] {
+            height: 72px;
+            margin-right: 20px; /* Adjust spacing after Dartmouth */
         }
 
         .university-logos img[alt="Georgia Institute of Technology"] {
-            height: 40px;
+            height: 52px;
+            margin-right: 40px; /* Adjust spacing after Georgia Tech */
         }
 
         .university-logos img[alt="UCLA"] {
-            height: 45px;
+            height: 48px;
+            /* No margin needed for the last logo */
         }
     </style>
-</head>
-<body>
-    <section id="section1">
-        <img src="./images/EliteMinds logo.png" alt="EliteMinds Logo" class="logo">
-        <div class="container">
-            <div class="content-left">
-                <h1 class="main-header">Nurture Bright<br>Young Minds</h1>
-                <h2 class="sub-header">Build unique stem projects with world-class mentors and alongside peers who share your passion.</h2>
-                
-                <div class="pill-container">
-                    <div class="pill-row">
-                        <div class="pill pill-dark-blue">Biology</div>
-                        <div class="pill pill-medium-blue">Nonprofit</div>
-                        <div class="pill pill-light-blue">Arts</div>
-                    </div>
-                    <div class="pill-row">
-                        <div class="pill pill-dark-blue">STEM</div>
-                        <div class="pill pill-blue">Entrepreneurship</div>
-                    </div>
+<section id="section1">
+    <img src="./images/EliteMinds logo.png" alt="EliteMinds Logo" class="logo">
+    <div class="container">
+        <div class="content-left">
+            <h1 class="main-header">Nurture <span class="bright">Bright</span><br>Young Minds</h1>
+            <h2 class="sub-header">Build unique stem projects with world-class mentors and alongside peers who share your passion.</h2>
+            
+            <div class="pill-container">
+                <div class="pill-row">
+                    <div class="pill pill-dark-blue">AI</div>
+                    <div class="pill pill-medium-blue">Nonprofit</div>
+                    <div class="pill pill-light-blue">Arts</div>
+                </div>
+                <div class="pill-row">
+                    <div class="pill pill-dark-blue">Biology</div>
+                    <div class="pill pill-blue">Entrepreneurship</div>
                 </div>
             </div>
 
+            <div class="reviews-container">
+                <img src="./images/reviews.jpeg" alt="Age range and rating" class="reviews-image">
+            </div>
+
+            <!-- Button moved here, inside content-left -->
+            <button onclick="document.getElementById('section2').scrollIntoView({behavior: 'smooth'})" class="enroll-now-btn">
+                Enroll Now
+            </button>
+        </div>
+
+        <div class="hero-section">
             <div class="hero-image">
                 <img src="./images/EMfront.png" alt="Student with headphones">
             </div>
         </div>
+    </div>
 
-        <div class="mentors-container">
-            <h2 class="mentors-title">Mentors from</h2>
-            <div class="university-logos">
-                <img src="images/stanfordlogo.png" alt="Stanford University">
-                <img src="images/cal.png" alt="UC Berkeley">
-                <img src="images/harvardlogo.png" alt="Harvard University">
-                <img src="images/dartmouth.png" alt="Dartmouth">
-                <img src="images/cm.jpg" alt="Carnegie Mellon University">
-                <img src="images/gtlogo.png" alt="Georgia Institute of Technology">
-                <img src="images/ucla.png" alt="UCLA">
-            </div>
+    <div class="mentors-container">
+        <h2 class="mentors-title">Mentors from</h2>
+        <div class="university-logos">
+            <img src="images/stanfordlogo.png" alt="Stanford University">
+            <img src="images/harvardlogo.png" alt="Harvard University">
+            <img src="images/cal.png" alt="UC Berkeley">
+            <img src="images/dartmouth.png" alt="Dartmouth">
+            <img src="images/gtlogo.png" alt="Georgia Institute of Technology">
+            <img src="images/ucla.png" alt="UCLA">
         </div>
-    </section>
+    </div>
+</section>
     <section id="section2">
         <h2 class="section-title">Elite Courses</h2>
         <div class="courses-container">
