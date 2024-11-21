@@ -26,7 +26,7 @@
         .content-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 200px 48px 40px;
+            padding: 160px 48px 0px;
         }
 
         .status-pills {
@@ -73,7 +73,7 @@
 
         .detail-row {
             display: flex;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             font-size: 16px;
         }
 
@@ -85,10 +85,11 @@
 
         .detail-value {
             color: #666;
-            max-width: 300px;
+            max-width: 400px;
             font-size: 16px;
             line-height: 1.5;
         }
+
 
         .main-content {
             display: flex;
@@ -109,6 +110,9 @@
         .image-container {
             flex: 1;
             max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
         }
 
         .image-container img {
@@ -117,8 +121,52 @@
             border-radius: 20px;
         }
 
+        .partnership-section {
+            margin-top: 0;  /* Updated from 60px */
+        }
+
+        .partnership-title {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+        }
+
+        .partner-logos {
+            max-width: 100%;  /* Updated from 420px */
+        }
+
+        .partner-logos img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+
+        .enroll-button {
+            display: inline-block;
+            background-color: #4AA9FF;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            margin-top: 42px;
+            transition: background-color 0.2s ease;
+            width: 200px;  /* Added fixed width */
+            margin-left: -120px;  /* Added negative margin to align with text */
+        }
+
+        .enroll-button:hover {
+            background-color: #15325A;
+        }
         .instructor-section {
-            padding: 40px 0;
+            padding: 0;  /* Remove default padding */
+            margin-top: -100px;  /* Pull the section up */
             background-color: #fff;
         }
 
@@ -224,62 +272,6 @@
             margin-bottom: 20px;
         }
 
-        .university-logos {
-            display: flex;
-            gap: 20px;
-        }
-
-        .university-logos img {
-            width: 100px;
-            height: auto;
-        }
-
-        .ratings-container {
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .rating {
-            margin-bottom: 20px;
-        }
-
-        .rating span {
-            color: #666;
-            font-size: 16px;
-        }
-
-        .stars {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 4px;
-        }
-
-        .rating-number {
-            font-weight: 600;
-            color: #333;
-            margin-left: 8px;
-        }
-
-        .features {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .feature {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: #666;
-            font-size: 14px;
-        }
-
-        .feature img {
-            width: 20px;
-            height: 20px;
-        }
-
         /* Update hero image container to accommodate new elements */
         .hero-image {
             position: relative;
@@ -325,10 +317,24 @@
                         <span class="detail-label">Tuition</span>
                         <span class="detail-value">$500</span>
                     </div>
+                
+                    <div class="detail-row">
+                        <span class="detail-label">Sessions</span>
+                        <span class="detail-value">Dec 5th, 2024 - Jan 9th, 2025<br>Weekly on Thursday, 7:00pm EST/4:00pm PST<br>
+                            <a href="https://www.berkeley.edu/" target="_blank"><button class="enroll-button">Enroll Now</button></a>
+                        </span>
+                    </div>
+                    
                 </div>
             </div>
             <div class="image-container">
                 <img src="images/courseimage.png" alt="Entrepreneurship Course">
+                <div class="partnership-section">
+                    <h3 class="partnership-title">In Partnership With</h3>
+                    <div class="partner-logos">
+                        <img src="images/partners.jpeg" alt="Partner Companies">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
