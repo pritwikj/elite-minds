@@ -3,16 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Art of Entrepreneurship - Elite Minds</title>
+    <title>Elite Minds</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="./images/favicon-32x32.png" sizes="32x32" />
     <style>
-        body {
+        * {
             margin: 0;
             padding: 0;
-            background-color: #FFFFFF;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        section {
             min-height: 100vh;
+        }
+
+        #section1 {
+            background-color: #FFFFFF;
+            position: relative;
+            padding-top: 50px; /* Add this line - adjust value as needed */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 60px auto 0;  /* Combined margin: top right/left bottom */
+            padding: 0 48px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+            min-height: 65vh;
+        }
+
+        .content-left {
+            flex: 1;
+            max-width: 600px;
+            margin-top: 0;
+        }
+
+        .hero-image {
+            flex: 1;
+            max-width: 500px;  /* Increased from 400px */
+            height: auto;
+            margin-top: -40px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            transform: scale(0.85);  /* Added to make the image 10% bigger */
+        }
+
+        .hero-section {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .reviews-container {
+            width: 100%;
+            display: flex;
+            justify-content: left;
+            margin-top: 40px;
+            /* Removed position: absolute and bottom property since we want it to flow naturally in the document */
+        }
+
+        .reviews-image {
+            max-width: 330px;
+            height: auto;
+        }
+
+        .main-header {
             font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 47px;
+            color: #123B27;
+            margin-top: 0;
+            line-height: 1.3; /* Add this line - reduces the gap between lines */
+        }
+
+        .bright {
+            color: #00BF63;
+        }
+
+        .sub-header {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 20px;
+            color: #6F6F77;
+            max-width: 450px;
+            margin-top: 20px;
+        }
+
+        .pill-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;  /* Reduced from 16px */
+            margin-top: 30px;
+        }
+
+        .pill {
+            height: 34px;  /* Reduced from 40px */
+            border-radius: 6px;  /* Reduced from 7.5px */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 14px;  /* Reduced from 16px */
+            color: white;
+            padding: 0 20px;  /* Reduced from 24px */
+        }
+
+        .pill-dark-blue {
+            background-color: #1A3D6B;
+            width: 120px;  /* Reduced from 140px */
+        }
+
+        .pill-medium-blue {
+            background-color: #9ebae2;
+            width: 120px;  /* Reduced from 140px */
+        }
+
+        .pill-light-blue {
+            background-color: #cbd7e9;
+            width: 120px;  /* Reduced from 140px */
+        }
+
+        .pill-blue {
+            background-color: #6f96d1;
+            width: 160px;  /* Reduced from 180px */
+        }
+
+        .pill-row {
+            display: flex;
+            gap: 12px;  /* Reduced from 16px */
         }
 
         .logo {
@@ -21,536 +150,710 @@
             left: 48px;
             width: 200px;
             height: auto;
-            z-index: 1000;
         }
-
-        .content-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 160px 48px 0px;
-        }
-
-        .status-pills {
-            margin-top: 0;
-        }
-
-        .pill {
-            display: inline-block;
-            padding: 6px 14px;
-            border-radius: 20px;
-            margin-right: 12px;
-            font-size: 14px;
-        }
-
-        .limited-seats {
-            background-color: #1A3D6B;
-            color: white;
-        }
-
-        .duration {
-            background-color: #CBE1EE;
-            color: #1A3D6B;
-        }
-
-        .course-title {
-            font-size: 36px;
-            font-weight: 600;
-            margin: 24px 0;
-            max-width: 800px;
-            line-height: 1.2;
-        }
-
-        .course-description {
-            font-size: 16px;
-            color: #666;
-            max-width: 600px;
-            margin-bottom: 40px;
-            line-height: 1.5;
-        }
-
-        .course-details {
-            margin-top: 40px;
-        }
-
-        .detail-row {
-            display: flex;
-            margin-bottom: 30px;
-            font-size: 16px;
-        }
-
-        .detail-label {
-            width: 120px;
-            font-weight: 600;
-            color: #333;
-        }
-
-        .detail-value {
-            color: #666;
-            max-width: 400px;
-            font-size: 16px;
-            line-height: 1.5;
-        }
-        .detail-value ul {
-            list-style-type: disc;
-            padding-left: 15px;  /* Reduced from margin-left to padding-left */
-            margin: 0;  /* Remove any default margins */
-        }
-
-        .detail-value li {
-            padding-left: 0;
-            margin-left: 0;
-            margin-bottom: 10px;  /* Adds space between list items */
-            }
-
-
-        .main-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 60px;
-        }
-
-        .text-content, .image-container {
-            margin-top: 0;
-        }
-
-        .text-content {
-            flex: 1;
-            max-width: 600px;
-        }
-
-        .image-container {
-            flex: 1;
-            max-width: 500px;
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        .image-container img {
+        
+        .enroll-now-btn {
+            display: block;
             width: 100%;
-            height: auto;
-            border-radius: 20px;
-        }
-
-        .partnership-section {
-            margin-top: 0;  /* Updated from 60px */
-        }
-
-        .partnership-title {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 20px;
+            max-width: 180px;
+            margin: 32px 0 0 0;
+            padding: 10px 40px;
+            background-color: #00d76f;
+            color: black;
             font-family: 'Poppins', sans-serif;
-            font-weight: 500;
-        }
-
-        .partner-logos {
-            max-width: 100%;  /* Updated from 420px */
-        }
-
-        .partner-logos img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-
-
-        .enroll-button {
-            display: inline-block;
-            background-color: #00BF63;
-            color: white;
-            padding: 12px 24px;
+            font-size: 18px;
+            font-weight: 600;
+            border: 2px solid black;
             border-radius: 50px;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 500;
-            font-size: 17px;
-            border: none;
             cursor: pointer;
-            margin-top: 60px;
-            transition: background-color 0.2s ease;
-            width: 250px;  /* Added fixed width */
-            margin-left: 0px;  /* Added negative margin to align with text */
-        }
-
-        .enroll-button:hover {
-            background-color: #15325A;
-        }
-        .instructor-section {
-            padding: 0;  /* Remove default padding */
-            margin-top: -70px;  /* Pull the section up */
-            background-color: #fff;
-        }
-
-        .instructor-bio {
+            transition: background-color 0.3s, transform 0.2s;  /* Removed box-shadow from transition */
             display: flex;
-            gap: 40px;
-            margin-bottom: 40px;
+            align-items: center;
+            justify-content: space-between;
         }
 
-        .instructor-image {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin-right: 40px;
+        .enroll-now-btn:hover {
+            background-color: #00a857;
+            transform: translateY(-2px);
         }
 
-        .instructor-info {
-            flex: 1;
+        .enroll-now-btn:active {
+            transform: translateY(0);
         }
 
-        .taught-by {
-            font-size: 14px;
-            color: #666;
+        #section1 {
+            background-color: #FFFFFF;
+            position: relative;
         }
 
-        .instructor-name {
-            font-size: 24px;
-            font-weight: 600;
-            margin: 12px 0;
-        }
-
-        .instructor-description {
-            font-size: 16px;
-            color: #666;
-        }
-
-        .curriculum-section {
-            margin-top: 40px;
+        #section2 {
+            background-color: #CCE1EE;
+            padding: 40px 0 100px; /* Adjusted padding to be shorter at bottom */
+            min-height: auto; /* Remove minimum height requirement */
         }
 
         .section-title {
-            font-size: 24px;
+            font-family: 'Poppins', sans-serif;
             font-weight: 600;
-            margin-bottom: 20px;
+            font-size: 46px;
+            color: #123B27;
+            margin-bottom: 40px;
+            max-width: 1200px;
+            margin: 0 auto 40px;
+            padding: 0 48px;
         }
 
-        .weeks-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-top: 40px;
+        .courses-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 48px;
         }
 
-        .week-card {
-            background-color: #f0f0f0;
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        .week-card h3 {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: #333;
-        }
-
-        .week-card ul {
-            list-style-type: disc;
-            padding-left: 20px;
-        }
-
-        .week-card li {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 8px;
-            line-height: 1.5;
-            padding-left: 0;
-        }
-
-        .week-card:nth-child(n+4) {
-            margin-top: 20px;
-        }
-
-        .week-card li:before {
-            content: none;
-        }
-
-        .instructor-image img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
+        .course-card {
+            background: white;
+            border-radius: 45px;
+            width: 400px;
+            height: 500px;
+            position: relative;
             overflow: hidden;
         }
 
-        .mentors-section {
-            margin-top: 60px;
+        .course-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            opacity: 0.5;
         }
 
-        .mentors-section h3 {
-            color: #666;
+        .enrollment-status {
+            position: absolute;
+            top: 30px;
+            left: 25px;
+            background: #1E1E1E;
+            border-radius: 45px;
+            padding: 8px 20px;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .course-title {
+            font-family: 'Poppins', sans-serif;
             font-size: 18px;
-            margin-bottom: 20px;
+            line-height: 1.3;
+            color: #1E1E1E;
+            opacity: 0.5;
+            padding: 20px 35px 0;
+            margin-top: 0;
+            height: 80px;
+            max-width: 350px;
         }
 
-        /* Update hero image container to accommodate new elements */
-        .hero-image {
-            position: relative;
+        .coming-soon {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            color: #6F6F77;
+            font-size: 20px;
+            font-weight: 500;
+            margin-top: 80px;
+        }
+
+        .instructor-section {
+            padding: 0 35px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            position: absolute;
+            top: 290px;
+            left: 0;
+            right: 0;
+        }
+
+        .instructor-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .instructor-info {
             display: flex;
             flex-direction: column;
         }
 
-        .hero-image img {
-            border-radius: 20px;
-            background-color: #E1F7DB;
+        .taught-by {
+            font-family: 'Poppins', sans-serif;
+            color: #929299;
+            font-size: 10px;
+            margin-bottom: 2px;
+            font-weight: 300;
+            opacity: 1;
+            letter-spacing: 0.2px;
         }
 
-        /* Add these media queries at the end of your existing CSS */
-
-                @media screen and (max-width: 768px) {
-            .logo {
-                position: relative;
-                top: 0;
-                left: 0;
-                width: 150px;
-                margin: -25px 0;
-            }
-
-            .content-container {
-                padding: 20px 24px;
-            }
-
-            .main-content {
-                flex-direction: column;
-                gap: 30px;
-            }
-
-            .text-content, .image-container {
-                max-width: 100%;
-            }
-
-            .course-title {
-                font-size: 28px;
-            }
-
-            .detail-row {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .detail-label {
-                width: 100%;
-            }
-
-            .detail-value {
-                width: 100%;
-            }
-
-            .weeks-grid {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-
-            .week-card:nth-child(n+4) {
-                margin-top: 0;
-            }
-
-            .partnership-section {
-                margin-bottom: 60px;
-            }
-
-            .instructor-section {
-                margin-top: 0;
-                position: relative;
-            }
-
-            .instructor-bio {
-                flex-direction: column;
-                text-align: center;
-                gap: 20px;
-                padding-top: 20px;
-            }
-
-            .instructor-image {
-                margin: 0 auto;
-            }
-
-            .instructor-info {
-                text-align: center;
-            }
-
-            .enroll-button {
-                width: 100%;
-                margin: 30px 0;
-            }
+        .instructor-name {
+            font-family: 'Poppins', sans-serif;
+            color: #6F6F77;
+            font-size: 14px;
+            font-weight: 500;
         }
 
-        @media screen and (max-width: 480px) {
-            .content-container {
-                padding: 20px 16px;
-            }
-
-            .status-pills {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 10px;
-            }
-
-            .pill {
-                margin-right: 0;
-                font-size: 12px;
-            }
-
-            .course-title {
-                font-size: 24px;
-            }
-
-            .partnership-section {
-                margin-bottom: 0px;
-            }
-
-            .instructor-image, .instructor-image img {
-                width: 150px;
-                height: 150px;
-            }
-
-            .week-card {
-                padding: 15px;
-            }
-
-            .week-card h3 {
-                font-size: 16px;
-            }
-
-            .week-card li {
-                font-size: 14px;
-            }
+        .course-footer {
+            position: absolute;
+            bottom: 25px;
+            left: 35px;
+            right: 35px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            align-items: center;
         }
+
+        .next-batch {
+            background: #505050;
+            color: white;
+            padding: 8px 0;
+            text-align: center;
+            border-radius: 45px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 12px;
+            width: 240px;
+            margin-left: 0;
+        }
+
+        .enroll-button {
+            background: #28B1FF;
+            color: white;
+            padding: 12px 0;
+            text-align: center;
+            border-radius: 45px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            width: 240px;
+            margin-left: 0;
+            opacity: 1 !important;
+        }
+
+        /* Specific styles for the second card */
+        .course-card:nth-child(2) .enrollment-status {
+            background: #E1F7DB;
+            color: #1A3D6B;
+            width: fit-content;
+        }
+
+        .course-card:nth-child(2) .next-batch {
+            background: #123B27;
+            padding: 8px 0;
+        }
+
+        /* Specific styles for the third card */
+        .course-card:nth-child(3) .enroll-button {
+            opacity: 0.45;
+        }
+
+        /* Update the titles to be on one line */
+        .course-card:nth-child(2) .course-title {
+            white-space: normal;
+            overflow: visible;
+            max-width: 350px;
+            padding: 20px 35px 0;
+        }
+
+        /* First and third card opacity */
+        .course-card:nth-child(1) .course-image,
+        .course-card:nth-child(1) .course-title,
+        .course-card:nth-child(1) .instructor-section,
+        .course-card:nth-child(1) .instructor-name,
+        .course-card:nth-child(1) .next-batch,
+        .course-card:nth-child(1) .enroll-button,
+        .course-card:nth-child(3) .course-image,
+        .course-card:nth-child(3) .course-title,
+        .course-card:nth-child(3) .instructor-section,
+        .course-card:nth-child(3) .instructor-name,
+        .course-card:nth-child(3) .next-batch,
+        .course-card:nth-child(3) .enroll-button {
+            opacity: 0.75;
+        }
+
+        /* Keep enrollment status at full opacity */
+        .enrollment-status {
+            opacity: 1 !important;
+        }
+
+        /* Ensure the middle card stays at full opacity */
+        .course-card:nth-child(2) * {
+            opacity: 1;
+        }
+
+        /* Specific color for the enroll buttons */
+        .course-card:nth-child(1) .enroll-button,
+        .course-card:nth-child(3) .enroll-button {
+            background-color: #D9EFFF;
+        }
+
+        /* Adjust image opacity specifically */
+        .course-card:nth-child(1) .course-image,
+        .course-card:nth-child(3) .course-image {
+            opacity: 0.5;  /* Increased transparency */
+        }
+
+        /* Keep other elements at previous opacity */
+        .course-card:nth-child(1) .course-title,
+        .course-card:nth-child(1) .instructor-section,
+        .course-card:nth-child(1) .instructor-name,
+        .course-card:nth-child(1) .next-batch,
+        .course-card:nth-child(1) .enroll-button,
+        .course-card:nth-child(3) .course-title,
+        .course-card:nth-child(3) .instructor-section,
+        .course-card:nth-child(3) .instructor-name,
+        .course-card:nth-child(3) .next-batch,
+        .course-card:nth-child(3) .enroll-button {
+            opacity: 0.75;  /* Keep previous opacity */
+        }
+
+        /* Increased opacity for third card footer elements */
+        .course-card:nth-child(3) .next-batch,
+        .course-card:nth-child(3) .enroll-button {
+            opacity: 1;
+        }
+
+        /* Reset all specific opacity rules */
+        .course-card:nth-child(1) .course-image,
+        .course-card:nth-child(3) .course-image {
+            opacity: 0.5;  /* Keep images faded */
+        }
+
+        /* Set buttons to full opacity with correct color */
+        .course-card:nth-child(1) .next-batch,
+        .course-card:nth-child(1) .enroll-button,
+        .course-card:nth-child(3) .next-batch,
+        .course-card:nth-child(3) .enroll-button {
+            opacity: 1;
+        }
+
+        /* Set enroll button color */
+        .course-card:nth-child(1) .enroll-button,
+        .course-card:nth-child(3) .enroll-button {
+            background-color: #D9EFFF;
+        }
+
+        /* Keep middle card elements at full opacity */
+        .course-card:nth-child(2) * {
+            opacity: 1;
+        }
+
+        /* Clear all previous opacity rules first */
+        .course-card * {
+            opacity: 1;
+        }
+
+        /* Style for the enroll buttons */
+        .enroll-button {
+            background: #28B1FF;  /* Default blue for middle card */
+            color: white;
+            padding: 12px 0;
+            text-align: center;
+            border-radius: 45px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            width: 240px;
+            opacity: 1 !important;
+        }
+
+        /* Specific color for first and third cards */
+        .course-card:nth-child(1) .enroll-button,
+        .course-card:nth-child(3) .enroll-button {
+            background-color: #D9EFFF;
+        }
+
+        /* Next batch styling */
+        .next-batch {
+            background: #505050;  /* Default gray for first and third cards */
+            color: white;
+            padding: 8px 0;
+            text-align: center;
+            border-radius: 45px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 12px;
+            width: 240px;
+        }
+
+        /* Specific style for middle card next batch */
+        .course-card:nth-child(2) .next-batch {
+            background: #123B27;
+        }
+
+        .mentors-container {
+            max-width: 1100px;
+            margin: 30px auto 0;
+            padding: 2px;
+            background-color: #F8F8F8;
+            border-radius: 25px;
+        }
+
+        .mentors-title {
+            text-align: center;
+            color: #666666;
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            font-weight: 1000;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .university-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: nowrap;
+            padding: 0;
+            margin-left: -60px;
+        }
+
+        .university-logos img {
+            height: 85px; /* Reduced from 65px */
+            width: auto;   
+            object-fit: contain;
+        }
+
+        /* Updated logo-specific sizes */
+        .university-logos img[alt="Stanford University"] {
+            height: 125px;
+            margin-right: 10px; /* Adjust spacing after Stanford */
+        }
+
+        .university-logos img[alt="Harvard University"] {
+            height: 80px;
+            margin-right: 50px; /* Adjust spacing after Harvard */
+        }
+
+        .university-logos img[alt="UC Berkeley"] {
+            height: 105px;
+            margin-right: 15px; /* Adjust spacing after Berkeley */
+        }
+
+        .university-logos img[alt="Dartmouth"] {
+            height: 72px;
+            margin-right: 20px; /* Adjust spacing after Dartmouth */
+        }
+
+        .university-logos img[alt="Georgia Institute of Technology"] {
+            height: 52px;
+            margin-right: 40px; /* Adjust spacing after Georgia Tech */
+        }
+
+        .university-logos img[alt="UCLA"] {
+            height: 48px;
+            /* No margin needed for the last logo */
+        }
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column-reverse;
+        padding: 0 24px;
+        gap: 20px;
+        margin-top: 0px;
+        min-height: auto;
+    }
+
+    .content-left {
+        text-align: center;
+        padding: 0;
+    }
+
+    .main-header {
+        font-size: 36px;
+    }
+
+    .sub-header {
+        font-size: 18px;
+        margin: 20px auto;
+    }
+
+    .pill-container {
+        align-items: center;
+    }
+
+    .hero-image {
+    max-width: 100%;  /* Increased from 80% */
+    margin: 0 auto;
+}
+
+.hero-image img {
+    transform: none;  /* Removed scale down */
+}
+}
+
+    .reviews-container {
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .reviews-image {
+        max-width: 280px;
+    }
+
+    .enroll-now-btn {
+        margin: 32px auto 0;
+    }
+
+    .logo {
+        position: relative;
+        top: 0;
+        left: 24px;
+        width: 150px;
+        margin: -60px 0 0px 0;
+    }
+
+    /* Mentors section */
+    .mentors-container {
+        margin: 20px 24px;
+        padding: 15px;
+    }
+
+    .university-logos {
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    /* Top row logos */
+    .university-logos img[alt="Stanford University"] {
+        height: 65px !important;
+        margin-right: 0 !important;
+    }
+
+    .university-logos img[alt="Harvard University"] {
+        height: 55px !important;
+        margin-right: 0 !important;
+    }
+
+    .university-logos img[alt="UC Berkeley"] {
+        height: 60px !important;
+        margin-right: 0 !important;
+    }
+
+    .university-logos img[alt="Dartmouth"] {
+        height: 50px !important;
+        margin-right: 0 !important;
+    }
+
+    /* Bottom row logos */
+    .university-logos img[alt="Georgia Institute of Technology"],
+    .university-logos img[alt="UCLA"] {
+        height: 35px !important;
+        margin-right: 0 !important;
+    }
+
+    /* Courses section */
+    #section2 {
+        padding: 40px 0;
+    }
+
+    .section-title {
+        font-size: 32px;
+        text-align: center;
+        padding: 0 24px;
+    }
+
+    .courses-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        padding: 0 24px;
+    }
+
+    .course-card {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        min-height: 500px;
+    }
+
+    .course-title {
+        height: auto;
+        min-height: 80px;
+        font-size: 16px;
+    }
+
+    .coming-soon {
+        font-size: 18px;
+        margin-top: 40px;
+    }
+
+/* Extra small devices */
+@media screen and (max-width: 480px) {
+    .main-header {
+        font-size: 32px;
+    }
+
+    .sub-header {
+        font-size: 16px;
+    }
+
+    .pill-row {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-image {
+    max-width: 70%;  /* Increased from 70% */
+}
+
+.hero-image img {
+    transform: none;  /* Removed scale down */
+}
+
+    /* Adjust logo sizes for even smaller screens */
+    .university-logos img[alt="Stanford University"] {
+        height: 55px !important;
+    }
+
+    .university-logos img[alt="Harvard University"] {
+        height: 45px !important;
+    }
+
+    .university-logos img[alt="UC Berkeley"] {
+        height: 50px !important;
+    }
+
+    .university-logos img[alt="Dartmouth"] {
+        height: 40px !important;
+    }
+
+    .university-logos img[alt="Georgia Institute of Technology"],
+    .university-logos img[alt="UCLA"] {
+        height: 30px !important;
+    }
+
+    .course-card {
+        max-width: 300px;
+    }
+}
     </style>
-</head>
-<body>
-    <a href="https://elitemindsprogram.com/" target="_blank">
-        <img src="./images/EliteMinds logo.png" alt="EliteMinds Logo" class="logo">
-    </a>
-    
-    <div class="content-container">
-        <div class="main-content">
-            <div class="text-content">
-                <div class="status-pills">
-                    <span class="pill limited-seats">Limited Seats Available</span>
-                    <span class="pill duration">6-week class</span>
+<section id="section1">
+    <img src="./images/EliteMinds logo.png" alt="EliteMinds Logo" class="logo">
+    <div class="container">
+        <div class="content-left">
+            <h1 class="main-header">Nurture <span class="bright">Bright</span><br>Young Minds</h1>
+            <h2 class="sub-header">Real projects. Elite mentors. Hands-on learning that transforms your future</h2>
+            
+            <div class="pill-container">
+                <div class="pill-row">
+                    <div class="pill pill-dark-blue">AI</div>
+                    <div class="pill pill-medium-blue">Nonprofit</div>
+                    <div class="pill pill-light-blue">Arts</div>
                 </div>
-
-                <h1 class="course-title">The Art of Entrepreneurship:<br>Buliding Your First Startup</h1>
-                
-                <p class="course-description">
-                    Learn the real-world skills to create the next big thing
-                </p>
-
-                <div class="course-details">
-                    <div class="detail-row">
-                        <span class="detail-label">Group Size</span>
-                        <span class="detail-value">8-10 students</span>
-                    </div>
-                    
-                    <div class="detail-row">
-                        <span class="detail-label">Outcome</span>
-                        <span class="detail-value">
-                            <ul>
-                                <li>Create your own professional pitch deck</li>
-                                <li>Earn Elite Entrepreneurship Certification</li>
-                                <li>Present to real tech companies and investors</li>
-                                <li>Internship opportunities with our technology partners</li>
-                            </ul>
-                        </span>
-                    </div>
-                    
-                    <div class="detail-row">
-                        <span class="detail-label">Tuition</span>
-                        <span class="detail-value">$500</span>
-                    </div>
-                
-                    <div class="detail-row">
-                        <span class="detail-label">Sessions</span>
-                        <span class="detail-value">Dec 5th, 2024 - Jan 9th, 2025<br>Weekly on Thursday, 7:00pm EST/4:00pm PST<br>
-                            <a href="https://tally.so/r/mKPWEA" target="_blank"><button class="enroll-button">Enroll Now</button></a>
-                        </span>
-                    </div>
-                    
+                <div class="pill-row">
+                    <div class="pill pill-dark-blue">Biology</div>
+                    <div class="pill pill-blue">Entrepreneurship</div>
                 </div>
             </div>
-            <div class="image-container">
-                <img src="images/courseimage.png" alt="Entrepreneurship Course">
-                <div class="partnership-section">
-                    <h3 class="partnership-title">In Partnership With</h3>
-                    <div class="partner-logos">
-                        <img src="images/partners.jpeg" alt="Partner Companies">
-                    </div>
-                </div>
+
+            <div class="reviews-container">
+                <img src="./images/reviews.jpeg" alt="Age range and rating" class="reviews-image">
+            </div>
+
+            <!-- Button moved here, inside content-left -->
+            <button onclick="document.getElementById('section2').scrollIntoView({behavior: 'smooth'})" class="enroll-now-btn">
+                Enroll Now
+            </button>
+        </div>
+
+        <div class="hero-section">
+            <div class="hero-image">
+                <img src="./images/EMfront.png" alt="Student with headphones">
             </div>
         </div>
     </div>
 
-    <section class="instructor-section">
-        <div class="content-container">
-            <div class="instructor-bio">
-                <div class="instructor-image">
-                    <img src="images/Keertisqr.png" alt="Keerti Jeeva">
+    <div class="mentors-container">
+        <h2 class="mentors-title">Mentors from</h2>
+        <div class="university-logos">
+            <img src="images/stanfordlogo.png" alt="Stanford University">
+            <img src="images/harvardlogo.png" alt="Harvard University">
+            <img src="images/cal.png" alt="UC Berkeley">
+            <img src="images/dartmouth.png" alt="Dartmouth">
+            <img src="images/gtlogo.png" alt="Georgia Institute of Technology">
+            <img src="images/ucla.png" alt="UCLA">
+        </div>
+    </div>
+</section>
+    <section id="section2">
+        <h2 class="section-title">Elite Masterclasses</h2>
+        <div class="courses-container">
+            <!-- Course Card 1 -->
+            <div class="course-card">
+                <img src="./images/AI Course.png" alt="AI Course" class="course-image">
+                <div class="enrollment-status">enrollment full!</div>
+                <h3 class="course-title">Zero to One AI Launch Lab: Your First AI Model</h3>
+                <div class="instructor-section">
+                    <img src="./images/Austin.png" alt="Austin" class="instructor-image">
+                    <div class="instructor-info">
+                        <span class="taught-by">Taught By</span>
+                        <span class="instructor-name">Austin Woo</span>
+                    </div>
                 </div>
-                <div class="instructor-info">
-                    <span class="taught-by">Taught By</span>
-                    <h2 class="instructor-name">Keerti Jeeva</h2>
-                    <p class="instructor-description">
-                        While pursuing her degree in computer science at UC Berkeley, Keerti is making history as the youngest woman admitted to Berkeley's startup incubator program, Berkeley SkyDeck (top 3.5% acceptance rate). She is currently an AI startup founder based in San Francisco and continues to spread her passion for advancing young individuals in entrepreneurship.
-                    </p>
+                <div class="course-footer">
+                    <div class="next-batch">Batch started November 18, 2024</div>
+                    <div class="enroll-button">Learn More & Enroll</div>
                 </div>
             </div>
 
-            <div class="curriculum-section">
-                <h2 class="section-title">Week by Week Curriculum</h2>
-                <div class="weeks-grid">
-                    <div class="week-card">
-                        <h3>Week 1</h3>
-                        <ul>
-                            <li>Learn startup fundamentals and technical analysis</li>
-                            <li>Generate and validate innovative business ideas</li>
-                            <li>Analyze successful startup case studies</li>
-                        </ul>
+            <!-- Course Card 2 -->
+            <div class="course-card">
+                <img src="./images/entrepreneurship course.png" alt="Entrepreneurship Course" class="course-image">
+                <div class="enrollment-status" style="background: #E1F7DB; color: #1A3D6B;">3 seats remaining</div>
+                <h3 class="course-title">
+                    The Art of Entrepreneurship:<br>
+                    Designing Your First Startup
+                </h3>
+                <div class="instructor-section">
+                    <img src="./images/Keerti.png" alt="Keerti" class="instructor-image">
+                    <div class="instructor-info">
+                        <span class="taught-by">Taught By</span>
+                        <span class="instructor-name">Keerti Jeeva</span>
                     </div>
-                    <div class="week-card">
-                        <h3>Week 2</h3>
-                        <ul>
-                            <li>Master advanced research techniques used by real companies</li>
-                            <li>Learn Silicon Valley's secret customer discovery methods</li>
-                            <li>Decode billion-dollar market opportunities</li>
-                        </ul>
+                </div>
+                <div class="course-footer">
+                    <div class="next-batch" style="background: #123B27;">Next batch December 12, 2024</div>
+                    <a href="entrepreneurship.html" target="_blank" class="enroll-button" style="text-decoration: none;">
+                        Learn More & Enroll
+                    </a>
+                </div>
+            </div>
+
+            <!-- Course Card 3 -->
+            <div class="course-card">
+                <img src="./images/cancer research.png" alt="Cancer Research Course" class="course-image">
+                <div class="enrollment-status">enrollment full!</div>
+                <h3 class="course-title">Cancer Research: Discovering How Scientists Fight Disease</h3>
+                <div class="instructor-section">
+                    <img src="./images/Nikita.png" alt="Nikita" class="instructor-image">
+                    <div class="instructor-info">
+                        <span class="taught-by">Taught By</span>
+                        <span class="instructor-name">Nikita Katukota</span>
                     </div>
-                    <div class="week-card">
-                        <h3>Week 3</h3>
-                        <ul>
-                            <li>Create using industry-standard prototyping tools</li>
-                            <li>Learn advanced design thinking methodology</li>
-                            <li>Master rapid innovation techniques</li>
-                        </ul>
-                    </div>
-                    <div class="week-card">
-                        <h3>Week 4</h3>
-                        <ul>
-                            <li>Design scalable business systems</li>
-                            <li>Learn revenue modeling like real founders</li>
-                            <li>Master professional business frameworks</li>
-                        </ul>
-                    </div>
-                    <div class="week-card">
-                        <h3>Week 5</h3>
-                        <ul>
-                            <li>Build real-world solutions</li>
-                            <li>Test with actual customers</li>
-                            <li>Analyze data like professional startups</li>
-                        </ul>
-                    </div>
-                    <div class="week-card">
-                        <h3>Week 6</h3>
-                        <ul>
-                            <li>Design viral growth mechanisms</li>
-                            <li>Create professional acquisition strategies</li>
-                            <li>Perfect your investor pitch</li>
-                        </ul>
-                    </div>
+                </div>
+                <div class="course-footer">
+                    <div class="next-batch">Next batch November 28, 2024</div>
+                    <div class="enroll-button" style="opacity: 0.45;">Learn More & Enroll</div>
                 </div>
             </div>
         </div>
+        <p class="coming-soon">More classes launching soon!</p>
     </section>
 </body>
-</html> 
+</html>

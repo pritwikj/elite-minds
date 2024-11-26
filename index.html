@@ -520,14 +520,14 @@
         }
 
         .university-logos img {
-            height: 55px; /* Reduced from 65px */
+            height: 85px; /* Reduced from 65px */
             width: auto;   
             object-fit: contain;
         }
 
         /* Updated logo-specific sizes */
         .university-logos img[alt="Stanford University"] {
-            height: 105px;
+            height: 125px;
             margin-right: 10px; /* Adjust spacing after Stanford */
         }
 
@@ -555,6 +555,193 @@
             height: 48px;
             /* No margin needed for the last logo */
         }
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column-reverse;
+        padding: 0 24px;
+        gap: 20px;
+        margin-top: 0px;
+        min-height: auto;
+    }
+
+    .content-left {
+        text-align: center;
+        padding: 0;
+    }
+
+    .main-header {
+        font-size: 36px;
+    }
+
+    .sub-header {
+        font-size: 18px;
+        margin: 20px auto;
+    }
+
+    .pill-container {
+        align-items: center;
+    }
+
+    .hero-image {
+    max-width: 100%;  /* Increased from 80% */
+    margin: 0 auto;
+}
+
+.hero-image img {
+    transform: none;  /* Removed scale down */
+}
+}
+
+    .reviews-container {
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .reviews-image {
+        max-width: 280px;
+    }
+
+    .enroll-now-btn {
+        margin: 32px auto 0;
+    }
+
+    .logo {
+        position: relative;
+        top: 0;
+        left: 24px;
+        width: 150px;
+        margin: -60px 0 0px 0;
+    }
+
+    /* Mentors section */
+    .mentors-container {
+        margin: 20px 24px;
+        padding: 15px;
+    }
+
+    .university-logos {
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    /* Top row logos */
+    .university-logos img[alt="Stanford University"] {
+        height: 65px !important;
+        margin-right: 0 !important;
+    }
+
+    .university-logos img[alt="Harvard University"] {
+        height: 55px !important;
+        margin-right: 0 !important;
+    }
+
+    .university-logos img[alt="UC Berkeley"] {
+        height: 60px !important;
+        margin-right: 0 !important;
+    }
+
+    .university-logos img[alt="Dartmouth"] {
+        height: 50px !important;
+        margin-right: 0 !important;
+    }
+
+    /* Bottom row logos */
+    .university-logos img[alt="Georgia Institute of Technology"],
+    .university-logos img[alt="UCLA"] {
+        height: 35px !important;
+        margin-right: 0 !important;
+    }
+
+    /* Courses section */
+    #section2 {
+        padding: 40px 0;
+    }
+
+    .section-title {
+        font-size: 32px;
+        text-align: center;
+        padding: 0 24px;
+    }
+
+    .courses-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        padding: 0 24px;
+    }
+
+    .course-card {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        min-height: 500px;
+    }
+
+    .course-title {
+        height: auto;
+        min-height: 80px;
+        font-size: 16px;
+    }
+
+    .coming-soon {
+        font-size: 18px;
+        margin-top: 40px;
+    }
+
+/* Extra small devices */
+@media screen and (max-width: 480px) {
+    .main-header {
+        font-size: 32px;
+    }
+
+    .sub-header {
+        font-size: 16px;
+    }
+
+    .pill-row {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-image {
+    max-width: 70%;  /* Increased from 70% */
+}
+
+.hero-image img {
+    transform: none;  /* Removed scale down */
+}
+
+    /* Adjust logo sizes for even smaller screens */
+    .university-logos img[alt="Stanford University"] {
+        height: 55px !important;
+    }
+
+    .university-logos img[alt="Harvard University"] {
+        height: 45px !important;
+    }
+
+    .university-logos img[alt="UC Berkeley"] {
+        height: 50px !important;
+    }
+
+    .university-logos img[alt="Dartmouth"] {
+        height: 40px !important;
+    }
+
+    .university-logos img[alt="Georgia Institute of Technology"],
+    .university-logos img[alt="UCLA"] {
+        height: 30px !important;
+    }
+
+    .course-card {
+        max-width: 300px;
+    }
+}
     </style>
 <section id="section1">
     <img src="./images/EliteMinds logo.png" alt="EliteMinds Logo" class="logo">
