@@ -142,6 +142,94 @@ section {
     width: 160px;
 }
 
+
+
+/* Featured Examples Section */
+.featured-section {
+    background-color: #2F4F2F;
+    padding: 50px 0;
+    min-height: auto;
+}
+
+.featured-title {
+    color: white;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 46px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.featured-description {
+    color: white;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto 48px;
+    padding: 0 24px;
+    line-height: 1.5;
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 48px;
+}
+
+.featured-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.featured-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.featured-content {
+    padding: 24px;
+}
+
+.featured-card-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: #1E1E1E;
+    margin-bottom: 12px;
+}
+
+.featured-card-description {
+    font-family: 'Poppins', sans-serif;
+    color: #6F6F77;
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+.featured-card-author {
+    font-family: 'Poppins', sans-serif;
+    color: #929299;
+    font-size: 14px;
+}
+
+@media screen and (min-width: 768px) {
+    .featured-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .featured-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
 /* Reviews Section */
 .reviews-container {
     width: 100%;
@@ -198,10 +286,11 @@ section {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     font-size: 46px;
-    color: #123B27;
+    color: #000000;  /* Changed from #123B27 to black */
     max-width: 1200px;
     margin: 0 auto 40px;
     padding: 0 48px;
+    text-align: center;  /* Added this line to center the text */
 }
 
 .courses-container {
@@ -594,6 +683,54 @@ section {
             <img src="images/dartmouth.png" alt="Dartmouth">
             <img src="images/gtlogo.png" alt="Georgia Institute of Technology">
             <img src="images/ucla.png" alt="UCLA">
+        </div>
+    </div>
+</section>
+
+<section class="featured-section">
+    <h2 class="featured-title">Featured Examples</h2>
+    <p class="featured-description">
+    </p>
+    
+    <div class="featured-grid">
+        <!-- AI Meal Planning Tool -->
+        <div class="featured-card">
+            <img src="./images/cv_nav.png" alt="Computer Vision Navigator" class="featured-image">
+            <div class="featured-content">
+                <h3 class="featured-card-title">Computer Vision Navigator</h3>
+                <p class="featured-card-description">AI-powered app that processes real-time video to help visually impaired people navigate indoor spaces by identifying obstacles, reading text, and providing audio guidance.</p>
+                <p class="featured-card-author">Eshaan S.</p>
+            </div>
+        </div>
+
+        <!-- Antihistamines Research -->
+        <div class="featured-card">
+            <img src="./images/planarian.png" alt="Planarian Regeneration Project" class="featured-image">
+            <div class="featured-content">
+                <h3 class="featured-card-title">Planarian Regeneration</h3>
+                <p class="featured-card-description">An investigation of planarian regeneration that uses microscopy and advanced time-lapse imaging to reveal how they can regrow complete body structures from tiny fragments.</p>
+                <p class="featured-card-author">Caitlyn M.</p>
+            </div>
+        </div>
+
+        <!-- Sanitation Solutions -->
+        <div class="featured-card">
+            <img src="./images/rural_health.jpg" alt="Rural Health Express" class="featured-image">
+            <div class="featured-content">
+                <h3 class="featured-card-title">Rural Health Express Nonprofit</h3>
+                <p class="featured-card-description">A fleet of converted buses bringing essential medical care to underserved rural communities through mobile clinics staffed by volunteer healthcare professionals.</p>
+                <p class="featured-card-author">Sruti P.</p>
+            </div>
+        </div>
+
+        <!-- Chess App -->
+        <div class="featured-card">
+            <img src="./images/cubesat.png" alt="CubeSat Satellite Station" class="featured-image">
+            <div class="featured-content">
+                <h3 class="featured-card-title">CubeSat Satellite Station</h3>
+                <p class="featured-card-description">A personal ground station network that uses software-defined radio and open-source software to track and receive data from educational satellites passing overhead.</p>
+                <p class="featured-card-author">Aidan N.</p>
+            </div>
         </div>
     </div>
 </section>
