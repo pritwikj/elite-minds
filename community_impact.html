@@ -296,6 +296,30 @@
             background-color: #E1F7DB;
         }
 
+        .bottom-enroll-container {
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .bottom-enroll-button {
+            display: inline-block;
+            background-color: #00BF63;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            font-size: 17px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            width: 250px;
+        }
+
+        .bottom-enroll-button:hover {
+            background-color: #15325A;
+        }
+
         /* Add these media queries at the end of your existing CSS */
 
                 @media screen and (max-width: 768px) {
@@ -374,6 +398,11 @@
                 width: 100%;
                 margin: 30px 0;
             }
+
+            .bottom-enroll-button {
+                width: 100%;
+                max-width: 250px;
+            }
         }
 
         @media screen and (max-width: 480px) {
@@ -416,6 +445,9 @@
             .week-card li {
                 font-size: 14px;
             }
+            .bottom-enroll-container {
+                margin: 40px 0;
+             }
         }
     </style>
 </head>
@@ -573,6 +605,11 @@
                             <li>Receive Community Change Leader Certification</li>
                         </ul>
                     </div>
+                </div>
+                <div class="bottom-enroll-container">
+                    <a href="https://tally.so/r/3qY0e9" target="_blank">
+                        <button class="bottom-enroll-button">Enroll Now</button>
+                    </a>
                 </div>
             </div>                       
         </div>
