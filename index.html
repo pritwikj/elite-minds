@@ -295,17 +295,19 @@ section {
 
 .courses-container {
     display: flex;
-    justify-content: center;
-    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 24px;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 48px;
+    padding: 0 24px;
 }
 
 .course-card {
+    flex: 0 1 360px;
     background: white;
     border-radius: 45px;
-    width: 400px;
+    width: 360px;
     height: 500px;
     position: relative;
     overflow: hidden;
@@ -419,17 +421,17 @@ section {
 }
 
 /* Card-specific styles */
-.course-card:nth-child(1) .course-image,
-.course-card:nth-child(3) .course-image {
+.course-card:nth-child(3) .course-image,
+.course-card:nth-child(4) .course-image {
     opacity: 0.5;
 }
 
-.course-card:nth-child(1) .course-title,
-.course-card:nth-child(1) .instructor-section,
-.course-card:nth-child(1) .instructor-name,
 .course-card:nth-child(3) .course-title,
 .course-card:nth-child(3) .instructor-section,
-.course-card:nth-child(3) .instructor-name {
+.course-card:nth-child(3) .instructor-name,
+.course-card:nth-child(4) .course-title,
+.course-card:nth-child(4) .instructor-section,
+.course-card:nth-child(4) .instructor-name {
     opacity: 0.75;
 }
 
@@ -442,12 +444,9 @@ section {
     background: #123B27;
 }
 
-.course-card:nth-child(1) .enroll-button,
-.course-card:nth-child(3) .enroll-button {
+.course-card:nth-child(3) .enroll-button,
+.course-card:nth-child(4) .enroll-button {
     background-color: #D9EFFF;
-}
-
-.course-card:nth-child(3) .enroll-button {
     opacity: 0.45;
 }
 
@@ -637,6 +636,34 @@ section {
         max-width: 300px;
     }
 }
+
+/* Update mobile responsive styles to maintain proper layout */
+@media screen and (max-width: 1200px) {
+    .courses-container {
+        padding: 0 24px;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .course-card {
+        flex: 0 1 350px;
+        width: 350px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .courses-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .course-card {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        min-height: 500px;
+    }
+}
     </style>
 <section id="section1">
     <img src="./images/EliteMinds logo.png" alt="EliteMinds Logo" class="logo">
@@ -734,68 +761,94 @@ section {
         </div>
     </div>
 </section>
-    <section id="section2">
-        <h2 class="section-title">Elite Passion Projects</h2>
-        <div class="courses-container">
-            <!-- Course Card 1 -->
-            <div class="course-card">
-                <img src="./images/AI Course.png" alt="AI Course" class="course-image">
-                <div class="enrollment-status">enrollment full!</div>
-                <h3 class="course-title">Zero to One AI Launch Lab: Your First AI Passion Project</h3>
-                <div class="instructor-section">
-                    <img src="./images/Austin.png" alt="Austin" class="instructor-image">
-                    <div class="instructor-info">
-                        <span class="taught-by">Taught By</span>
-                        <span class="instructor-name">Austin Woo</span>
-                    </div>
-                </div>
-                <div class="course-footer">
-                    <div class="next-batch">Batch started November 18, 2024</div>
-                    <div class="enroll-button">Learn More & Enroll</div>
+<section id="section2">
+    <h2 class="section-title">Elite Passion Projects</h2>
+    <div class="courses-container">
+        <!-- Course Card 1 -->
+        <div class="course-card">
+            <img src="./images/biomed_impact.jpeg" alt="Biomedical Engineering Course" class="course-image">
+            <div class="enrollment-status" style="background: #E1F7DB; color: #1A3D6B;">Coming Soon</div>
+            <h3 class="course-title">Biomedical Engineering Lab: Design Your Medical Project</h3>
+            <div class="instructor-section">
+                <img src="./images/osezele_headshot.jpeg" alt="Osezele" class="instructor-image">
+                <div class="instructor-info">
+                    <span class="taught-by">Taught By</span>
+                    <span class="instructor-name">Osezele Okoruwa</span>
                 </div>
             </div>
-
-            <!-- Course Card 2 -->
-            <div class="course-card">
-                <img src="./images/community_impact.png" alt="Entrepreneurship Course" class="course-image">
-                <div class="enrollment-status" style="background: #E1F7DB; color: #1A3D6B;">2 seats remaining</div>
-                <h3 class="course-title">
-                    Create a Unique Community Impact Passion Project
-                </h3>
-                <div class="instructor-section">
-                    <img src="./images/Keerti.png" alt="Keerti" class="instructor-image">
-                    <div class="instructor-info">
-                        <span class="taught-by">Taught By</span>
-                        <span class="instructor-name">Keerti Jeeva</span>
-                    </div>
-                </div>
-                <div class="course-footer">
-                    <div class="next-batch" style="background: #123B27;">Next batch December 22, 2024</div>
-                    <a href="community_impact.html" target="_blank" class="enroll-button" style="text-decoration: none;">
-                        Learn More & Enroll
-                    </a>
+            <!-- Start of Selection -->
+            <div class="course-footer">
+                <!-- <div class="next-batch" style="background: #123B27;">Next batch December 22, 2024</div> -->
+                <!-- <a href="biomedical_engineering.html" target="_blank" class="enroll-button" style="text-decoration: none;">
+                    Learn More & Enroll
+                </a> -->
+                <div class="next-batch" style="background: #123B27;">Next batch- January 2025</div>
+                <div class="enroll-button" style="text-decoration: none;">
+                    Coming Soon
                 </div>
             </div>
+            <!-- End of Selection -->
+        </div>
 
-            <!-- Course Card 3 -->
-            <div class="course-card">
-                <img src="./images/cancer research.png" alt="Cancer Research Course" class="course-image">
-                <div class="enrollment-status">enrollment full!</div>
-                <h3 class="course-title">Fight Cancer Through Your Research Project</h3>
-                <div class="instructor-section">
-                    <img src="./images/Nikita.png" alt="Nikita" class="instructor-image">
-                    <div class="instructor-info">
-                        <span class="taught-by">Taught By</span>
-                        <span class="instructor-name">Nikita Katukota</span>
-                    </div>
+        <!-- Course Card 2 -->
+        <div class="course-card">
+            <img src="./images/community_impact.png" alt="Entrepreneurship Course" class="course-image">
+            <div class="enrollment-status" style="background: #E1F7DB; color: #1A3D6B;">2 seats remaining</div>
+            <h3 class="course-title">
+                Create a Unique Community Impact Passion Project
+            </h3>
+            <div class="instructor-section">
+                <img src="./images/Keerti.png" alt="Keerti" class="instructor-image">
+                <div class="instructor-info">
+                    <span class="taught-by">Taught By</span>
+                    <span class="instructor-name">Keerti Jeeva</span>
                 </div>
-                <div class="course-footer">
-                    <div class="next-batch">Next batch November 28, 2024</div>
-                    <div class="enroll-button" style="opacity: 0.45;">Learn More & Enroll</div>
-                </div>
+            </div>
+            <div class="course-footer">
+                <div class="next-batch" style="background: #123B27;">Next batch December 22, 2024</div>
+                <a href="community_impact.html" target="_blank" class="enroll-button" style="text-decoration: none;">
+                    Learn More & Enroll
+                </a>
             </div>
         </div>
-        <p class="coming-soon">More projects launching soon!</p>
-    </section>
+
+        <!-- Course Card 3 -->
+        <div class="course-card">
+            <img src="./images/AI Course.png" alt="AI Course" class="course-image">
+            <div class="enrollment-status">enrollment full!</div>
+            <h3 class="course-title">Zero to One AI Launch Lab: Your First AI Passion Project</h3>
+            <div class="instructor-section">
+                <img src="./images/Austin.png" alt="Austin" class="instructor-image">
+                <div class="instructor-info">
+                    <span class="taught-by">Taught By</span>
+                    <span class="instructor-name">Austin Woo</span>
+                </div>
+            </div>
+            <div class="course-footer">
+                <div class="next-batch">Batch started November 18, 2024</div>
+                <div class="enroll-button">Learn More & Enroll</div>
+            </div>
+        </div>
+
+        <!-- Course Card 4 -->
+        <div class="course-card">
+            <img src="./images/cancer research.png" alt="Cancer Research Course" class="course-image">
+            <div class="enrollment-status">enrollment full!</div>
+            <h3 class="course-title">Fight Cancer Through Your Research Project</h3>
+            <div class="instructor-section">
+                <img src="./images/Nikita.png" alt="Nikita" class="instructor-image">
+                <div class="instructor-info">
+                    <span class="taught-by">Taught By</span>
+                    <span class="instructor-name">Nikita Katukota</span>
+                </div>
+            </div>
+            <div class="course-footer">
+                <div class="next-batch">Next batch November 28, 2024</div>
+                <div class="enroll-button" style="opacity: 0.45;">Learn More & Enroll</div>
+            </div>
+        </div>
+    </div>
+    <p class="coming-soon">More projects launching soon!</p>
+</section>
 </body>
 </html>
