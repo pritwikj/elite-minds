@@ -256,9 +256,9 @@ section {
 .enroll-now-btn {
     display: flex;
     width: 100%;
-    max-width: 180px;
+    max-width: 200px;
     margin: 32px 0 0 0;
-    padding: 10px 40px;
+    padding: 10px 30px;
     background-color: #00d76f;
     color: black;
     font-family: 'Poppins', sans-serif;
@@ -269,7 +269,8 @@ section {
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    white-space: nowrap;
 }
 
 .enroll-now-btn:hover {
@@ -659,9 +660,182 @@ section {
         min-height: 500px;
     }
 }
+
+.header-nav {
+    position: absolute;
+    top: 20px;
+    right: 48px;
+    display: flex;
+    gap: 20px;
+}
+
+.header-button {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #123B27;
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 25px;
+    transition: background-color 0.3s;
+}
+
+.header-button:hover {
+    background-color: #E1F7DB;
+}
+
+/* Add this to your mobile media query (@media screen and (max-width: 768px)) */
+.header-nav {
+    position: relative;
+    top: 0;
+    right: 0;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Program Benefits Section */
+.program-benefits {
+    background-color: #F8F8F8;
+    padding: 80px 0;
+}
+
+.benefits-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 46px;
+    color: #123B27;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.benefits-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 48px;
+}
+
+.benefit-card {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: #1A3D6B;
+    margin-bottom: 15px;
+}
+
+.benefit-card p {
+    font-family: 'Poppins', sans-serif;
+    color: #6F6F77;
+    line-height: 1.6;
+}
+
+.programs-overview {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 60px auto 0;
+    padding: 0 48px;
+}
+
+.program-type {
+    background: #E1F7DB;
+    padding: 40px 40px 30px;
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.program-image {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    margin-top: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.program-type h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 28px;
+    color: #123B27;
+    margin-bottom: 20px;
+}
+
+.program-type p {
+    font-family: 'Poppins', sans-serif;
+    color: #1A3D6B;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.program-link {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: #00BF63;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.program-link:hover {
+    color: #00a857;
+}
+
+/* Mobile Responsive Styles for Program Benefits */
+@media screen and (max-width: 768px) {
+    .benefits-container,
+    .programs-overview {
+        grid-template-columns: 1fr;
+        padding: 0 24px;
+    }
+
+    .benefits-title {
+        font-size: 32px;
+        padding: 0 24px;
+    }
+
+    .program-benefits {
+        padding: 60px 0;
+    }
+
+    .benefit-card,
+    .program-type {
+        padding: 24px;
+    }
+
+    .program-type h3 {
+        font-size: 24px;
+    }
+
+    .program-type {
+        padding: 24px 24px 24px;
+    }
+    
+    .program-image {
+        height: 200px;
+        margin-top: 24px;
+    }
+}
     </style>
 <section id="section1">
     <img src="./images/EliteMinds logo.png" alt="EliteMinds Logo" class="logo">
+    <nav class="header-nav">
+        <a href="group_programs.html" class="header-button">Group Programs</a>
+        <a href="mentorship.html" class="header-button">1:1 Mentorship</a>
+    </nav>
     <div class="container">
         <div class="content-left">
             <h1 class="main-header">Create <span class="bright">Standout</span><br>Passion Projects</h1>
@@ -684,8 +858,8 @@ section {
             </div>
 
             <!-- Button moved here, inside content-left -->
-            <button onclick="document.getElementById('section2').scrollIntoView({behavior: 'smooth'})" class="enroll-now-btn">
-                Enroll Now
+            <button onclick="document.getElementById('programs-overview').scrollIntoView({behavior: 'smooth'})" class="enroll-now-btn">
+                Get Started
             </button>
         </div>
 
@@ -752,110 +926,46 @@ section {
         </div>
     </div>
 </section>
-<section id="section2">
-    <h2 class="section-title">Elite Passion Projects</h2>
-    <div class="courses-container">
-        <!-- Course Card 1 -->
-        <div class="course-card">
-            <img src="./images/biomed_impact.jpeg" alt="Biomedical Invention Lab" class="course-image">
-            <div class="enrollment-status" style="background: #E1F7DB; color: #1A3D6B;">1 seat remaining</div>
-            <h3 class="course-title">Biomedical Invention Lab: Design Your Medical Project</h3>
-            <div class="instructor-section">
-                <img src="./images/osezele_headshot.jpeg" alt="Osezele" class="instructor-image">
-                <div class="instructor-info">
-                    <span class="taught-by">Taught By</span>
-                    <span class="instructor-name">Osezele Okoruwa</span>
-                </div>
-            </div>
-            <!-- Start of Selection -->
-            <div class="course-footer">
-                <div class="next-batch" style="background: #123B27;">Next batch January 12, 2025</div>
-                <a href="biomedical_engineering.html" target="_blank" class="enroll-button" style="text-decoration: none;">
-                    Learn More & Enroll
-                </a>
-            </div>
-            <!-- End of Selection -->
-        </div>
 
-        <!-- Move AI Launch Lab card to position 2 -->
-        <div class="course-card">
-            <img src="./images/ai-app.jpg" alt="AI Course" class="course-image">
-            <div class="enrollment-status" style="background: #E1F7DB; color: #1A3D6B;">5 seats remaining</div>
-            <h3 class="course-title">Zero to One AI Launch Lab: Your First AI Passion Project</h3>
-            <div class="instructor-section">
-                <img src="./images/pritwik.jpeg" alt="Pritwik" class="instructor-image">
-                <div class="instructor-info">
-                    <span class="taught-by">Taught By</span>
-                    <span class="instructor-name">Pritwik Jeeva</span>
-                </div>
-            </div>
-            <div class="course-footer">
-                <div class="next-batch" style="background: #123B27;">Next batch April 6, 2025</div>
-                <a href="ai_launch_lab.html" target="_blank" class="enroll-button" style="text-decoration: none;">
-                    Learn More & Enroll
-                </a>
-            </div>
+<section class="program-benefits" id="programs">
+    <h2 class="benefits-title">Why Choose Elite Minds?</h2>
+    <div class="benefits-container">
+        <div class="benefit-card">
+            <h3>Elite Mentorship</h3>
+            <p>Work directly with expert mentors from T20 universities who provide tailored guidance and in-depth feedback to ensure your success.</p>
         </div>
-
-        <!-- Move PhD Blueprint card to position 3 -->
-        <div class="course-card">
-            <img src="./images/med_research.jpg" alt="Healthcare Research Program" class="course-image">
-            <div class="enrollment-status" style="background: #E1F7DB; color: #1A3D6B;">4 seats remaining</div>
-            <h3 class="course-title">The PhD Blueprint: Medical Research Intensive</h3>
-            <div class="instructor-section">
-                <img src="./images/mrudula_headshot.JPG" alt="Mrudula" class="instructor-image">
-                <div class="instructor-info">
-                    <span class="taught-by">Taught By</span>
-                    <span class="instructor-name">Mrudula Naidu</span>
-                </div>
-            </div>
-            <div class="course-footer">
-                <div class="next-batch" style="background: #123B27;">Next batch January 19, 2025</div>
-                <a href="healthcare_research.html" target="_blank" class="enroll-button" style="text-decoration: none;">
-                    Learn More & Enroll
-                </a>
-            </div>
+        
+        <div class="benefit-card">
+            <h3>Proven 4x Framework</h3>
+            <p>Our proven framework has helped students increase their college acceptance rates by 4x through standout passion projects that make your applications stand out.</p>
         </div>
-
-        <!-- Course Card 4 -->
-        <div class="course-card">
-            <img src="./images/cancer research.png" alt="Cancer Research Course" class="course-image">
-            <div class="enrollment-status">enrollment full!</div>
-            <h3 class="course-title">Fight Cancer Through Your Research Project</h3>
-            <div class="instructor-section">
-                <img src="./images/Nikita.png" alt="Nikita" class="instructor-image">
-                <div class="instructor-info">
-                    <span class="taught-by">Taught By</span>
-                    <span class="instructor-name">Nikita Katukota</span>
-                </div>
-            </div>
-            <div class="course-footer">
-                <div class="next-batch">Batch started November 28, 2024</div>
-                <div class="enroll-button" style="opacity: 0.45;">Learn More & Enroll</div>
-            </div>
+        
+        <div class="benefit-card">
+            <h3>Official Certification</h3>
+            <p>Earn official Elite Minds certification upon project completion, validating your expertise and strengthening your academic portfolio.</p>
         </div>
-
-        <!-- Move Community Impact card to last position -->
-        <div class="course-card">
-            <img src="./images/community_impact.png" alt="Community Impact Course" class="course-image" style="opacity: 0.5;">
-            <div class="enrollment-status" style="background: #1E1E1E; color: white;">enrollment full!</div>
-            <h3 class="course-title" style="opacity: 0.75;">
-                Create a Unique Community Impact Passion Project
-            </h3>
-            <div class="instructor-section" style="opacity: 0.75;">
-                <img src="./images/Keerti.png" alt="Keerti" class="instructor-image">
-                <div class="instructor-info">
-                    <span class="taught-by">Taught By</span>
-                    <span class="instructor-name">Keerti Jeeva</span>
-                </div>
-            </div>
-            <div class="course-footer">
-                <div class="next-batch" style="background: #505050;">Next batch January 5, 2025</div>
-                <div class="enroll-button" style="background-color: #D9EFFF; opacity: 0.45;">Learn More & Enroll</div>
-            </div>
+        
+        <div class="benefit-card">
+            <h3>Collaborative Network</h3>
+            <p>Join a community of ambitious peers, develop leadership skills through projects, and build lasting connections.</p>
         </div>
     </div>
-    <p class="coming-soon">More projects launching soon!</p>
+
+    <div class="programs-overview" id="programs-overview">
+        <div class="program-type">
+            <h3>Group Programs</h3>
+            <p>Students build passion projects alongside accomplished peers under the mentorship of industry experts, giving them a competitive edge in college applications.</p>
+            <a href="group_programs.html" class="program-link">Learn More →</a>
+            <img src="./images/group_program.jpeg" alt="Students collaborating" class="program-image">
+        </div>
+        
+        <div class="program-type">
+            <h3>1:1 Mentorship</h3>
+            <p>Our Elite Mentors and students collaborate to develop unique, impactful profiles with a spike that sets them apart in college admissions.</p>
+            <a href="mentorship.html" class="program-link">Learn More →</a>
+            <img src="./images/mentorship_pic.jpeg" alt="One-on-one mentoring session" class="program-image">
+        </div>
+    </div>
 </section>
 </body>
 </html>

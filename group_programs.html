@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Programs - Elite Minds</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="./images/favicon-32x32.png" sizes="32x32" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #FFFFFF;
+        }
+
+        .header {
+            background-color: #FFFFFF;
+            padding: 4px 48px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: none;
+            margin-top: -40px;
+        }
+
+        .logo {
+            width: 200px;
+            height: auto;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 16px;
+        }
+
+        .header-button {
+            font-weight: 500;
+            font-size: 15px;
+            color: #123B27;
+            text-decoration: none;
+            padding: 2px 16px;
+            border-radius: 25px;
+            transition: background-color 0.3s;
+        }
+
+        .header-button:hover {
+            background-color: #E1F7DB;
+        }
+
+        .main-content {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 20px 48px 100px;
+        }
+
+        .page-title {
+            font-size: 46px;
+            color: #000000;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .page-description {
+            font-size: 18px;
+            color: #6F6F77;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        /* Add Course Card Styles */
+        .courses-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .course-card {
+            flex: 0 1 360px;
+            background: white;
+            border-radius: 45px;
+            width: 360px;
+            height: 500px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .course-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .enrollment-status {
+            position: absolute;
+            top: 30px;
+            left: 25px;
+            background: #1E1E1E;
+            border-radius: 45px;
+            padding: 8px 20px;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .course-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            line-height: 1.3;
+            color: #1E1E1E;
+            padding: 20px 35px 0;
+            margin-top: 0;
+            height: 80px;
+            max-width: 350px;
+        }
+
+        .instructor-section {
+            padding: 0 35px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            position: absolute;
+            top: 290px;
+            left: 0;
+            right: 0;
+        }
+
+        .instructor-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .instructor-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .taught-by {
+            font-family: 'Poppins', sans-serif;
+            color: #929299;
+            font-size: 10px;
+            margin-bottom: 2px;
+            font-weight: 300;
+            letter-spacing: 0.2px;
+        }
+
+        .instructor-name {
+            font-family: 'Poppins', sans-serif;
+            color: #6F6F77;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .course-footer {
+            position: absolute;
+            bottom: 25px;
+            left: 35px;
+            right: 35px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .next-batch {
+            background: #505050;
+            color: white;
+            padding: 8px 0;
+            text-align: center;
+            border-radius: 45px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 12px;
+            width: 240px;
+        }
+
+        .enroll-button {
+            background: #28B1FF;
+            color: white;
+            padding: 12px 0;
+            text-align: center;
+            border-radius: 45px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            width: 240px;
+            text-decoration: none;
+        }
+
+        .coming-soon {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            color: #6F6F77;
+            font-size: 20px;
+            font-weight: 500;
+            margin-top: 80px;
+        }
+
+        /* Update responsive styles */
+        @media screen and (max-width: 1600px) {
+            .courses-container {
+                padding: 0 24px;
+            }
+        }
+
+        @media screen and (max-width: 1080px) {
+            .course-card {
+                flex: 0 1 350px;
+                width: 350px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                padding: 4px;
+                margin-top: -20px;
+            }
+
+            .header-nav {
+                margin-top: 4px;
+            }
+
+            .main-content {
+                padding: 40px 24px;
+            }
+
+            .page-title {
+                font-size: 32px;
+                padding: 0 24px;
+            }
+
+            .courses-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .course-card {
+                width: 100%;
+                max-width: 350px;
+                height: auto;
+                min-height: 500px;
+            }
+
+            .coming-soon {
+                font-size: 18px;
+                margin-top: 40px;
+            }
+
+            .logo {
+                width: 150px;
+            }
+        }
+
+        /* Add new styles for the dark background section */
+        .courses-section {
+            background-color: #F5F7FA;
+            padding: 32px 0 48px;
+            margin: 0 120px;
+            border-radius: 32px;
+        }
+
+        /* Update courses-container styles */
+        .courses-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Update media queries */
+        @media screen and (max-width: 768px) {
+            .courses-section {
+                margin: 0 24px;
+                padding: 32px 0;
+                border-radius: 24px;
+            }
+
+            .courses-container {
+                padding: 0 12px;
+            }
+        }
+
+        .header-button.active {
+            background-color: #E1F7DB;
+        }
+
+        /* Add style for the section title */
+        .section-title {
+            text-align: center;
+            width: 100%;
+            color: #123B27;
+            font-size: 32px;
+            margin-bottom: 32px;
+            font-weight: 600;
+            padding-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="test.html">
+            <img src="./images/EliteMinds logo.png" alt="EliteMinds Logo" class="logo">
+        </a>
+        <nav class="header-nav">
+            <a href="group_programs.html" class="header-button active">Group Programs</a>
+            <a href="mentorship.html" class="header-button">1:1 Mentorship</a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <h1 class="page-title">Group Programs</h1>
+        <p class="page-description">
+            Join our collaborative learning environment where you'll work alongside like-minded peers under the guidance of expert mentors. Our group programs offer structured curriculum, peer feedback, and opportunities to develop leadership skills while working on impactful projects.
+        </p>
+
+        <section class="courses-section">
+            <h2 class="section-title">Elite Passion Projects</h2>
+            <div class="courses-container">
+                <!-- Course Card 1 -->
+                <div class="course-card">
+                    <img src="./images/biomed_impact.jpeg" alt="Biomedical Invention Lab" class="course-image">
+                    <div class="enrollment-status" style="background: #E1F7DB; color: #1A3D6B;">1 seat remaining</div>
+                    <h3 class="course-title">Biomedical Invention Lab: Design Your Medical Project</h3>
+                    <div class="instructor-section">
+                        <img src="./images/osezele_headshot.jpeg" alt="Osezele" class="instructor-image">
+                        <div class="instructor-info">
+                            <span class="taught-by">Taught By</span>
+                            <span class="instructor-name">Osezele Okoruwa</span>
+                        </div>
+                    </div>
+                    <div class="course-footer">
+                        <div class="next-batch" style="background: #123B27;">Next batch January 12, 2025</div>
+                        <a href="biomedical_engineering.html" target="_blank" class="enroll-button">
+                            Learn More & Enroll
+                        </a>
+                    </div>
+                </div>
+
+                <!-- AI Launch Lab card -->
+                <div class="course-card">
+                    <img src="./images/ai-app.jpg" alt="AI Course" class="course-image">
+                    <div class="enrollment-status" style="background: #E1F7DB; color: #1A3D6B;">5 seats remaining</div>
+                    <h3 class="course-title">Zero to One AI Launch Lab: Your First AI Passion Project</h3>
+                    <div class="instructor-section">
+                        <img src="./images/pritwik.jpeg" alt="Pritwik" class="instructor-image">
+                        <div class="instructor-info">
+                            <span class="taught-by">Taught By</span>
+                            <span class="instructor-name">Pritwik Jeeva</span>
+                        </div>
+                    </div>
+                    <div class="course-footer">
+                        <div class="next-batch" style="background: #123B27;">Next batch April 6, 2025</div>
+                        <a href="ai_launch_lab.html" target="_blank" class="enroll-button">
+                            Learn More & Enroll
+                        </a>
+                    </div>
+                </div>
+
+                <!-- PhD Blueprint card -->
+                <div class="course-card">
+                    <img src="./images/med_research.jpg" alt="Healthcare Research Program" class="course-image">
+                    <div class="enrollment-status" style="background: #E1F7DB; color: #1A3D6B;">4 seats remaining</div>
+                    <h3 class="course-title">The PhD Blueprint: Medical Research Intensive</h3>
+                    <div class="instructor-section">
+                        <img src="./images/mrudula_headshot.JPG" alt="Mrudula" class="instructor-image">
+                        <div class="instructor-info">
+                            <span class="taught-by">Taught By</span>
+                            <span class="instructor-name">Mrudula Naidu</span>
+                        </div>
+                    </div>
+                    <div class="course-footer">
+                        <div class="next-batch" style="background: #123B27;">Next batch January 19, 2025</div>
+                        <a href="healthcare_research.html" target="_blank" class="enroll-button">
+                            Learn More & Enroll
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Cancer Research Course -->
+                <div class="course-card">
+                    <img src="./images/cancer research.png" alt="Cancer Research Course" class="course-image" style="opacity: 0.5;">
+                    <div class="enrollment-status" style="background: #1E1E1E; color: white;">enrollment full!</div>
+                    <h3 class="course-title" style="opacity: 0.75;">Fight Cancer Through Your Research Project</h3>
+                    <div class="instructor-section" style="opacity: 0.75;">
+                        <img src="./images/Nikita.png" alt="Nikita" class="instructor-image">
+                        <div class="instructor-info">
+                            <span class="taught-by">Taught By</span>
+                            <span class="instructor-name">Nikita Katukota</span>
+                        </div>
+                    </div>
+                    <div class="course-footer">
+                        <div class="next-batch" style="background: #505050;">Batch started November 28, 2024</div>
+                        <div class="enroll-button" style="background-color: #D9EFFF; opacity: 0.45;">Learn More & Enroll</div>
+                    </div>
+                </div>
+
+                <!-- Community Impact card -->
+                <div class="course-card">
+                    <img src="./images/community_impact.png" alt="Community Impact Course" class="course-image" style="opacity: 0.5;">
+                    <div class="enrollment-status" style="background: #1E1E1E; color: white;">enrollment full!</div>
+                    <h3 class="course-title" style="opacity: 0.75;">
+                        Create a Unique Community Impact Passion Project
+                    </h3>
+                    <div class="instructor-section" style="opacity: 0.75;">
+                        <img src="./images/Keerti.png" alt="Keerti" class="instructor-image">
+                        <div class="instructor-info">
+                            <span class="taught-by">Taught By</span>
+                            <span class="instructor-name">Keerti Jeeva</span>
+                        </div>
+                    </div>
+                    <div class="course-footer">
+                        <div class="next-batch" style="background: #505050;">Next batch January 5, 2025</div>
+                        <div class="enroll-button" style="background-color: #D9EFFF; opacity: 0.45;">Learn More & Enroll</div>
+                    </div>
+                </div>
+            </div>
+            <p class="coming-soon">More projects launching soon!</p>
+        </section>
+    </main>
+</body>
+</html> 

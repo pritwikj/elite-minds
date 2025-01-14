@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1:1 Mentorship - Elite Minds</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="./images/favicon-32x32.png" sizes="32x32" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .header {
+            background-color: #FFFFFF;
+            padding: 4px 48px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: none;
+            margin-top: -20px;
+        }
+
+        .logo {
+            width: 200px;
+            height: auto;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 16px;
+        }
+
+        .header-button {
+            font-weight: 500;
+            font-size: 15px;
+            color: #123B27;
+            text-decoration: none;
+            padding: 2px 16px;
+            border-radius: 25px;
+            transition: background-color 0.3s;
+        }
+
+        .header-button.active {
+            background-color: #E1F7DB;
+        }
+
+        .main-content {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 48px 100px;
+        }
+
+        .page-title {
+            font-size: 46px;
+            color: #000000;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .page-description {
+            font-size: 18px;
+            color: #6F6F77;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        /* Add responsive styles */
+        @media screen and (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                padding: 20px;
+                margin-top: -20px;
+            }
+
+            .header-nav {
+                margin-top: 20px;
+            }
+
+            .main-content {
+                padding: 0 24px;
+                margin: 40px auto;
+            }
+
+            .page-title {
+                font-size: 32px;
+            }
+
+            .logo {
+                width: 150px;
+            }
+        }
+
+        .instructor {
+            padding-block: 60px;
+            margin-top: 40px;
+        }
+
+        .departments-title {
+            text-align: center;
+            width: 100%;
+            color: #123B27;
+            font-size: 32px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .section-text-it {
+            text-align: center;
+            margin-top: 10px;    
+            margin-bottom: 60px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #6F6F77;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .instructor-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 40px;
+            padding: 0;
+            list-style: none;
+        }
+
+        .instructor-card { 
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: white;
+            padding: 30px;
+            border-radius: 24px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            height: 480px;
+        }
+
+        .instructor-card .card-banner {
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            width: 250px;  
+            height: 250px; 
+            overflow: hidden; 
+            margin-inline: auto; 
+            border-radius: 50%; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
+            flex-shrink: 0;
+        }
+
+        .instructor-card .card-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            object-position: center 20%; 
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .instructor-card:hover .card-banner {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.45);
+        }
+
+        .instructor-card .card-title {
+            color: #123B27;
+            font-size: 22px;
+            margin-bottom: 8px;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .instructor-card .card-subtitle {
+            margin-bottom: 8px;
+            color: #6F6F77;
+            font-size: 14px;
+            line-height: 1.4;
+            width: 100%;
+        }
+
+        /* Add responsive styles for the instructor grid */
+        @media screen and (max-width: 768px) {
+            .instructor-list {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 30px;
+            }
+
+            .instructor-card .card-banner {
+                width: 200px;
+                height: 200px;
+            }
+        }
+
+        /* Add new section styling */
+        .mentors-section {
+            background-color: #F5F7FA;
+            padding: 48px 0;
+            margin: 0 10px;
+            padding-left: -10px;
+            padding-right: -10px;
+            border-radius: 32px;
+        }
+
+        .mentors-section .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 120px;
+        }
+
+        /* Update responsive styles */
+        @media screen and (max-width: 768px) {
+            .mentors-section {
+                margin: 0 -24px;
+                padding: 32px 24px;
+            }
+
+            .mentors-section .container {
+                padding: 0;
+            }
+
+            .page-title {
+                font-size: 32px;
+                padding: 0 24px;
+            }
+
+            .page-description {
+                padding: 0 24px;
+                font-size: 16px;
+            }
+
+            .instructor-list {
+                padding: 0 12px;
+            }
+        }
+
+        .consultation-button-container {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .consultation-button {
+            display: inline-block;
+            background: #28B1FF;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 45px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(40, 177, 255, 0.2);
+        }
+
+        .consultation-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(40, 177, 255, 0.3);
+        }
+
+        /* Add styles for the bottom button container */
+        .bottom-consultation-container {
+            text-align: center;
+            margin-top: 48px;
+        }
+
+        /* Update mobile styles */
+        @media screen and (max-width: 768px) {
+            .consultation-button {
+                padding: 12px 24px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="test.html">
+            <img src="./images/EliteMinds logo.png" alt="EliteMinds Logo" class="logo">
+        </a>
+        <nav class="header-nav">
+            <a href="group_programs.html" class="header-button">Group Programs</a>
+            <a href="mentorship.html" class="header-button active">1:1 Mentorship</a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <h1 class="page-title">1:1 Mentorship</h1>
+        <p class="page-description">
+            Get personalized guidance from our expert mentors who will help you develop and execute your standout passion project. Our 1:1 mentorship program offers tailored support, flexible scheduling, and in-depth feedback to ensure your success.
+        </p>
+        
+        <!-- Add the new consultation button container -->
+        <div class="consultation-button-container">
+            <a href="https://tally.so/r/mRvYrj" class="consultation-button">Book a Consultation Call</a>
+        </div>
+
+        <section class="mentors-section">
+            <div class="container">
+                <h2 class="departments-title">Meet the Elite Mentors</h2>
+                <p class="section-text-it">
+                    Our Elite Mentors are handpicked from T20 universities and have founded companies, published research, and led global nonprofits.
+                </p>
+                <ul class="instructor-list">
+                    <li>
+                        <div class="instructor-card">
+                            <figure class="card-banner">
+                                <img src="./images/mrudula_mentor.JPG" alt="Mrudula">
+                            </figure>
+                            <h3 class="card-title">Mrudula N.</h3>
+                            <p class="card-subtitle">PhD, NYU School of Medicine</p>
+                            <p class="card-subtitle">Research @ Johns Hopkins, Harvard</p>
+                            <p class="card-subtitle">MPH in Global Health Leadership, NYU</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="instructor-card">
+                            <figure class="card-banner">
+                                <img src="./images/Nikita_mentor.jpeg" alt="Nikita">
+                            </figure>
+                            <h3 class="card-title">Nikita K.</h3>
+                            <p class="card-subtitle">UC Berkeley Biology Alum</p>
+                            <p class="card-subtitle">Research @ Harvard Cancer Institute, UCSF, Stanford Medical School</p>
+                            <p class="card-subtitle">5x Published Medical Research Author</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="instructor-card">
+                            <figure class="card-banner">
+                                <img src="./images/claire_headshot.jpeg" alt="Claire">
+                            </figure>
+                            <h3 class="card-title">Claire N.</h3>
+                            <p class="card-subtitle">MBA @ UPenn Wharton</p>
+                            <p class="card-subtitle">Duke Computer Engineering Alum</p>
+                            <p class="card-subtitle">Software Engineer @ Apple, Disney, Gemini</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="instructor-card">
+                            <figure class="card-banner">
+                                <img src="./images/osezele_mentor.jpeg" alt="Osezele">
+                            </figure>
+                            <h3 class="card-title">Osezele O.</h3>
+                            <p class="card-subtitle">Darmouth Engineering Alum, Opus Fellow</p>
+                            <p class="card-subtitle">Data Research @ Dartmouth Medical School</p>
+                            <p class="card-subtitle">Biomedical Engineering Research @ Dartmouth Engineering</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="instructor-card">
+                            <figure class="card-banner">
+                                <img src="./images/ayaan_mentor.jpeg" alt="Ayaan">
+                            </figure>
+                            <h3 class="card-title">Ayaan P.</h3>
+                            <p class="card-subtitle">Pre-Med @ Stanford</p>
+                            <p class="card-subtitle">Founder of Two Pioneering Health Initiatives</p>
+                            <p class="card-subtitle">2x Published Medical Research Author</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="instructor-card">
+                            <figure class="card-banner">
+                                <img src="./images/Pritwik_headshot.JPG" alt="Pritwik">
+                            </figure>
+                            <h3 class="card-title">Pritwik J.</h3>
+                            <p class="card-subtitle">UC Berkeley Data Science Alum</p>
+                            <p class="card-subtitle">AI Startup Founder, Entrepreneur In Residence @ Berkeley SkyDeck</p>
+                            <p class="card-subtitle">Technology Research @ IIT Madras, UC Berkeley</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="instructor-card">
+                            <figure class="card-banner">
+                                <img src="./images/isabella_mentor.jpeg" alt="Isabella">
+                            </figure>
+                            <h3 class="card-title">Isabella D.</h3>
+                            <p class="card-subtitle">UC Berkeley Physics</p>
+                            <p class="card-subtitle">Particle Research @ ATLAS Experiment, Berkeley Lab</p>
+                            <p class="card-subtitle">Astrophysics (Supernova Cosmology) Research, Northwestern University</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="instructor-card">
+                            <figure class="card-banner">
+                                <img src="./images/aditya_b.png" alt="Aditya B">
+                            </figure>
+                            <h3 class="card-title">Aditya B.</h3>
+                            <p class="card-subtitle">UC Berkeley Computer Science</p>
+                            <p class="card-subtitle">Software Engineer @ Sigma Computing, JPMorgan</p>
+                            <p class="card-subtitle">Research @ Johns Hopkins, Berkeley RISE Lab</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="instructor-card">
+                            <figure class="card-banner">
+                                <img src="./images/kaitlyn_mentor.jpg" alt="Kaitlyn">
+                            </figure>
+                            <h3 class="card-title">Kaitlyn C.</h3>
+                            <p class="card-subtitle">UCLA Physiological Science Alum</p>
+                            <p class="card-subtitle">Genetic Counseling @ Stanford Health</p>
+                            <p class="card-subtitle">Research @ UCSF, UCLA, LookUpTrials</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="instructor-card">
+                            <figure class="card-banner">
+                                <img src="./images/bhaktram_headshot.jpg" alt="Bhaktram">
+                            </figure>
+                            <h3 class="card-title">Bhaktram J.</h3>
+                            <p class="card-subtitle">NYU Computer Science</p>
+                            <p class="card-subtitle">Deep Learning Research @ Hewlett Packard</p>
+                            <p class="card-subtitle">Machine Learning Research @ National University of Singapore</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="instructor-card">
+                            <figure class="card-banner">
+                                <img src="./images/Aditya_mentor.jpeg" alt="Aditya">
+                            </figure>
+                            <h3 class="card-title">Aditya J.</h3>
+                            <p class="card-subtitle">UC Berkeley Biology</p>
+                            <p class="card-subtitle">Y Combinator-Backed Healthcare Tech Founder</p>
+                            <p class="card-subtitle">Neuroscience Research @ UCSF, UC Berkeley</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="instructor-card">
+                            <figure class="card-banner">
+                                <img src="./images/vibha_headshot.jpg" alt="Vibha">
+                            </figure>
+                            <h3 class="card-title">Vibha S.</h3>
+                            <p class="card-subtitle">UC Berkeley Analytics</p>
+                            <p class="card-subtitle">Founder & Executive Director @ Hygiene for Her </p>
+                            <p class="card-subtitle">Gates Foundation Local Changemaker, ATT Oxygen Scholar</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="instructor-card">
+                            <figure class="card-banner">
+                                <img src="./images/keerti_mentor.jpeg" alt="Keerti">
+                            </figure>
+                            <h3 class="card-title">Keerti J.</h3>
+                            <p class="card-subtitle">UC Berkeley Computer Science</p>
+                            <p class="card-subtitle">AI Entrepreneur @ Berkeley SkyDeck</p>
+                            <p class="card-subtitle">Founder of Women's Edu Non-Profit</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="instructor-card">
+                            <figure class="card-banner">
+                                <img src="./images/julia_mentor.jpg" alt="Julia">
+                            </figure>
+                            <h3 class="card-title">Julia D.</h3>
+                            <p class="card-subtitle">UC Berkeley Chemical Biology & Nutritional Sciences Alum</p>
+                            <p class="card-subtitle">Gene Therapy Research Lead @ UCSF</p>
+                            <p class="card-subtitle">Published Medical Oncology Research Author</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Add bottom consultation button -->
+        <div class="bottom-consultation-container">
+            <a href="https://tally.so/r/mRvYrj" class="consultation-button">Book a Consultation Call</a>
+        </div>
+    </main>
+</body>
+</html> 
