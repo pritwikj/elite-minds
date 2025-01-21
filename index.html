@@ -688,26 +688,44 @@ section {
 
 .header-button {
     font-family: 'Poppins', sans-serif;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 16px;
     color: #123B27;
     text-decoration: none;
-    padding: 8px 20px;
+    padding: 10px 24px;
     border-radius: 25px;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
+    background-color: #E1F7DB;
+    border: 2px solid #123B27;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .header-button:hover {
-    background-color: #E1F7DB;
+    background-color: #00BF63;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* Add this to your mobile media query (@media screen and (max-width: 768px)) */
-.header-nav {
-    position: relative;
-    top: 0;
-    right: 0;
-    justify-content: center;
-    margin-top: 20px;
+.header-button:active {
+    transform: translateY(0);
+}
+
+/* Update the mobile styles to maintain button appearance */
+@media screen and (max-width: 768px) {
+    .header-nav {
+        position: relative;
+        top: 0;
+        right: 0;
+        justify-content: center;
+        margin-top: 20px;
+        gap: 12px;
+    }
+    
+    .header-button {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
 }
 
 /* Program Benefits Section */
