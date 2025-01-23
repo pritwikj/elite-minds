@@ -864,6 +864,95 @@ section {
         margin-top: 24px;
     }
 }
+
+/* Testimonials Section */
+.testimonials {
+    padding: 80px 0;
+    background-color: #f8f8f8;
+}
+
+.testimonials-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 46px;
+    color: #123B27;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 48px;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.student-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.student-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.student-name {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: #1A3D6B;
+    margin-bottom: 5px;
+}
+
+.rating {
+    color: #FFD700;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.quote {
+    font-family: 'Poppins', sans-serif;
+    color: #6F6F77;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+/* Mobile Responsive Styles for Testimonials */
+@media screen and (max-width: 1024px) {
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        padding: 0 24px;
+    }
+
+    .testimonials-title {
+        font-size: 32px;
+        padding: 0 24px;
+    }
+
+    .testimonials {
+        padding: 60px 0;
+    }
+}
     </style>
 <section id="section1">
     <a href="https://elitemindsprogram.com/">
@@ -1002,6 +1091,78 @@ section {
             <a href="mentorship.html" class="program-link">Learn More →</a>
             <img src="./images/mentorship_pic.jpeg" alt="One-on-one mentoring session" class="program-image">
         </div>
+    </div>
+</section>
+
+<section class="testimonials">
+    <h2 class="testimonials-title">Read What Our Students Have to Say</h2>
+    <div class="testimonials-grid">
+        <div class="testimonial-card">
+            <div class="student-info">
+                <img src="./images/student8.png" alt="Alice Y." class="student-image">
+                <div class="student-details">
+                    <h3 class="student-name">Alice Y., Princeton</h3>
+                </div>
+            </div>
+            <div class="rating">★★★★★</div>
+            <p class="quote">Elite Minds helped me turn my passion for bioengineering into a real-world impact project. With their guidance, I developed a novel microfluidic device for rapid disease detection that's now being tested in local clinics. The mentors provided invaluable technical expertise and helped me overcome challenges throughout the research process.</p>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="student-info">
+                <img src="./images/ranvir.jpeg" alt="Ranvir" class="student-image">
+                <div class="student-details">
+                    <h3 class="student-name">Ranvir P., UPenn</h3>
+                </div>
+            </div>
+            <div class="rating">★★★★★</div>
+            <p class="quote">Through Elite Minds, I launched a health-tech startup focused on mental wellness for teens. The entrepreneurship mentorship was incredible - they helped me develop my business plan, pitch to investors, and build a working prototype. What started as an idea is now a platform being piloted in several high schools!</p>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="student-info">
+                <img src="./images/student4.png" alt="Eric" class="student-image">
+                <div class="student-details">
+                    <h3 class="student-name">Eric G., Cornell</h3>
+                </div>
+            </div>
+            <div class="rating">★★★★★</div>
+            <p class="quote">The personalized guidance at Elite Minds helped me develop an AI-powered diagnostic tool for early cancer detection. Their mentors taught me everything from data analysis to medical imaging processing. The project has real impact - I'm now collaborating with researchers at a local medical center to validate the technology.</p>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="student-info">
+                <img src="./images/student1.png" alt="Student 1" class="student-image">
+                <div class="student-details">
+                    <h3 class="student-name">Aziz M., UC Berkeley</h3>
+                </div>
+            </div>
+            <div class="rating">★★★★★</div>
+            <p class="quote">Elite Minds mentors helped me develop an astrophysics project analyzing exoplanet data from NASA's TESS telescope. Their expertise was crucial in helping me write algorithms to detect potential habitable planets. The project led to a research paper that's now being reviewed for publication.</p>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="student-info">
+                <img src="./images/Spencer.jpeg" alt="Spencer L." class="student-image">
+                <div class="student-details">
+                    <h3 class="student-name">Spencer L., Carnegie Mellon</h3>
+                </div>
+            </div>
+            <div class="rating">★★★★★</div>
+            <p class="quote">With Elite Minds, I founded a non-profit that provides STEM education to underserved communities. The mentorship helped me develop a sustainable business model, build partnerships with local schools, and create an engaging curriculum. We've now reached over 500 students across multiple districts!</p>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="student-info">
+                <img src="./images/student3.png" alt="Student 1" class="student-image">
+                <div class="student-details">
+                    <h3 class="student-name">Samantha S., UCLA</h3>
+                </div>
+            </div>
+            <div class="rating">★★★★★</div>
+            <p class="quote">As a pre-med student, I worked with Elite Minds to develop an AI-powered mobile app that helps patients manage chronic conditions. Their mentorship was crucial in combining healthcare knowledge with technical implementation. The app is now being piloted at a local hospital's outpatient clinic.</p>
+        </div>
+    </div>
     </div>
 </section>
 </body>
