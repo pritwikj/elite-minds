@@ -37,13 +37,14 @@ html {
 
 /* Base Styles */
 section {
-    min-height: 100vh;
+    padding: 60px 0;
 }
 
 #section1 {
     background-color: #FFFFFF;
     position: relative;
-    padding-top: 50px;
+    padding: 0 0 20px 0;
+    min-height: auto;
 }
 
 #section2 {
@@ -52,45 +53,170 @@ section {
     min-height: auto;
 }
 
+/* Stats Section */
+.stats-section {
+    background-color: #1A9CFF;
+    padding: 20px 0;
+    color: white;
+    text-align: center;
+    min-height: auto;
+}
+
+.stats-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 0 10px;
+}
+
+.stat-item {
+    flex: 1;
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-icon {
+    margin-bottom: 8px;
+    flex-shrink: 0;
+}
+
+.stat-icon img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.stat-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-numbers {
+    font-family: 'Poppins', sans-serif;
+    font-size: 38px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    line-height: 1;
+}
+
+.stat-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+/* Media queries for stats section */
+@media screen and (max-width: 768px) {
+    .stats-section {
+        padding: 15px 0;
+    }
+    
+    .stats-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .stat-item {
+        flex: 0 0 50%;
+        margin: 10px 0;
+        flex-direction: column;
+    }
+    
+    .stat-numbers {
+        font-size: 36px;
+    }
+    
+    .stat-text {
+        font-size: 14px;
+    }
+    
+    .stat-icon img {
+        width: 55px;
+        height: 55px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .stat-item {
+        flex: 0 0 100%;
+        margin: 8px 0;
+        flex-direction: column;
+    }
+    .stat-numbers {
+        font-size: 34px;
+    }
+    .stat-text {
+        font-size: 14px;
+    }
+    .stat-icon img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
 /* Typography */
 .main-header {
     font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 47px;
-    color: #123B27;
+    font-weight: 500;
+    font-size: 76px;
+    color: #000000;
     margin-top: 0;
-    line-height: 1.3;
+    line-height: 1.0;
 }
 
-.bright {
-    color: #00BF63;
+.highlighted {
+    display: inline-block;
+    background-color: #b0ff64;
+    padding: 0 2px;
+    margin-bottom: 8px;
+    line-height: 1.0;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
 }
 
 .sub-header {
     font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 20px;
-    color: #6F6F77;
-    max-width: 450px;
-    margin-top: 20px;
+    font-weight: 500;
+    font-size: 22px;
+    color: #000000;
+    max-width: 100%;
+    margin-top: 30px;
+    line-height: 1.4;
+    text-align: center;
 }
 
 /* Layout - Desktop */
 .container {
     max-width: 1200px;
-    margin: 60px auto 0;
-    padding: 0 48px;
+    margin: 0 auto;
+    padding: 0 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 60px;
-    min-height: 65vh;
+    min-height: auto;
+    gap: 40px;
 }
 
 .content-left {
-    flex: 1;
-    max-width: 600px;
+    flex: 0.4;
+    max-width: 38%;
     margin-top: 0;
+}
+
+.content-right {
+    flex: 0.4;
+    max-width: 38%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .hero-section {
@@ -114,382 +240,59 @@ section {
     transform: scale(0.85);
 }
 
-/* Pills */
-.pill-container {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-top: 30px;
-}
-
-.pill {
-    height: 34px;
-    border-radius: 6px;
+/* Header */
+.header {
+    background-color: #FFFFFF;
+    padding: 0 48px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 14px;
-    color: white;
-    padding: 0 20px;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    margin-top: -50px;
 }
 
-.pill-row {
-    display: flex;
-    gap: 12px;
-}
-
-.pill-dark-blue {
-    background-color: #1A3D6B;
-    width: 120px;
-}
-
-.pill-medium-blue {
-    background-color: #9ebae2;
-    width: 120px;
-}
-
-.pill-light-blue {
-    background-color: #cbd7e9;
-    width: 120px;
-}
-
-.pill-blue {
-    background-color: #6f96d1;
-    width: 160px;
-}
-
-
-
-/* Featured Examples Section */
-.featured-section {
-    background-color: #2F4F2F;
-    padding: 50px 0;
-    min-height: auto;
-}
-
-.featured-title {
-    color: white;
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-    font-size: 46px;
-    font-weight: 600;
-    margin-bottom: 16px;
-}
-
-.featured-description {
-    color: white;
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-    font-size: 18px;
-    max-width: 800px;
-    margin: 0 auto 48px;
-    padding: 0 24px;
-    line-height: 1.5;
-}
-
-.featured-grid {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 24px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 48px;
-}
-
-.featured-card {
-    background: white;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.featured-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.featured-content {
-    padding: 24px;
-}
-
-.featured-card-title {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 20px;
-    color: #1E1E1E;
-    margin-bottom: 12px;
-}
-
-.featured-card-description {
-    font-family: 'Poppins', sans-serif;
-    color: #6F6F77;
-    margin-bottom: 16px;
-    line-height: 1.5;
-}
-
-.featured-card-author {
-    font-family: 'Poppins', sans-serif;
-    color: #929299;
-    font-size: 14px;
-}
-
-@media screen and (min-width: 768px) {
-    .featured-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media screen and (min-width: 1024px) {
-    .featured-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-/* Reviews Section */
-.reviews-container {
-    width: 100%;
-    display: flex;
-    justify-content: left;
-    margin-top: 40px;
-}
-
-.reviews-image {
-    max-width: 330px;
-    height: auto;
-}
-
-/* Logo */
 .logo {
-    position: absolute;
-    top: -40px;
-    left: 48px;
     width: 200px;
     height: auto;
 }
 
 /* Enroll Button */
-.enroll-now-btn {
+.learn-more-btn {
     display: flex;
-    width: 100%;
-    max-width: 200px;
-    margin: 32px 0 0 0;
-    padding: 10px 30px;
-    background-color: #00d76f;
-    color: black;
+    width: 200px;
+    margin: 32px auto 0;
+    padding: 14px 30px;
+    background-color: #fff;
+    color: #1A9CFF;
     font-family: 'Poppins', sans-serif;
-    font-size: 18px;
-    font-weight: 600;
-    border: 2px solid black;
+    font-size: 16px;
+    font-weight: 500;
+    border: 2px solid #1A9CFF;
     border-radius: 50px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
     align-items: center;
     justify-content: center;
     white-space: nowrap;
 }
 
-.enroll-now-btn:hover {
-    background-color: #00a857;
+.learn-more-btn:hover {
+    background-color: #1A9CFF;
+    color: #fff;
     transform: translateY(-2px);
 }
 
-.enroll-now-btn:active {
+.learn-more-btn:active {
+    background-color: #0077cc;
+    color: #fff;
     transform: translateY(0);
-}
-
-/* Course Cards */
-.section-title {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 46px;
-    color: #000000;  /* Changed from #123B27 to black */
-    max-width: 1200px;
-    margin: 0 auto 40px;
-    padding: 0 48px;
-    text-align: center;  /* Added this line to center the text */
-}
-
-.courses-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 24px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
-}
-
-.course-card {
-    flex: 0 1 360px;
-    background: white;
-    border-radius: 45px;
-    width: 360px;
-    height: 500px;
-    position: relative;
-    overflow: hidden;
-}
-
-.course-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-/* Course Card Elements */
-.enrollment-status {
-    position: absolute;
-    top: 30px;
-    left: 25px;
-    background: #1E1E1E;
-    border-radius: 45px;
-    padding: 8px 20px;
-    color: white;
-    font-family: 'Poppins', sans-serif;
-    font-size: 12px;
-    font-weight: 500;
-    white-space: nowrap;
-}
-
-.course-title {
-    font-family: 'Poppins', sans-serif;
-    font-size: 18px;
-    line-height: 1.3;
-    color: #1E1E1E;
-    padding: 20px 35px 0;
-    margin-top: 0;
-    height: 80px;
-    max-width: 350px;
-}
-
-.instructor-section {
-    padding: 0 35px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    position: absolute;
-    top: 290px;
-    left: 0;
-    right: 0;
-}
-
-.instructor-image {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.instructor-info {
-    display: flex;
-    flex-direction: column;
-}
-
-.taught-by {
-    font-family: 'Poppins', sans-serif;
-    color: #929299;
-    font-size: 10px;
-    margin-bottom: 2px;
-    font-weight: 300;
-    letter-spacing: 0.2px;
-}
-
-.instructor-name {
-    font-family: 'Poppins', sans-serif;
-    color: #6F6F77;
-    font-size: 14px;
-    font-weight: 500;
-}
-
-/* Course Card Footer */
-.course-footer {
-    position: absolute;
-    bottom: 25px;
-    left: 35px;
-    right: 35px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    align-items: center;
-}
-
-.next-batch {
-    background: #505050;
-    color: white;
-    padding: 8px 0;
-    text-align: center;
-    border-radius: 45px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 12px;
-    width: 240px;
-}
-
-.enroll-button {
-    background: #28B1FF;
-    color: white;
-    padding: 12px 0;
-    text-align: center;
-    border-radius: 45px;
-    cursor: pointer;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    width: 240px;
-}
-
-/* Card-specific styles */
-.course-card:nth-child(4) .course-image {
-    opacity: 0.5;
-}
-
-.course-card:nth-child(4) .course-title,
-.course-card:nth-child(4) .instructor-section,
-.course-card:nth-child(4) .instructor-name {
-    opacity: 0.75;
-}
-
-.course-card:nth-child(2) .enrollment-status {
-    background: #E1F7DB;
-    color: #1A3D6B;
-}
-
-.course-card:nth-child(2) .next-batch {
-    background: #123B27;
-}
-
-.course-card:nth-child(4) .enroll-button {
-    background-color: #D9EFFF;
-    opacity: 0.45;
-}
-
-.coming-soon {
-    font-family: 'Poppins', sans-serif;
-    text-align: center;
-    color: #6F6F77;
-    font-size: 20px;
-    font-weight: 500;
-    margin-top: 80px;
 }
 
 /* University Logos Section */
 .mentors-container {
-    max-width: 1100px;
-    margin: 30px auto 0;
-    padding: 2px;
-    background-color: #F8F8F8;
-    border-radius: 25px;
-}
-
-.mentors-title {
-    text-align: center;
-    color: #666666;
-    font-family: 'Poppins', sans-serif;
-    font-size: 24px;
-    font-weight: 1000;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    max-width: 1200px;
+    margin: 60px auto 0;
+    padding: 20px;
 }
 
 .university-logos {
@@ -498,35 +301,90 @@ section {
     align-items: center;
     flex-wrap: nowrap;
     padding: 0;
-    margin-left: -60px;
 }
 
 .university-logos img {
-    height: 85px;
+    height: 60px;
     width: auto;
     object-fit: contain;
+    margin: 0 20px;
 }
 
-.university-logos img[alt="Stanford University"] { height: 125px; margin-right: 10px; }
-.university-logos img[alt="Harvard University"] { height: 80px; margin-right: 50px; }
-.university-logos img[alt="UC Berkeley"] { height: 105px; margin-right: 15px; }
-.university-logos img[alt="Dartmouth"] { height: 72px; margin-right: 20px; }
-.university-logos img[alt="Georgia Institute of Technology"] { height: 52px; margin-right: 40px; }
-.university-logos img[alt="UCLA"] { height: 48px; }
+.university-logos img[alt="Stanford University"] { height: 60px; }
+.university-logos img[alt="Harvard University"] { height: 60px; }
+.university-logos img[alt="UC Berkeley"] { height: 70px; }
+.university-logos img[alt="Dartmouth"] { height: 60px; }
+.university-logos img[alt="Georgia Institute of Technology"] { height: 45px; }
+.university-logos img[alt="UCLA"] { height: 45px; }
+
+.header-nav {
+    display: flex;
+    gap: 16px;
+}
+
+.header-button {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 15.5px;
+    color: #000;
+    text-decoration: none;
+    padding: 10px 22px;
+    border-radius: 22px;
+    transition: all 0.3s ease;
+    background-color: #b0ff64;
+    border: 2px solid #000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-button:hover {
+    background-color: #a0e85a;
+    color: #000;
+    border: 2px solid #000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.header-button.active {
+    background-color: #8fd94e;
+    color: #000;
+    border: 2px solid #000;
+}
 
 /* Mobile Responsive Styles */
 @media screen and (max-width: 768px) {
-    .container {
-        flex-direction: column-reverse;
-        padding: 0 24px;
-        gap: 20px;
+    .header {
+        flex-direction: column;
+        padding: 10px 20px;
         margin-top: 0;
+    }
+    
+    .header-nav {
+        position: relative;
+        top: 0;
+        right: 0;
+        justify-content: center;
+        margin-top: 20px;
+        gap: 12px;
+    }
+    
+    .header-button {
+        padding: 7px 18px;
+        font-size: 13px;
+    }
+    
+    .container {
+        flex-direction: column;
+        padding: 0 24px;
+        gap: 40px;
+        margin: 0 auto;
         min-height: auto;
     }
 
-    .content-left {
+    .content-left, .content-right {
         text-align: center;
-        padding: 0;
+        padding: 20px 0;
+        align-items: center;
+        max-width: 100%;
     }
 
     .main-header {
@@ -534,12 +392,8 @@ section {
     }
 
     .sub-header {
-        font-size: 18px;
-        margin: 20px auto;
-    }
-
-    .pill-container {
-        align-items: center;
+        font-size: 20px;
+        margin: 30px auto;
     }
 
     .hero-image {
@@ -551,375 +405,433 @@ section {
         transform: none;
     }
 
-    .reviews-container {
-        justify-content: center;
-        margin-top: 20px;
-    }
-
-    .reviews-image {
-        max-width: 280px;
-    }
-
-    .enroll-now-btn {
+    .learn-more-btn {
         margin: 32px auto 0;
     }
 
     .logo {
-        position: relative;
-        top: 0;
-        left: 24px;
         width: 150px;
-        margin: -60px 0 0;
     }
 
     .mentors-container {
-        margin: 20px 24px;
+        margin: 40px 24px;
         padding: 15px;
     }
 
     .university-logos {
         flex-wrap: wrap;
-        gap: 30px;
+        gap: 20px;
         justify-content: center;
-        margin-left: 0;
-        padding: 10px;
     }
 
-    .university-logos img[alt="Stanford University"] { height: 65px !important; margin-right: 0 !important; }
-    .university-logos img[alt="Harvard University"] { height: 55px !important; margin-right: 0 !important; }
-    .university-logos img[alt="UC Berkeley"] { height: 60px !important; margin-right: 0 !important; }
-    .university-logos img[alt="Dartmouth"] { height: 50px !important; margin-right: 0 !important; }
-    .university-logos img[alt="Georgia Institute of Technology"],
-    .university-logos img[alt="UCLA"] { height: 35px !important; margin-right: 0 !important; }
-
-    #section2 {
-        padding: 40px 0;
-    }
-
-    .section-title {
-        font-size: 32px;
-        text-align: center;
-        padding: 0 24px;
-    }
-
-    .courses-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 40px;
-        padding: 0 24px;
-    }
-
-    .course-card {
-        width: 100%;
-        max-width: 350px;
-        height: auto;
-        min-height: 500px;
-    }
-
-    .course-title {
-        height: auto;
-        min-height: 80px;
-        font-size: 16px;
-    }
-    .coming-soon {
-    font-size: 18px;
-    margin-top: 40px;
-    }
-
-    .featured-title {
-        font-size: 32px;  /* Reduced from 46px to match other mobile headings */
-        margin-bottom: 12px;
-    }
-
-    .featured-description {
-        font-size: 16px;  /* Reduced from 18px */
-        margin-bottom: 36px;
-        padding: 0 20px;
-    }
-
-    .featured-card-title {
-        font-size: 18px;  /* Reduced from 20px */
-    }
-
-    .featured-card-description {
-        font-size: 14px;
+    .university-logos img {
+        height: 40px !important;
+        margin: 10px !important;
     }
 }
 
-/* Extra small devices */
 @media screen and (max-width: 480px) {
     .main-header {
-        font-size: 32px;
+        font-size: 28px;
     }
 
     .sub-header {
-        font-size: 16px;
-    }
-
-    .pill-row {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .hero-image {
-        max-width: 70%;
-    }
-
-    .course-card {
-        max-width: 300px;
+        font-size: 18px;
     }
 }
 
-/* Update mobile responsive styles to maintain proper layout */
-@media screen and (max-width: 1200px) {
-    .courses-container {
-        padding: 0 24px;
-    }
+/* About Section */
+.about-section {
+    padding: 30px 20px 0px 20px;
+    background-color: #FFFFFF;
 }
 
-@media screen and (max-width: 1080px) {
-    .course-card {
-        flex: 0 1 350px;
-        width: 350px;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .courses-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .course-card {
-        width: 100%;
-        max-width: 350px;
-        height: auto;
-        min-height: 500px;
-    }
-}
-
-.header-nav {
-    position: absolute;
-    top: 20px;
-    right: 48px;
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
-    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
 }
 
-.header-button {
+.about-image {
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin-right: 70px;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.about-content {
+    flex: 0 0 50%;
+    max-width: 50%;
+    text-align: left;
+    margin-left: 50px;
+}
+
+.about-title {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    font-size: 16px;
-    color: #123B27;
-    text-decoration: none;
-    padding: 10px 24px;
-    border-radius: 25px;
-    transition: all 0.3s ease;
-    background-color: #E1F7DB;
-    border: 2px solid #123B27;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 54px;
+    margin-bottom: 20px;
+    line-height: 1.2;
 }
 
-.header-button:hover {
-    background-color: #00BF63;
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+.about-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    margin: 0 0 30px;
+    line-height: 1.4;
 }
 
-.header-button:active {
-    transform: translateY(0);
+.about-highlight {
+    display: inline-block;
+    background-color: #b0ff64;
+    padding: 15px 25px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-top: 20px;
+    border-radius: 10px;
 }
 
-/* Update the mobile styles for header buttons */
-@media screen and (max-width: 768px) {
-    .header-nav {
-        position: relative;
-        top: -40px;
-        right: 0;
-        justify-content: center;
-        margin-top: 20px;
-        gap: 12px;
+@media screen and (max-width: 992px) {
+    .about-container {
+        flex-direction: column;
+        gap: 30px;
     }
     
-    .header-button {
-        padding: 8px 20px;
-        font-size: 14px;
+    .about-image, .about-content {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    
+    .about-content {
+        text-align: center;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .about-title {
+        font-size: 36px;
+    }
+    .about-text {
+        font-size: 20px;
+    }
+    .about-highlight {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .about-title {
+        font-size: 28px;
+    }
+    .about-text {
+        font-size: 18px;
+    }
+    .about-highlight {
+        font-size: 18px;
+    }
+}
+
+/* Student Spotlight Section */
+/*
+<section class="spotlight-section">
+    <h2 class="spotlight-title">Student Spotlights</h2>
+    <div class="spotlight-container">
+        <div class="spotlight-card">
+            <div class="spotlight-image">
+                <img src="./images/student1_video.jpg" alt="Madeline Fong">
+                <div class="spotlight-play">▶</div>
+            </div>
+            <div class="spotlight-name">Madeline Fong</div>
+            <div class="spotlight-desc">Research project examines how lifestyle factors—specifically diet and exercise—affect the onset and severity of eczema symptoms in adolescents.</div>
+        </div>
+        <div class="spotlight-card">
+            <div class="spotlight-image">
+                <img src="./images/student2_video.jpg" alt="Akash Arun Kumar">
+                <div class="spotlight-play">▶</div>
+            </div>
+            <div class="spotlight-name">Akash Arun Kumar</div>
+            <div class="spotlight-desc">An app to help elderly care citizens who are struggling with mental health and find entertaining ways to improve mental health.</div>
+        </div>
+        <div class="spotlight-card">
+            <div class="spotlight-image">
+                <img src="./images/student3_video.jpg" alt="Sia Gullapali">
+                <div class="spotlight-play">▶</div>
+            </div>
+            <div class="spotlight-name">Sia Gullapali</div>
+            <div class="spotlight-desc">Host of an unique women's empowerment podcast called "women in the spotlight" helping promote more women in corporates.</div>
+        </div>
+    </div>
+</section>
+*/
 
 /* Program Benefits Section */
 .program-benefits {
-    background-color: #F8F8F8;
-    padding: 80px 0;
+    background-color: #f5f5f5;
+    padding: 50px 0 30px 0;
+    text-align: center;
 }
 
 .benefits-title {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    font-size: 46px;
-    color: #123B27;
-    text-align: center;
-    margin-bottom: 50px;
+    font-size: 42px;
+    margin-bottom: 60px;
+    color: #000;
 }
 
 .benefits-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 48px;
+    margin: 0 auto 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 0 20px;
 }
 
 .benefit-card {
-    background: white;
-    padding: 30px;
-    border-radius: 16px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(25% - 30px);
+    min-width: 250px;
+    background-color: #f8f9fa;
+    border-radius: 20px;
+    padding: 30px 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .benefit-card h3 {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    font-size: 24px;
-    color: #1A3D6B;
+    font-size: 22px;
     margin-bottom: 15px;
+    color: #1A9CFF;
 }
 
 .benefit-card p {
     font-family: 'Poppins', sans-serif;
-    color: #6F6F77;
+    font-size: 16px;
     line-height: 1.6;
+    color: #555;
 }
 
 .programs-overview {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
     max-width: 1200px;
-    margin: 60px auto 0;
-    padding: 0 48px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
 }
 
 .program-type {
-    background: #E1F7DB;
-    padding: 40px 40px 30px;
-    border-radius: 16px;
+    flex: 1 1 calc(33.33% - 30px);
+    min-width: 300px;
+    background-color: white;
+    border-radius: 20px;
     overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
     display: flex;
     flex-direction: column;
-    height: 100%;
 }
 
-.program-image {
-    width: 100%;
-    height: 240px;
-    object-fit: cover;
-    margin-top: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+.program-type:hover {
+    transform: translateY(-10px);
+}
+
+.program-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .program-type h3 {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    font-size: 28px;
-    color: #123B27;
-    margin-bottom: 20px;
+    font-size: 24px;
+    padding: 0 0 15px;
+    color: #000;
 }
 
 .program-type p {
     font-family: 'Poppins', sans-serif;
-    color: #1A3D6B;
+    font-size: 16px;
+    padding: 0 0 20px;
+    color: #555;
     line-height: 1.6;
-    margin-bottom: 25px;
+    flex-grow: 1;
 }
 
 .program-link {
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
-    color: #00BF63;
+    font-size: 16px;
+    color: #1A9CFF;
     text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s;
+    transition: color 0.2s ease;
+    margin-top: auto;
+    align-self: flex-start;
 }
 
 .program-link:hover {
-    color: #00a857;
+    color: #0077cc;
 }
 
-/* Mobile Responsive Styles for Program Benefits */
-@media screen and (max-width: 768px) {
-    .benefits-container,
-    .programs-overview {
-        grid-template-columns: 1fr;
-        padding: 0 24px;
-    }
+.program-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
 
-    .benefits-title {
-        font-size: 32px;
-        padding: 0 24px;
-    }
+/* Featured Section */
+.featured-section {
+    background-color: #f8f9fa;
+    padding: 80px 0;
+    text-align: center;
+}
 
-    .program-benefits {
-        padding: 60px 0;
-    }
+.featured-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 42px;
+    margin-bottom: 40px;
+    color: #000;
+}
 
-    .benefit-card,
-    .program-type {
-        padding: 24px;
-    }
+.featured-description {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto 50px;
+    line-height: 1.6;
+}
 
-    .program-type h3 {
-        font-size: 24px;
-    }
+.featured-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 0 20px;
+}
 
-    .program-type {
-        padding: 24px 24px 24px;
-    }
-    
-    .program-image {
-        height: 200px;
-        margin-top: 24px;
-    }
+.featured-card {
+    flex: 1 1 calc(50% - 30px);
+    min-width: 280px;
+    max-width: 550px;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featured-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.featured-image {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.featured-content {
+    padding: 25px;
+    text-align: left;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.featured-card-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: #000;
+}
+
+.featured-card-description {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    flex: 1;
+}
+
+.featured-card-author {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    color: #1A9CFF;
+    margin-top: auto;
 }
 
 /* Testimonials Section */
 .testimonials {
     padding: 80px 0;
-    background-color: #f8f8f8;
+    background-color: #ffffff;
+    text-align: center;
 }
 
 .testimonials-title {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    font-size: 46px;
-    color: #123B27;
-    text-align: center;
-    margin-bottom: 50px;
+    font-size: 42px;
+    margin-bottom: 60px;
+    color: #000;
 }
 
 .testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 48px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 40px;
+    padding: 0 20px;
 }
 
 .testimonial-card {
-    background: white;
-    padding: 30px;
-    border-radius: 16px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #f8f9fa;
+    border-radius: 20px;
+    padding: 35px;
+    text-align: left;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
 }
 
 .student-info {
     display: flex;
     align-items: center;
-    gap: 15px;
     margin-bottom: 15px;
 }
 
@@ -928,14 +840,19 @@ section {
     height: 60px;
     border-radius: 50%;
     object-fit: cover;
+    margin-right: 15px;
+}
+
+.student-details {
+    flex: 1;
 }
 
 .student-name {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     font-size: 18px;
-    color: #1A3D6B;
-    margin-bottom: 5px;
+    margin: 0;
+    color: #000;
 }
 
 .rating {
@@ -946,93 +863,241 @@ section {
 
 .quote {
     font-family: 'Poppins', sans-serif;
-    color: #6F6F77;
+    font-size: 15px;
     line-height: 1.6;
-    font-size: 14px;
+    color: #555;
 }
 
-/* Mobile Responsive Styles for Testimonials */
-@media screen and (max-width: 1024px) {
+/* Media queries for responsive design */
+@media screen and (max-width: 992px) {
+    .benefits-container {
+        padding: 0 20px;
+    }
+    
+    .benefit-card {
+        flex: 1 1 calc(50% - 30px);
+    }
+    
+    .programs-overview {
+        padding: 0 20px;
+    }
+    
+    .program-type {
+        flex: 1 1 calc(50% - 30px);
+    }
+    
+    .featured-grid {
+        padding: 0 20px;
+    }
+    
     .testimonials-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     }
 }
 
 @media screen and (max-width: 768px) {
+    .program-benefits {
+        padding: 40px 0 20px 0;
+    }
+    
+    .benefits-title, .featured-title, .testimonials-title {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+    
+    .benefit-card {
+        min-width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .program-type {
+        flex: 1 1 100%;
+        min-width: 100%;
+    }
+    
+    .featured-card {
+        flex: 1 1 100%;
+    }
+    
+    .testimonial-card {
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .program-benefits, .featured-section, .testimonials {
+        padding: 30px 0 10px 0;
+    }
+    
+    .benefits-title, .featured-title, .testimonials-title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+    
     .testimonials-grid {
         grid-template-columns: 1fr;
-        padding: 0 24px;
-    }
-
-    .testimonials-title {
-        font-size: 32px;
-        padding: 0 24px;
-    }
-
-    .testimonials {
-        padding: 60px 0;
     }
 }
     </style>
-<section id="section1">
+<header class="header">
     <a href="https://elitemindsprogram.com/">
         <img src="./images/EliteMinds logo.png" alt="EliteMinds Logo" class="logo">
     </a>
     <nav class="header-nav">
-        <a href="group_programs.html" class="header-button">Group Programs</a>
+        <a href="group_programs.html" class="header-button">Group programs</a>
+        <a href="fellowships.html" class="header-button">Fellowship Opportunities</a>
         <a href="mentorship.html" class="header-button">1:1 Mentorship</a>
     </nav>
+</header>
+
+<section id="section1">
     <div class="container">
         <div class="content-left">
-            <h1 class="main-header">Create <span class="bright">Standout</span><br>Passion Projects</h1>
-            <h2 class="sub-header">Spike projects. Elite mentors. Boost your T20 college applications</h2>
+            <h1 class="main-header">
+                Work with <span class="highlighted">professors,</span><br/>
+                <span style="white-space: nowrap;">Ivy League</span> <span class="highlighted" style="margin-top: 10px;">researchers,</span><br/>
+                <span style="white-space: nowrap;"><span class="highlighted">PhDs</span> & more</span>
+            </h1>
             
-            <div class="pill-container">
-                <div class="pill-row">
-                    <div class="pill pill-dark-blue">AI</div>
-                    <div class="pill pill-medium-blue">Nonprofit</div>
-                    <div class="pill pill-light-blue">Arts</div>
-                </div>
-                <div class="pill-row">
-                    <div class="pill pill-dark-blue">Biology</div>
-                    <div class="pill pill-blue">Entrepreneurship</div>
-                </div>
+            <!-- Placeholder image instead of university logos -->
+            <div style="margin-top: 40px; width: 100%; display: flex; justify-content: flex-start;">
+                <img src="./images/uni_logos.jpeg" alt="University logos" style="width: 110%; height: auto; max-width: 800px; margin-left: -15px;">
             </div>
-
-            <div class="reviews-container">
-                <img src="./images/reviews.png" alt="Age range and rating" class="reviews-image">
-            </div>
-
-            <!-- Button moved here, inside content-left -->
-            <button onclick="document.getElementById('programs-overview').scrollIntoView({behavior: 'smooth'})" class="enroll-now-btn">
-                Get Started
-            </button>
         </div>
 
-        <div class="hero-section">
-            <div class="hero-image">
-                <img src="./images/EMfront.png" alt="Student with headphones">
+        <div class="content-right">
+            <!-- Single placeholder image for student circles -->
+            <div style="width: 90%; margin: 0 auto; margin-top: -30px;">
+                <img src="./images/home_page_students.png" alt="Student images" style="width: 100%; height: auto; margin: 0;">
+            </div>
+            
+            <!-- Centered subheader and button below the image -->
+            <h2 class="sub-header" style="margin-top: 60px;">Create standout passion projects.<br>Boost your T20 college applications</h2>
+            
+            <button onclick="document.getElementById('programs-overview').scrollIntoView({behavior: 'smooth'})" class="learn-more-btn">
+                LEARN MORE
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats-section">
+    <div class="stats-container">
+        <div class="stat-item">
+            <div class="stat-icon">
+                <img src="./images/acceptance_rate.png" alt="Acceptance rate icon">
+            </div>
+            <div class="stat-content">
+                <div class="stat-numbers">94.4%</div>
+                <div class="stat-text">T20 acceptance rate</div>
+            </div>
+        </div>
+        
+        <div class="stat-item">
+            <div class="stat-icon">
+                <img src="./images/love.png" alt="Love icon">
+            </div>
+            <div class="stat-content">
+                <div class="stat-numbers">132k+</div>
+                <div class="stat-text">Parents love us</div>
+            </div>
+        </div>
+        
+        <div class="stat-item">
+            <div class="stat-icon">
+                <img src="./images/classes_completed.png" alt="Classes completed icon">
+            </div>
+            <div class="stat-content">
+                <div class="stat-numbers">5000+</div>
+                <div class="stat-text">Classes completed</div>
+            </div>
+        </div>
+        
+        <div class="stat-item">
+            <div class="stat-icon">
+                <img src="./images/career.png" alt="Career icon">
+            </div>
+            <div class="stat-content">
+                <div class="stat-numbers">20+</div>
+                <div class="stat-text">Career paths</div>
             </div>
         </div>
     </div>
+</section>
 
-    <div class="mentors-container">
-        <h2 class="mentors-title">Mentors from</h2>
-        <div class="university-logos">
-            <img src="images/stanfordlogo.png" alt="Stanford University">
-            <img src="images/harvardlogo.png" alt="Harvard University">
-            <img src="images/cal.png" alt="UC Berkeley">
-            <img src="images/dartmouth.png" alt="Dartmouth">
-            <img src="images/gtlogo.png" alt="Georgia Institute of Technology">
-            <img src="images/ucla.png" alt="UCLA">
+<section class="about-section" id="about">
+    <div class="about-container">
+        <div class="about-image" style="margin-left: -100px;">
+            <img src="./images/what_is_elite.png" alt="What is Elite Minds">
+        </div>
+        <div class="about-content">
+            <h2 class="about-title">What is Elite Minds?</h2>
+            <p class="about-text">Elite minds is the secret weapon to gaining admissions into Top 20 universities. Our expert mentors work with students to build unique passion projects to help students stand out.</p>
+            <div class="about-highlight">94.4% of our students go on to attend a<br>
+Top 20 university</div>
+        </div>
+    </div>
+</section>
+
+<!-- Inserted Why Choose Elite Minds section -->
+<section class="program-benefits" id="programs" style="background-color: #f5f5f5;">
+    <h2 class="benefits-title">Why Choose Elite Minds?</h2>
+    <div class="benefits-container">
+        <div class="benefit-card">
+            <h3>Elite Mentorship</h3>
+            <p>Work directly with expert mentors from T20 universities who provide tailored guidance and in-depth feedback to ensure your success.</p>
+        </div>
+        <div class="benefit-card">
+            <h3>Proven 4x Framework</h3>
+            <p>Our proven framework has helped students increase their college acceptance rates by 4x through standout passion projects that make your applications stand out.</p>
+        </div>
+        <div class="benefit-card">
+            <h3>Official Certification</h3>
+            <p>Earn official Elite Minds certification upon project completion, validating your expertise and strengthening your academic portfolio.</p>
+        </div>
+        <div class="benefit-card">
+            <h3>Collaborative Network</h3>
+            <p>Join a community of ambitious peers, develop leadership skills through projects, and build lasting connections.</p>
+        </div>
+    </div>
+</section>
+
+<!-- New Our Offerings section with green background -->
+<section class="offerings-section" id="offerings" style="background-color: #b0ff64; padding: 40px 0; text-align: center;">
+    <h2 style="font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 42px; margin-bottom: 50px; color: #000;">Elite Opportunities</h2>
+    
+    <div class="programs-overview" id="programs-overview" style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px; padding: 0 20px;">
+        <div class="program-type">
+            <img src="./images/group_program.jpeg" alt="Students collaborating" class="program-image">
+            <div class="program-content">
+                <h3>Group Programs</h3>
+                <p>Students build passion projects alongside accomplished peers under the mentorship of industry experts.</p>
+                <a href="group_programs.html" class="program-link">Learn More →</a>
+            </div>
+        </div>
+        <div class="program-type">
+            <img src="./images/fellowships_home.jpeg" alt="Student in research lab" class="program-image">
+            <div class="program-content">
+                <h3>Elite Fellowships</h3>
+                <p>Our exclusive partnerships with top professors and researchers where students conduct research and develop projects.</p>
+                <a href="fellowships.html" class="program-link">Learn More →</a>
+            </div>
+        </div>
+        <div class="program-type">
+            <img src="./images/mentorship_pic.jpeg" alt="One-on-one mentoring session" class="program-image">
+            <div class="program-content">
+                <h3>1:1 Mentorship</h3>
+                <p>Students and Elite Mentors collaborate to develop unique, impactful profiles with a spike that sets them apart.</p>
+                <a href="mentorship.html" class="program-link">Learn More →</a>
+            </div>
         </div>
     </div>
 </section>
 
 <section class="featured-section">
     <h2 class="featured-title">Featured Examples</h2>
-    <p class="featured-description">
-    </p>
+    <p class="featured-description"></p>
     
     <div class="featured-grid">
         <div class="featured-card">
@@ -1043,7 +1108,6 @@ section {
                 <p class="featured-card-author">Eshaan S.</p>
             </div>
         </div>
-
         <div class="featured-card">
             <img src="./images/planarian.png" alt="Planarian Regeneration Project" class="featured-image">
             <div class="featured-content">
@@ -1052,7 +1116,6 @@ section {
                 <p class="featured-card-author">Caitlyn M.</p>
             </div>
         </div>
-
         <div class="featured-card">
             <img src="./images/rural_health.jpg" alt="Rural Health Express" class="featured-image">
             <div class="featured-content">
@@ -1061,7 +1124,6 @@ section {
                 <p class="featured-card-author">Sruti P.</p>
             </div>
         </div>
-
         <div class="featured-card">
             <img src="./images/cubesat.png" alt="CubeSat Satellite Station" class="featured-image">
             <div class="featured-content">
@@ -1069,47 +1131,6 @@ section {
                 <p class="featured-card-description">A personal ground station network that uses software-defined radio and open-source software to track and receive data from educational satellites passing overhead.</p>
                 <p class="featured-card-author">Aidan N.</p>
             </div>
-        </div>
-    </div>
-</section>
-
-<section class="program-benefits" id="programs">
-    <h2 class="benefits-title">Why Choose Elite Minds?</h2>
-    <div class="benefits-container">
-        <div class="benefit-card">
-            <h3>Elite Mentorship</h3>
-            <p>Work directly with expert mentors from T20 universities who provide tailored guidance and in-depth feedback to ensure your success.</p>
-        </div>
-        
-        <div class="benefit-card">
-            <h3>Proven 4x Framework</h3>
-            <p>Our proven framework has helped students increase their college acceptance rates by 4x through standout passion projects that make your applications stand out.</p>
-        </div>
-        
-        <div class="benefit-card">
-            <h3>Official Certification</h3>
-            <p>Earn official Elite Minds certification upon project completion, validating your expertise and strengthening your academic portfolio.</p>
-        </div>
-        
-        <div class="benefit-card">
-            <h3>Collaborative Network</h3>
-            <p>Join a community of ambitious peers, develop leadership skills through projects, and build lasting connections.</p>
-        </div>
-    </div>
-
-    <div class="programs-overview" id="programs-overview">
-        <div class="program-type">
-            <h3>Group Programs</h3>
-            <p>Students build passion projects alongside accomplished peers under the mentorship of industry experts, giving them a competitive edge in college applications.</p>
-            <a href="group_programs.html" class="program-link">Learn More →</a>
-            <img src="./images/group_program.jpeg" alt="Students collaborating" class="program-image">
-        </div>
-        
-        <div class="program-type">
-            <h3>1:1 Mentorship</h3>
-            <p>Students and Elite Mentors collaborate to develop unique, impactful profiles with a spike that sets them apart in college admissions.</p>
-            <a href="mentorship.html" class="program-link">Learn More →</a>
-            <img src="./images/mentorship_pic.jpeg" alt="One-on-one mentoring session" class="program-image">
         </div>
     </div>
 </section>
@@ -1182,7 +1203,6 @@ section {
             <div class="rating">★★★★★</div>
             <p class="quote">As a pre-med student, I worked with Elite Minds to develop an AI-powered mobile app that helps patients manage chronic conditions. Their mentorship was crucial in combining healthcare knowledge with technical implementation. The app is now being piloted at a local hospital's outpatient clinic.</p>
         </div>
-    </div>
     </div>
 </section>
 </body>

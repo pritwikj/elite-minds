@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fellowships - Elite Minds</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="./images/favicon-32x32.png" sizes="32x32" />
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1634891550798578');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1634891550798578&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #FFFFFF;
+        }
+
+        .header {
+            background-color: #FFFFFF;
+            padding: 4px 48px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: none;
+            margin-top: -40px;
+        }
+
+        .logo {
+            width: 200px;
+            height: auto;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 16px;
+        }
+
+        .header-button {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            color: #123B27;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            background-color: #E1F7DB;
+            border: 2px solid #123B27;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-button:hover {
+            background-color: #00BF63;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .header-button:active {
+            transform: translateY(0);
+        }
+
+        .main-content {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 20px 48px 100px;
+        }
+
+        .page-title {
+            font-size: 46px;
+            color: #000000;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .page-description {
+            font-size: 18px;
+            color: #6F6F77;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        /* Fellowship Card Styles */
+        .fellowships-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .fellowship-card {
+            flex: 0 1 600px;
+            background: white;
+            border-radius: 16px;
+            width: 100%;
+            height: auto;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: flex;
+            padding: 20px;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .fellowship-image-container {
+            flex: 0 0 200px;
+            height: 200px;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .fellowship-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .fellowship-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .fellowship-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            line-height: 1.2;
+            color: #1E1E1E;
+            padding: 0;
+            margin: 0;
+            height: auto;
+            max-width: none;
+        }
+
+        .seats-container {
+            display: flex;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .seats-badge {
+            background: #E1F7DB;
+            color: #123B27;
+            padding: 5px 12px;
+            border-radius: 16px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        /* New professor info styles */
+        .professor-info-container {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin-top: 8px;
+        }
+        
+        .professor-label {
+            font-size: 12px;
+            color: #6F6F77;
+            font-weight: 500;
+        }
+        
+        .professor-details {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .professor-image {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #E1F7DB;
+        }
+        
+        .professor-name {
+            font-family: 'Poppins', sans-serif;
+            color: #1E1E1E;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .apply-button {
+            background: #28B1FF;
+            color: white;
+            padding: 10px 24px;
+            text-align: center;
+            border-radius: 40px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            width: fit-content;
+            text-decoration: none;
+            margin-top: 16px;
+            display: inline-block;
+        }
+
+        .apply-button:hover {
+            background: #1a9fee;
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+
+        .fellowship-footer {
+            position: absolute;
+            bottom: 25px;
+            left: 35px;
+            right: 35px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .next-cohort {
+            background: #505050;
+            color: white;
+            padding: 8px 0;
+            text-align: center;
+            border-radius: 45px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 12px;
+            width: 240px;
+        }
+
+        .coming-soon {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            color: #6F6F77;
+            font-size: 18px;
+            font-weight: 500;
+            margin-top: 60px;
+        }
+
+        /* Update responsive styles */
+        @media screen and (max-width: 1600px) {
+            .fellowships-container {
+                padding: 0 24px;
+            }
+        }
+
+        @media screen and (max-width: 1080px) {
+            .fellowship-card {
+                flex: 0 1 320px;
+                width: 320px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                padding: 4px;
+                margin-top: -20px;
+            }
+
+            .header-nav {
+                position: relative;
+                top: 0;
+                right: 0;
+                justify-content: center;
+                margin-top: 20px;
+                gap: 12px;
+            }
+
+            .header-button {
+                padding: 8px 20px;
+                font-size: 14px;
+            }
+
+            .main-content {
+                padding: 40px 24px;
+            }
+
+            .page-title {
+                font-size: 32px;
+                padding: 0 24px;
+            }
+
+            .fellowships-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .fellowship-card {
+                flex-direction: column;
+                padding: 24px;
+                gap: 24px;
+            }
+
+            .fellowship-image-container {
+                flex: 0 0 200px;
+                height: 200px;
+                width: 100%;
+            }
+
+            .fellowship-title {
+                font-size: 24px;
+            }
+
+            .fellowship-footer {
+                position: absolute;
+                bottom: 20px;
+                left: 35px;
+                right: 35px;
+                padding-top: 10px;
+            }
+
+            .coming-soon {
+                font-size: 18px;
+                margin-top: 40px;
+            }
+
+            .logo {
+                width: 150px;
+            }
+
+            /* Professor responsive styles */
+            .professor-details {
+                gap: 8px;
+            }
+            
+            .professor-image {
+                width: 36px;
+                height: 36px;
+            }
+            
+            .professor-name {
+                font-size: 12px;
+            }
+        }
+
+        /* Add new styles for the dark background section */
+        .fellowships-section {
+            background-color: #F5F7FA;
+            padding: 32px 0 48px;
+            margin: 0 120px;
+            border-radius: 32px;
+        }
+
+        /* Update fellowships-container styles */
+        .fellowships-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Update media queries */
+        @media screen and (max-width: 768px) {
+            .fellowships-section {
+                margin: 0 24px;
+                padding: 32px 0;
+                border-radius: 24px;
+            }
+
+            .fellowships-container {
+                padding: 0 12px;
+            }
+        }
+
+        .header-button.active {
+            background-color: #00BF63;
+            color: white;
+        }
+
+        /* Add style for the section title */
+        .section-title {
+            text-align: center;
+            width: 100%;
+            color: #123B27;
+            font-size: 32px;
+            margin-bottom: 32px;
+            font-weight: 600;
+            padding-top: 0;
+        }
+
+        .highlight-badge {
+            position: absolute;
+            top: 30px;
+            right: 25px;
+            background: #FFD700;
+            border-radius: 45px;
+            padding: 8px 20px;
+            color: #123B27;
+            font-family: 'Poppins', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="https://elitemindsprogram.com/">
+            <img src="./images/EliteMinds logo.png" alt="EliteMinds Logo" class="logo">
+        </a>
+        <nav class="header-nav">
+            <a href="group_programs.html" class="header-button">Group Programs</a>
+            <a href="mentorship.html" class="header-button">1:1 Mentorship</a>
+            <a href="fellowships.html" class="header-button active">Fellowships</a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <h1 class="page-title">Elite Minds Fellowships</h1>
+        <p class="page-description">
+            We have exclusively partnered with some of the world's top professors and researchers to provide highly competitive fellowship programs. Students work on research projects, participate in seminars, and create projects directly with these industry experts.
+        </p>
+
+        <section class="fellowships-section">
+            <h2 class="section-title">Current Fellowship Opportunities</h2>
+            <div class="fellowships-container">
+                <!-- AI Scholars Fellowship Card -->
+                <div class="fellowship-card">
+                    <div class="fellowship-image-container">
+                        <img src="./images/ai_prof.png" alt="AI Scholars Program" class="fellowship-image">
+                    </div>
+                    <div class="fellowship-content">
+                        <h3 class="fellowship-title">AI Scholars Program with NYU Professor Dr.Tran</h3>
+                        <div class="seats-container">
+                            <div class="seats-badge">Next cohort: May 30th</div>
+                        </div>
+                        <div class="professor-info-container">
+                            <span class="professor-label">Program Lead:</span>
+                            <div class="professor-details">
+                                <img src="./images/hoa_tran_mentor.jpeg" alt="Professor" class="professor-image">
+                                <span class="professor-name">Dr. Hoa Tran, PhD</span>
+                            </div>
+                        </div>
+                        <a href="ai_scholars.html" target="_blank" class="apply-button">
+                            Learn More & Apply
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <p class="coming-soon">New fellowship opportunities launching soon!</p>
+        </section>
+    </main>
+</body>
+</html> 
