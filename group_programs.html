@@ -37,17 +37,18 @@
 
         .header {
             background-color: #FFFFFF;
-            padding: 4px 48px;
+            padding: 0 24px 0 48px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             box-shadow: none;
-            margin-top: -40px;
+            margin-top: -50px;
         }
 
         .logo {
             width: 200px;
             height: auto;
+            margin-left: -30px;
         }
 
         .header-nav {
@@ -58,20 +59,21 @@
         .header-button {
             font-family: 'Poppins', sans-serif;
             font-weight: 600;
-            font-size: 16px;
-            color: #123B27;
+            font-size: 15.5px;
+            color: #000;
             text-decoration: none;
-            padding: 10px 24px;
-            border-radius: 25px;
+            padding: 10px 22px;
+            border-radius: 22px;
             transition: all 0.3s ease;
-            background-color: #E1F7DB;
-            border: 2px solid #123B27;
+            background-color: #b0ff64;
+            border: 2px solid #000;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .header-button:hover {
-            background-color: #00BF63;
-            color: white;
+            background-color: #a0e85a;
+            color: #000;
+            border: 2px solid #000;
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
         }
@@ -80,10 +82,16 @@
             transform: translateY(0);
         }
 
+        .header-button.active {
+            background-color: #8fd94e;
+            color: #000;
+            border: 2px solid #000;
+        }
+
         .main-content {
             max-width: 1600px;
             margin: 0 auto;
-            padding: 20px 48px 100px;
+            padding: 40px 48px 100px;
         }
 
         .page-title {
@@ -91,11 +99,12 @@
             color: #000000;
             margin-bottom: 16px;
             text-align: center;
+            font-weight: 600;
         }
 
         .page-description {
             font-size: 18px;
-            color: #6F6F77;
+            color: #555;
             line-height: 1.6;
             margin-bottom: 40px;
             max-width: 1000px;
@@ -118,12 +127,18 @@
         .course-card {
             flex: 0 1 360px;
             background: white;
-            border-radius: 45px;
+            border-radius: 20px;
             width: 360px;
             height: 500px;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
 
         .course-image {
@@ -134,10 +149,10 @@
 
         .enrollment-status {
             position: absolute;
-            top: 30px;
-            left: 25px;
+            top: 20px;
+            left: 20px;
             background: #1E1E1E;
-            border-radius: 45px;
+            border-radius: 25px;
             padding: 8px 20px;
             color: white;
             font-family: 'Poppins', sans-serif;
@@ -150,15 +165,16 @@
             font-family: 'Poppins', sans-serif;
             font-size: 18px;
             line-height: 1.3;
-            color: #1E1E1E;
-            padding: 20px 35px 0;
+            color: #000;
+            padding: 20px 25px 0;
             margin-top: 0;
             height: 80px;
             max-width: 350px;
+            font-weight: 600;
         }
 
         .instructor-section {
-            padding: 0 35px;
+            padding: 0 25px;
             display: flex;
             align-items: center;
             gap: 15px;
@@ -191,7 +207,7 @@
 
         .instructor-name {
             font-family: 'Poppins', sans-serif;
-            color: #6F6F77;
+            color: #555;
             font-size: 14px;
             font-weight: 500;
         }
@@ -199,8 +215,8 @@
         .course-footer {
             position: absolute;
             bottom: 25px;
-            left: 35px;
-            right: 35px;
+            left: 25px;
+            right: 25px;
             display: flex;
             flex-direction: column;
             gap: 8px;
@@ -212,30 +228,36 @@
             color: white;
             padding: 8px 0;
             text-align: center;
-            border-radius: 45px;
+            border-radius: 25px;
             font-family: 'Poppins', sans-serif;
             font-size: 12px;
             width: 240px;
         }
 
         .enroll-button {
-            background: #28B1FF;
+            background: #1A9CFF;
             color: white;
             padding: 12px 0;
             text-align: center;
-            border-radius: 45px;
+            border-radius: 25px;
             cursor: pointer;
             font-family: 'Poppins', sans-serif;
             font-size: 14px;
             font-weight: 500;
             width: 240px;
             text-decoration: none;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .enroll-button:hover {
+            background-color: #0077cc;
+            transform: translateY(-2px);
         }
 
         .coming-soon {
             font-family: 'Poppins', sans-serif;
             text-align: center;
-            color: #6F6F77;
+            color: #555;
             font-size: 20px;
             font-weight: 500;
             margin-top: 80px;
@@ -258,8 +280,8 @@
         @media screen and (max-width: 768px) {
             .header {
                 flex-direction: column;
-                padding: 4px;
-                margin-top: -20px;
+                padding: 10px 20px 10px 20px;
+                margin-top: 0;
             }
 
             .header-nav {
@@ -272,8 +294,8 @@
             }
 
             .header-button {
-                padding: 8px 20px;
-                font-size: 14px;
+                padding: 7px 18px;
+                font-size: 13px;
             }
 
             .main-content {
@@ -302,22 +324,22 @@
             .instructor-section {
                 position: relative;
                 top: 0;
-                padding: 10px 35px;
+                padding: 10px 25px;
                 margin-top: 5px;
             }
 
             .course-footer {
                 position: absolute;
                 bottom: 20px;
-                left: 35px;
-                right: 35px;
+                left: 25px;
+                right: 25px;
                 padding-top: 10px;
             }
 
             .course-title {
                 height: auto;
                 min-height: 70px;
-                padding: 15px 35px 8px;
+                padding: 15px 25px 8px;
             }
 
             .coming-soon {
@@ -332,7 +354,7 @@
 
         /* Add new styles for the dark background section */
         .courses-section {
-            background-color: #F5F7FA;
+            background-color: #f5f7fa;
             padding: 32px 0 48px;
             margin: 0 120px;
             border-radius: 32px;
@@ -362,16 +384,11 @@
             }
         }
 
-        .header-button.active {
-            background-color: #00BF63;
-            color: white;
-        }
-
         /* Add style for the section title */
         .section-title {
             text-align: center;
             width: 100%;
-            color: #123B27;
+            color: #000;
             font-size: 32px;
             margin-bottom: 32px;
             font-weight: 600;
@@ -386,6 +403,7 @@
         </a>
         <nav class="header-nav">
             <a href="group_programs.html" class="header-button active">Group Programs</a>
+            <a href="fellowships.html" class="header-button">Fellowship Opportunities</a>
             <a href="mentorship.html" class="header-button">1:1 Mentorship</a>
         </nav>
     </header>
@@ -402,7 +420,7 @@
                 <!-- Course Card 2: Astrophysics Research Lab -->
                 <div class="course-card">
                     <img src="./images/astro.jpg" alt="Astrophysics Research Lab" class="course-image">
-                    <div class="enrollment-status" style="background: #E1F7DB; color: #1A3D6B;">9 seats remaining</div>
+                    <div class="enrollment-status" style="background: #b0ff64; color: #000;">9 seats remaining</div>
                     <h3 class="course-title">Berkeley Astrophysics Blueprint: Space Research Lab</h3>
                     <div class="instructor-section">
                         <img src="./images/isabella_mentor.png" alt="Isabella" class="instructor-image">
@@ -412,7 +430,7 @@
                         </div>
                     </div>
                     <div class="course-footer">
-                        <div class="next-batch" style="background: #123B27;">Next batch June 7th, 2025</div>
+                        <div class="next-batch" style="background: #505050;">Next batch June 7th, 2025</div>
                         <a href="astrophysics_lab.html" target="_blank" class="enroll-button">
                             Learn More & Enroll
                         </a>
@@ -422,7 +440,7 @@
                 <!-- Course Card 7: Community Impact -->
                 <div class="course-card">
                     <img src="./images/community_impact.png" alt="Community Impact Course" class="course-image">
-                    <div class="enrollment-status" style="background: #E1F7DB; color: #1A3D6B;">9 seats remaining</div>
+                    <div class="enrollment-status" style="background: #b0ff64; color: #000;">9 seats remaining</div>
                     <h3 class="course-title">
                         Create a Unique Community Impact Passion Project
                     </h3>
@@ -434,7 +452,7 @@
                         </div>
                     </div>
                     <div class="course-footer">
-                        <div class="next-batch" style="background: #123B27;">Next batch May 27th, 2025</div>
+                        <div class="next-batch" style="background: #505050;">Next batch May 27th, 2025</div>
                         <a href="community_impact.html" target="_blank" class="enroll-button">
                             Learn More & Enroll
                         </a>
@@ -444,7 +462,7 @@
                 <!-- Course Card: Hack Lab -->
                 <div class="course-card">
                     <img src="./images/cybersecurity_course.jpg" alt="Cybersecurity Course" class="course-image">
-                    <div class="enrollment-status" style="background: #E1F7DB; color: #1A3D6B;">8 seats remaining</div>
+                    <div class="enrollment-status" style="background: #b0ff64; color: #000;">8 seats remaining</div>
                     <h3 class="course-title">Hack Lab: Your First Cybersecurity Passion Project</h3>
                     <div class="instructor-section">
                         <img src="./images/anshul_headshot.jpeg" alt="Anshul" class="instructor-image">
@@ -454,7 +472,7 @@
                         </div>
                     </div>
                     <div class="course-footer">
-                        <div class="next-batch" style="background: #123B27;">Next batch June 2nd, 2025</div>
+                        <div class="next-batch" style="background: #505050;">Next batch June 2nd, 2025</div>
                         <a href="hack_lab.html" target="_blank" class="enroll-button">
                             Learn More & Enroll
                         </a>
@@ -464,7 +482,7 @@
                 <!-- Course Card 3: The PhD Blueprint -->
                 <div class="course-card">
                     <img src="./images/med_research.jpg" alt="Healthcare Research Program" class="course-image">
-                    <div class="enrollment-status" style="background: #E1F7DB; color: #1A3D6B;">Spots full - Waitlist enrollment</div>
+                    <div class="enrollment-status" style="background: #b0ff64; color: #000;">Spots full - Waitlist enrollment</div>
                     <h3 class="course-title">The PhD Blueprint: Medical Research Intensive</h3>
                     <div class="instructor-section">
                         <img src="./images/mrudula_headshot.JPG" alt="Mrudula" class="instructor-image">
@@ -474,7 +492,7 @@
                         </div>
                     </div>
                     <div class="course-footer">
-                        <div class="next-batch" style="background: #123B27;">Next batch June 5th, 2025</div>
+                        <div class="next-batch" style="background: #505050;">Next batch June 5th, 2025</div>
                         <a href="healthcare_research.html" target="_blank" class="enroll-button">
                             Learn More & Enroll
                         </a>
