@@ -161,6 +161,26 @@ section {
     }
 }
 
+/* Specific styles for the career icon */
+.career-icon-img {
+    width: 70px !important;
+    height: 70px !important;
+}
+
+@media screen and (max-width: 768px) {
+    .career-icon-img {
+        width: 65px !important;
+        height: 65px !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .career-icon-img {
+        width: 60px !important;
+        height: 60px !important;
+    }
+}
+
 /* Typography */
 .main-header {
     font-family: 'Poppins', sans-serif;
@@ -442,8 +462,9 @@ section {
 
 /* About Section */
 .about-section {
-    padding: 30px 20px 0px 20px;
+    padding: 5px 20px 0px 0px;
     background-color: #FFFFFF;
+    margin-bottom: -40px;
 }
 
 .about-container {
@@ -486,7 +507,7 @@ section {
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     font-size: 20px;
-    margin: 0 0 30px;
+    margin: 0 0 15px;
     line-height: 1.4;
 }
 
@@ -1016,7 +1037,7 @@ section {
         
         <div class="stat-item">
             <div class="stat-icon">
-                <img src="./images/career.png" alt="Career icon">
+                <img src="./images/career.png" alt="Career icon" class="career-icon-img">
             </div>
             <div class="stat-content">
                 <div class="stat-numbers">20+</div>
