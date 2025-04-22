@@ -125,10 +125,9 @@
         }
 
         .fellowship-card {
-            flex: 0 1 600px;
+            flex: 0 1 700px;
             background: white;
             border-radius: 20px;
-            width: 100%;
             height: auto;
             position: relative;
             overflow: hidden;
@@ -146,8 +145,8 @@
         }
 
         .fellowship-image-container {
-            flex: 0 0 200px;
-            height: 200px;
+            flex: 0 0 250px;
+            height: 300px;
             border-radius: 12px;
             overflow: hidden;
             position: relative;
@@ -164,6 +163,9 @@
             display: flex;
             flex-direction: column;
             gap: 12px;
+            align-self: flex-start;
+            padding-left: 10px;
+            margin-top: 15px;
         }
 
         .fellowship-title {
@@ -187,9 +189,9 @@
         .seats-badge {
             background: #b0ff64;
             color: #000;
-            padding: 5px 12px;
+            padding: 6px 13px;
             border-radius: 16px;
-            font-size: 12px;
+            font-size: 13px;
             font-weight: 500;
         }
 
@@ -202,7 +204,7 @@
         }
         
         .professor-label {
-            font-size: 12px;
+            font-size: 13px;
             color: #555;
             font-weight: 500;
         }
@@ -214,8 +216,8 @@
         }
         
         .professor-image {
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid #b0ff64;
@@ -224,19 +226,19 @@
         .professor-name {
             font-family: 'Poppins', sans-serif;
             color: #000;
-            font-size: 14px;
+            font-size: 15px;
             font-weight: 500;
         }
 
         .apply-button {
             background: #1A9CFF;
             color: white;
-            padding: 10px 24px;
+            padding: 11px 27px;
             text-align: center;
             border-radius: 40px;
             cursor: pointer;
             font-family: 'Poppins', sans-serif;
-            font-size: 14px;
+            font-size: 15px;
             font-weight: 500;
             width: fit-content;
             text-decoration: none;
@@ -335,12 +337,17 @@
                 flex-direction: column;
                 padding: 24px;
                 gap: 24px;
+                align-items: stretch;
             }
 
             .fellowship-image-container {
-                flex: 0 0 200px;
-                height: 200px;
+                flex: none;
+                height: 300px;
                 width: 100%;
+            }
+
+            .fellowship-content {
+                align-self: auto;
             }
 
             .fellowship-title {
@@ -371,12 +378,12 @@
             }
             
             .professor-image {
-                width: 36px;
-                height: 36px;
+                width: 40px;
+                height: 40px;
             }
             
             .professor-name {
-                font-size: 12px;
+                font-size: 13px;
             }
         }
 
@@ -465,9 +472,9 @@
                         <img src="./images/ai_prof.png" alt="AI Scholars Program" class="fellowship-image">
                     </div>
                     <div class="fellowship-content">
-                        <h3 class="fellowship-title">AI Scholars Program with NYU Professor Dr.Tran</h3>
+                        <h3 class="fellowship-title">AI/ML Scholars Program with NYU Professor Dr.Tran</h3>
                         <div class="seats-container">
-                            <div class="seats-badge">Next cohort: May 30th</div>
+                            <div class="seats-badge">Application deadline: May 5th</div>
                         </div>
                         <div class="professor-info-container">
                             <span class="professor-label">Program Lead:</span>
