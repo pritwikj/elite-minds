@@ -377,10 +377,9 @@ section {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding: 0 20px 10px 20px;
+        padding: 0 20px 0 20px;
         margin-top: 0;
         position: relative;
-        padding-top: 0;
     }
     
     .header-nav {
@@ -425,6 +424,7 @@ section {
         gap: 15px;
         margin: 0 auto;
         min-height: auto;
+        margin-top: 0;
     }
 
     #section1 .content-left, 
@@ -1062,6 +1062,11 @@ section {
         .content-right > div { margin-top: 0; } 
         /* Adjust sub-header spacing for mobile */
         .sub-header { margin-top: 30px; }
+    }
+
+    /* Add rule to pull section1's container up on desktop */
+    #section1 .container {
+        margin-top: -30px; /* Adjust as needed */
     }
     </style>
 <header class="header">
