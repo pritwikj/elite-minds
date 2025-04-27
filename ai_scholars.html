@@ -18,9 +18,9 @@
 
         .logo {
             position: absolute;
-            top: -40px;
-            left: 20px;
-            width: 180px;
+            top: -10px;
+            left: 0;
+            width: 150px;
             height: auto;
             z-index: 1000;
         }
@@ -415,12 +415,14 @@
             }
 
             .benefits-eligibility {
-                flex-direction: column;
+                grid-template-columns: 1fr;
+                gap: 30px;
             }
-            .eligibility-container > div {
+            .eligibility-container {
+                display: flex;
                 flex-direction: column;
+                gap: 30px;
             }
-            
             .weeks-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -467,23 +469,27 @@
 
         @media screen and (max-width: 480px) {
             .hero-section {
-                padding: 100px 0 60px;
+                padding: 120px 0 60px; /* Adjusted top padding */
             }
 
             .logo {
-                top: 20px;
-                left: 20px;
+                position: absolute; /* Keep absolute positioning */
+                top: -10px; /* Position slightly above the top edge */
+                left: 0; /* Position from left */
                 width: 150px;
             }
 
             .apply-button {
                 width: 100%;
                 padding: 12px 20px;
+                box-sizing: border-box; /* Include padding in width */
             }
 
             .deadline-badge {
                 width: 100%;
                 font-size: 14px;
+                box-sizing: border-box; /* Include padding in width */
+                margin-top: 10px; /* Add some space above */
             }
         }
     </style>
@@ -573,25 +579,23 @@
                     <div class="list-text">Access to our exclusive network of industry partners, professors, and researchers</div>
                 </div>
             </div>
-            <div class="eligibility-container" style="display: flex; flex-direction: column; flex: 1;">
-                <div style="display: flex; flex-direction: column; gap: 20px; height: 100%;">
-                    <div class="eligibility-list" style="flex: 1; margin: 0;">
-                        <h3>Eligibility Requirements</h3>
-                        <ul>
-                            <li>High school students with a demonstrated interest in technology, mathematics, or computer science</li>
-                            <li>Strong academic performance and a commitment to learning complex technical concepts</li>
-                            <li>Basic computer skills and access to a computer with reliable internet connection</li>
-                        </ul>
-                    </div>
-                    <div class="eligibility-list" style="flex: 1; margin: 0;">
-                        <h3>Program Logistics</h3>
-                         <ul>
-                            <li>Weekly sessions on Fridays, 11:00am-12:00pm PST, <br> May 30th to August 1st</li>
-                            <li>Application Deadline: May 5th, 2025</li>
-                            <li>Program Fees*: $2,000</li>
-                        </ul>
-                        <p style="color: #555; font-size: 14px; margin-top: 5px;">* Fees include all instructional materials, certification, mentorship, sessions, software, and activities.</p>
-                    </div>
+            <div class="eligibility-container">
+                <div class="eligibility-list">
+                    <h3>Eligibility Requirements</h3>
+                    <ul>
+                        <li>High school students with a demonstrated interest in technology, mathematics, or computer science</li>
+                        <li>Strong academic performance and a commitment to learning complex technical concepts</li>
+                        <li>Basic computer skills and access to a computer with reliable internet connection</li>
+                    </ul>
+                </div>
+                <div class="eligibility-list">
+                    <h3>Program Logistics</h3>
+                     <ul>
+                        <li>Weekly sessions on Fridays, 11:00am-12:00pm PST, <br> May 30th to August 1st</li>
+                        <li>Application Deadline: May 5th, 2025</li>
+                        <li>Program Fees*: $2,000</li>
+                    </ul>
+                    <p style="color: #555; font-size: 14px; margin-top: 5px;">* Fees include all instructional materials, certification, mentorship, sessions, software, and activities.</p>
                 </div>
             </div>
         </div>
