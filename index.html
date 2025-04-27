@@ -374,16 +374,19 @@ section {
 /* Mobile Responsive Styles */
 @media screen and (max-width: 768px) {
     .header {
-        flex-direction: column;
-        padding: 0 20px 10px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px 10px 20px;
         margin-top: 0;
+        position: relative;
     }
     
     .header-nav {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 55px;
+        top: 65px;
         right: 10px;
         background-color: #ffffff;
         padding: 15px 20px;
@@ -418,7 +421,7 @@ section {
     #section1 .container {
         flex-direction: column;
         padding: 0 24px;
-        gap: 15px; /* Reduced gap */
+        gap: 15px;
         margin: 0 auto;
         min-height: auto;
     }
@@ -426,14 +429,14 @@ section {
     #section1 .content-left, 
     #section1 .content-right {
         text-align: center;
-        padding: 0 0 10px 0; /* Reduced bottom padding, removed top padding */
+        padding: 0 0 10px 0;
         align-items: center;
         max-width: 100%;
     }
 
     /* Target the div holding the university logos image */
     #section1 .content-left > div:last-child {
-        margin-top: 25px !important; /* Reduced top margin */
+        margin-top: 25px !important;
     }
     
     /* Target the mobile student image */
@@ -441,17 +444,17 @@ section {
         display: block;
         width: 90%;
         height: auto;
-        margin: 10px auto 0 !important; /* Reduced top margin */
+        margin: 10px auto 0 !important;
     }
     
     /* Target the sub-header within content-right */
     #section1 .content-right .sub-header {
-         margin: 25px auto 0 !important; /* Reduced top margin, removed bottom margin */
+         margin: 25px auto 0 !important;
          font-size: 20px; 
     }
 
     #section1 .learn-more-btn {
-        margin: 20px auto 0; /* Reduced top margin */
+        margin: 20px auto 0;
     }
     /* End adjustments for #section1 */
 
@@ -461,7 +464,6 @@ section {
 
     .sub-header {
         font-size: 20px;
-        /* Removed margin: 30px auto; - handled by more specific rule above */
     }
 
     .hero-image {
@@ -480,7 +482,7 @@ section {
     }
 
     .logo {
-        width: 150px;
+        width: 180px;
     }
 
     .mentors-container {
@@ -1023,8 +1025,16 @@ section {
 .menu-toggle { display: none; }
 
 @media screen and (max-width: 768px) {
-    .menu-toggle { display: block; position: absolute; top: 15px; right: 20px; background: transparent; border: none; font-size: 24px; cursor: pointer; z-index: 1000; }
-    .header-nav { display: none; flex-direction: column; position: absolute; top: 55px; right: 10px; background-color: #ffffff; padding: 15px 20px; border-radius: 5px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); z-index: 999; width: calc(100% - 40px); max-width: 300px; }
+    .menu-toggle {
+        display: block;
+        background: transparent;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 1000;
+        margin-left: 15px;
+    }
+    .header-nav { display: none; flex-direction: column; position: absolute; top: 65px; right: 10px; background-color: #ffffff; padding: 15px 20px; border-radius: 5px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); z-index: 999; width: calc(100% - 40px); max-width: 300px; }
     .header-nav.open { display: flex; }
     .header-button { margin: 8px 0; padding: 10px 15px; background-color: transparent; border: none; box-shadow: none; color: #333; text-align: left; font-weight: 500; border-radius: 4px; transition: background-color 0.2s ease; }
     .header-button:hover { background-color: #f0f0f0; color: #000; transform: none; box-shadow: none; }
