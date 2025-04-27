@@ -265,7 +265,7 @@ section {
     background-color: #FFFFFF;
     padding: 0 20px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     margin-top: -50px;
@@ -380,6 +380,7 @@ section {
         padding: 0 20px 10px 20px;
         margin-top: 0;
         position: relative;
+        padding-top: 0;
     }
     
     .header-nav {
@@ -482,7 +483,12 @@ section {
     }
 
     .logo {
-        width: 180px;
+        margin-top: -40px !important;
+        padding-top: 0 !important;
+        max-height: 150px !important;
+        width: auto !important;
+        max-width: 500px !important;
+        margin-left: -15px;
     }
 
     .mentors-container {
@@ -1033,6 +1039,7 @@ section {
         cursor: pointer;
         z-index: 1000;
         margin-left: 15px;
+        margin-top: -40px;
     }
     .header-nav { display: none; flex-direction: column; position: absolute; top: 65px; right: 10px; background-color: #ffffff; padding: 15px 20px; border-radius: 5px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); z-index: 999; width: calc(100% - 40px); max-width: 300px; }
     .header-nav.open { display: flex; }
