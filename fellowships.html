@@ -300,30 +300,63 @@
 
         @media screen and (max-width: 768px) {
             .header {
-                flex-direction: column;
-                padding: 10px 20px 10px 20px;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 20px 0 20px;
                 margin-top: 0;
+                position: relative;
             }
 
             .header-nav {
-                position: relative;
-                top: 0;
-                right: 0;
-                justify-content: center;
-                margin-top: 20px;
-                gap: 12px;
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 65px;
+                right: 10px;
+                background-color: #ffffff;
+                padding: 15px 20px;
+                border-radius: 5px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                z-index: 999;
+                width: calc(100% - 40px);
+                max-width: 300px;
+            }
+            
+            .header-nav.open {
+                display: flex;
             }
 
             .header-button {
-                padding: 7px 18px;
-                font-size: 13px;
+                margin: 8px 0;
+                padding: 10px 15px;
+                background-color: transparent;
+                border: none;
+                box-shadow: none;
+                color: #333;
+                text-align: left;
+                font-weight: 500;
+                border-radius: 4px;
+                transition: background-color 0.2s ease;
+            }
+
+            .header-button:hover {
+                background-color: #f0f0f0;
+                color: #000;
+                transform: none;
+                box-shadow: none;
             }
 
             .main-content {
-                padding: 40px 24px;
+                padding-top: 0;
+                padding-bottom: 40px;
+                padding-left: 24px;
+                padding-right: 24px;
             }
 
             .page-title {
+                margin-top: 0;
+                margin-bottom: 4px;
                 font-size: 32px;
                 padding: 0 24px;
             }
@@ -368,8 +401,12 @@
             }
 
             .logo {
-                width: 150px;
-                margin-left: 0;
+                margin-top: -50px !important;
+                padding-top: 0 !important;
+                max-height: 180px !important;
+                width: auto !important;
+                max-width: 500px !important;
+                margin-left: -10px;
             }
 
             /* Professor responsive styles */
@@ -443,6 +480,23 @@
             font-weight: 600;
             white-space: nowrap;
         }
+        
+        .menu-toggle {
+            display: none;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+                background: transparent;
+                border: none;
+                font-size: 30px;
+                cursor: pointer;
+                z-index: 1000;
+                margin-left: 15px;
+                margin-top: -50px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -450,6 +504,7 @@
         <a href="https://elitemindsprogram.com/">
             <img src="./images/EliteMinds logo.png" alt="EliteMinds Logo" class="logo">
         </a>
+        <button class="menu-toggle" aria-label="Toggle menu">☰</button>
         <nav class="header-nav">
             <a href="group_programs.html" class="header-button">Group Programs</a>
             <a href="fellowships.html" class="header-button active">Fellowship Opportunities</a>
@@ -492,5 +547,13 @@
             <p class="coming-soon">New fellowship opportunities launching soon!</p>
         </section>
     </main>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      var btn = document.querySelector('.menu-toggle');
+      var nav = document.querySelector('.header-nav');
+      btn.addEventListener('click', function(){ nav.classList.toggle('open'); });
+    });
+    </script>
 </body>
 </html> 
