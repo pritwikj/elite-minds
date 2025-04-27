@@ -267,17 +267,18 @@ section {
 /* Header */
 .header {
     background-color: #FFFFFF;
-    padding: 0 20px;
+    padding: 0 24px 0 48px;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    box-shadow: none;
     margin-top: -50px;
 }
 
 .logo {
     width: 200px;
     height: auto;
+    margin-left: -30px;
 }
 
 /* Enroll Button */
@@ -367,6 +368,10 @@ section {
     border: 2px solid #000;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.header-button:active {
+    transform: translateY(0);
 }
 
 .header-button.active {
