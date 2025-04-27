@@ -438,14 +438,19 @@ section {
     /* Target the div holding the university logos image */
     #section1 .content-left > div:last-child {
         margin-top: 25px !important;
+        justify-content: center !important;
+    }
+
+    /* Target the university logos image itself */
+    #section1 .content-left > div:last-child img {
+        width: 100% !important;
+        margin-left: 0 !important;
+        max-width: 100% !important;
     }
     
     /* Target the mobile student image */
     #section1 .mobile-student-image {
-        display: block;
-        width: 90%;
-        height: auto;
-        margin: 10px auto 0 !important;
+        display: none;
     }
     
     /* Target the sub-header within content-right */
@@ -483,12 +488,12 @@ section {
     }
 
     .logo {
-        margin-top: -40px !important;
+        margin-top: -50px !important;
         padding-top: 0 !important;
-        max-height: 150px !important;
+        max-height: 180px !important;
         width: auto !important;
         max-width: 500px !important;
-        margin-left: -15px;
+        margin-left: -10px;
     }
 
     .mentors-container {
@@ -1035,11 +1040,11 @@ section {
         display: block;
         background: transparent;
         border: none;
-        font-size: 24px;
+        font-size: 30px;
         cursor: pointer;
         z-index: 1000;
         margin-left: 15px;
-        margin-top: -40px;
+        margin-top: -47px;
     }
     .header-nav { display: none; flex-direction: column; position: absolute; top: 65px; right: 10px; background-color: #ffffff; padding: 15px 20px; border-radius: 5px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); z-index: 999; width: calc(100% - 40px); max-width: 300px; }
     .header-nav.open { display: flex; }
@@ -1052,7 +1057,7 @@ section {
 
     @media screen and (max-width: 768px) {
         .desktop-student-image { display: none; }
-        .mobile-student-image { display: block; }
+        .mobile-student-image { display: none; }
         /* Adjust content-right image container for mobile if needed */
         .content-right > div { margin-top: 0; } 
         /* Adjust sub-header spacing for mobile */
