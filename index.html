@@ -115,17 +115,19 @@ section {
 /* Media queries for stats section */
 @media screen and (max-width: 768px) {
     .stats-section {
-        padding: 15px 0;
+        padding: 25px 0;
     }
     
     .stats-container {
-        flex-direction: row;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 20px;
+        padding: 0 15px;
     }
     
     .stat-item {
-        flex: 0 0 50%;
-        margin: 10px 0;
+        margin: 0;
         flex-direction: column;
     }
     
@@ -144,17 +146,19 @@ section {
 }
 
 @media screen and (max-width: 480px) {
-    .stat-item {
-        flex: 0 0 100%;
-        margin: 8px 0;
-        flex-direction: column;
+    .stats-container {
+        gap: 15px;
+        padding: 0 10px;
     }
+    
     .stat-numbers {
         font-size: 34px;
     }
+    
     .stat-text {
         font-size: 14px;
     }
+    
     .stat-icon img {
         width: 50px;
         height: 50px;
@@ -599,7 +603,7 @@ section {
 @media screen and (max-width: 992px) {
     .about-container {
         flex-direction: column;
-        gap: 30px;
+        gap: 0;
     }
     
     .about-image, .about-content {
@@ -609,6 +613,7 @@ section {
     
     .about-content {
         text-align: center;
+        margin-top: -10px;
     }
 }
 
@@ -633,6 +638,24 @@ section {
     }
     .about-highlight {
         font-size: 18px;
+    }
+}
+
+/* Mobile-specific overrides for the "What is Elite Minds?" section */
+@media screen and (max-width: 992px) {
+    .about-image {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        /* Center the image container on mobile */
+    }
+    .about-content {
+        margin-left: 0 !important;
+        /* Center the text content on mobile */
+    }
+    .about-section {
+        margin-bottom: 0 !important;
+        padding: 5px 0 0 0 !important;
+        /* Remove negative bottom margin and ensure proper spacing */
     }
 }
 
@@ -1067,6 +1090,35 @@ section {
     /* Add rule to pull section1's container up on desktop */
     #section1 .container {
         margin-top: -30px; /* Adjust as needed */
+    }
+
+    /* Further mobile tweaks for the "What is Elite Minds?" section */
+    @media screen and (max-width: 480px) {
+        .about-section {
+            padding: 2px 10px 0 10px !important;
+        }
+        .about-container {
+            gap: 0 !important;
+        }
+        .about-image img {
+            max-width: 100% !important;
+            margin: 0 auto !important;
+            border-radius: 10px;
+        }
+        .about-content {
+            margin: 0 auto !important;
+            text-align: center !important;
+            margin-top: -10px !important;
+        }
+        .about-highlight {
+            display: block !important;
+            width: 100% !important;
+            box-sizing: border-box;
+            margin: 20px 0 !important;
+            padding: 20px 15px !important;
+            text-align: center !important;
+            font-size: 18px !important;
+        }
     }
     </style>
 <header class="header">
