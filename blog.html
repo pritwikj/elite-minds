@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Elite Minds Blog - Insights and success stories from our mentors and students to help you on your academic journey.">
+    <title>Elite Minds Blog - Student Success Stories and Educational Insights</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="./images/favicon-32x32.png" sizes="32x32" />
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1634891550798578');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1634891550798578&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f9f9f9;
+    }
+
+    /* Header */
+    .header {
+        background-color: #FFFFFF;
+        padding: 0 24px 0 48px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: none;
+        margin-top: -50px;
+        position: relative;
+        z-index: 100;
+    }
+
+    .logo {
+        width: 200px;
+        height: auto;
+        margin-left: -30px;
+    }
+
+    .header-nav {
+        display: flex;
+        gap: 16px;
+    }
+
+    .header-button {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        color: #000;
+        text-decoration: none;
+        padding: 8px 18px;
+        border-radius: 22px;
+        transition: all 0.3s ease;
+        background-color: #b0ff64;
+        border: 2px solid #000;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .header-button:hover {
+        background-color: #a0e85a;
+        color: #000;
+        border: 2px solid #000;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .header-button:active {
+        transform: scale(0.98);
+    }
+
+    .header-button.active {
+        background-color: #8fd94e;
+        color: #000;
+        border: 2px solid #000;
+    }
+
+    .menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    /* Blog Section */
+    .blog-hero {
+        background-color: #2196F3;
+        color: white;
+        padding: 50px 20px;
+        text-align: center;
+    }
+
+    .blog-title {
+        font-size: 38px;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+
+    .blog-description {
+        max-width: 800px;
+        margin: 0 auto;
+        font-size: 19px;
+        font-weight: 300;
+    }
+
+    .blog-container {
+        max-width: 1200px;
+        margin: 60px auto;
+        padding: 0 20px;
+    }
+
+    .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 30px;
+    }
+
+    .blog-card {
+        background-color: #fff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .blog-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .blog-image {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+    }
+
+    .blog-content {
+        padding: 24px;
+    }
+
+    .blog-card-title {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 12px;
+        line-height: 1.3;
+        color: #222;
+    }
+
+    .blog-card-description {
+        font-size: 15px;
+        color: #555;
+        margin-bottom: 18px;
+        line-height: 1.5;
+    }
+
+    .blog-meta {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        color: #777;
+        margin-bottom: 15px;
+    }
+
+    .blog-author {
+        font-weight: 500;
+    }
+
+    .blog-date {
+        font-style: italic;
+    }
+
+    .blog-categories {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 15px;
+    }
+
+    .blog-category {
+        background-color: #f5f5f5;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 500;
+        color: #444;
+    }
+
+    .read-more {
+        display: inline-block;
+        margin-top: 15px;
+        color: #1A9CFF;
+        font-weight: 500;
+        text-decoration: none;
+        position: relative;
+        padding-right: 22px;
+    }
+    
+    .read-more::after {
+        content: "→";
+        position: absolute;
+        right: 0;
+        transition: transform 0.2s ease;
+    }
+    
+    .read-more:hover::after {
+        transform: translateX(4px);
+    }
+
+    /* Featured Post */
+    .featured-post {
+        background-color: #b0ff64;
+        border-radius: 12px;
+        padding: 35px;
+        margin-bottom: 45px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 35px;
+        align-items: center;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+    }
+
+    .featured-post-image {
+        width: 100%;
+        height: 320px;
+        object-fit: cover;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .featured-post-content {
+        padding: 10px;
+    }
+
+    .featured-post-title {
+        font-size: 28px;
+        font-weight: 600;
+        margin-bottom: 16px;
+        line-height: 1.3;
+        color: #222;
+    }
+
+    .featured-label {
+        background-color: #1A9CFF;
+        color: white;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: 500;
+        display: inline-block;
+        margin-bottom: 15px;
+        box-shadow: 0 2px 5px rgba(26, 156, 255, 0.3);
+    }
+
+    /* Newsletter Section */
+    .newsletter {
+        background-color: #f5f7fa;
+        padding: 60px 20px;
+        text-align: center;
+        margin: 60px 10px 0;
+        border-radius: 32px;
+    }
+
+    .newsletter-title {
+        font-size: 32px;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+
+    .newsletter-description {
+        max-width: 600px;
+        margin: 0 auto 30px;
+        font-size: 18px;
+    }
+
+    .newsletter-form {
+        display: flex;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .newsletter-input {
+        flex: 1;
+        padding: 15px;
+        border: none;
+        border-radius: 4px 0 0 4px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 16px;
+    }
+
+    .newsletter-button {
+        padding: 15px 25px;
+        background-color: #1A9CFF;
+        color: white;
+        border: none;
+        border-radius: 0 4px 4px 0;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .newsletter-button:hover {
+        background-color: #0080e0;
+    }
+
+    /* Mobile Styles */
+    @media screen and (max-width: 768px) {
+        .header {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px 0 20px;
+            margin-top: 0;
+            position: relative;
+        }
+
+        .menu-toggle {
+            display: block;
+            background: transparent;
+            border: none;
+            font-size: 30px;
+            cursor: pointer;
+            z-index: 1000;
+            margin-left: 15px;
+            margin-top: -50px;
+        }
+
+        .header-nav {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 65px;
+            right: 10px;
+            background-color: #ffffff;
+            padding: 15px 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            z-index: 999;
+            width: calc(100% - 40px);
+            max-width: 300px;
+        }
+
+        .header-nav.open {
+            display: flex;
+        }
+
+        .header-button {
+            margin: 8px 0;
+            padding: 10px 15px;
+            background-color: transparent;
+            border: none;
+            box-shadow: none;
+            color: #333;
+            text-align: left;
+            font-weight: 500;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+        }
+
+        .header-button:hover {
+            background-color: #f0f0f0;
+            color: #000;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .blog-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .featured-post {
+            grid-template-columns: 1fr;
+        }
+
+        .newsletter {
+            margin: 40px 0 0;
+            padding: 40px 20px;
+            border-radius: 24px;
+        }
+
+        .newsletter-form {
+            flex-direction: column;
+        }
+
+        .newsletter-input {
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .newsletter-button {
+            border-radius: 4px;
+        }
+
+        .blog-title {
+            font-size: 32px;
+        }
+
+        .blog-description {
+            font-size: 16px;
+        }
+
+        .logo {
+            margin-top: -50px !important;
+            padding-top: 0 !important;
+            max-height: 180px !important;
+            width: auto !important;
+            max-width: 500px !important;
+            margin-left: -10px;
+        }
+    }
+
+    /* Custom Footer Section */
+    .custom-footer {
+        background-color: #f5f7fa; /* Similar to newsletter background */
+        padding: 50px 20px;
+        text-align: center;
+        margin: 60px 10px 20px; /* Adjust margin as needed */
+        border-radius: 32px;
+    }
+
+    .footer-title {
+        font-size: 28px; /* Slightly smaller than newsletter title */
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .footer-description {
+        max-width: 600px;
+        margin: 0 auto 25px;
+        font-size: 18px;
+        color: #555;
+    }
+
+    .footer-button {
+        display: inline-block;
+        padding: 12px 30px;
+        background-color: #1A9CFF; /* Same blue as newsletter button */
+        color: white;
+        border: none;
+        border-radius: 25px; /* Rounded corners */
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        cursor: pointer;
+        text-decoration: none;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .footer-button:hover {
+        background-color: #0080e0; /* Darker blue on hover */
+        transform: translateY(-2px);
+    }
+
+    /* Responsive styles for footer */
+    @media screen and (max-width: 768px) {
+        .custom-footer {
+            margin: 40px 0 20px;
+            padding: 40px 20px;
+            border-radius: 24px;
+        }
+        .footer-title {
+            font-size: 24px;
+        }
+        .footer-description {
+            font-size: 16px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="https://elitemindsprogram.com/">
+            <img src="./images/EliteMinds logo.png" alt="EliteMinds Logo" class="logo">
+        </a>
+        <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+        <nav class="header-nav">
+            <a href="group_programs.html" class="header-button">Group Programs</a>
+            <a href="fellowships.html" class="header-button">Fellowship Opportunities</a>
+            <a href="mentorship.html" class="header-button">1:1 Mentorship</a>
+            <a href="blog.html" class="header-button active">Blog</a>
+        </nav>
+    </header>
+
+    <section class="blog-hero">
+        <h1 class="blog-title">Elite Minds Blog</h1>
+        <p class="blog-description">Expert insights, student success stories, and guidance for your academic journey</p>
+    </section>
+
+    <div class="blog-container">
+        <div class="featured-post">
+            <img src="./images/research_blog.jpg" alt="Featured Post: Research with Professors" class="featured-post-image">
+            <div class="featured-post-content">
+                <span class="featured-label">Featured</span>
+                <h2 class="featured-post-title">How High School Students Can Work With Professors on Research Projects</h2>
+                <p class="blog-card-description">More and more high school students are engaging in academic research alongside university professors — and for good reason. Learn how to get involved.</p>
+                <div class="blog-meta">
+                    <span class="blog-author">By Elite Minds</span>
+                    <span class="blog-date">July 26, 2024</span>
+                </div>
+                <a href="research-with-professors.html" class="read-more">Read Full Story →</a>
+            </div>
+        </div>
+
+        <div class="blog-grid">
+            <div class="blog-card">
+                <img src="./images/passion_great_blog.jpg" alt="Passion Projects for High School Students" class="blog-image">
+                <div class="blog-content">
+                    <h3 class="blog-card-title">Why Passion Projects Are Great for High School Students (and How to Get Started)</h3>
+                    <p class="blog-card-description">Explore the benefits of passion projects for high schoolers, from skill development to enhancing college applications, and get tips on how to start.</p>
+                    <div class="blog-meta">
+                        <span class="blog-author">By Elite Minds</span>
+                        <span class="blog-date">August 1, 2024</span>
+                    </div>
+                    <div class="blog-categories">
+                        <span class="blog-category">College Admissions</span>
+                        <span class="blog-category">High School</span>
+                        <span class="blog-category">Skill Development</span>
+                    </div>
+                    <a href="passion-projects.html" class="read-more">Read More →</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="./images/research_blog.jpg" alt="Blog Post: Research with Professors" class="blog-image">
+                <div class="blog-content">
+                    <h3 class="blog-card-title">How High School Students Can Work With Professors on Research Projects</h3>
+                    <p class="blog-card-description">More and more high school students are engaging in academic research alongside university professors — and for good reason...</p>
+                    <div class="blog-meta">
+                        <span class="blog-author">By Elite Minds</span>
+                        <span class="blog-date">July 26, 2024</span>
+                    </div>
+                    <div class="blog-categories">
+                        <span class="blog-category">Research</span>
+                        <span class="blog-category">College Admissions</span>
+                        <span class="blog-category">High School</span>
+                    </div>
+                    <a href="research-with-professors.html" class="read-more">Read More →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--
+    <section class="newsletter">
+        <h2 class="newsletter-title">Subscribe to Our Newsletter</h2>
+        <p class="newsletter-description">Get the latest articles, success stories, and college admissions tips delivered directly to your inbox.</p>
+        <form class="newsletter-form">
+            <input type="email" placeholder="Your email address" class="newsletter-input" required>
+            <button type="submit" class="newsletter-button">Subscribe</button>
+        </form>
+    </section>
+    -->
+
+    <section class="custom-footer">
+        <h2 class="footer-title">Want to start a project of your own?</h2>
+        <p class="footer-description">Click below to get started</p>
+        <a href="group_programs.html" class="footer-button">Get Started</a>
+    </section>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function(){
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('.header-nav');
+        
+        menuToggle.addEventListener('click', function() {
+            nav.classList.toggle('open');
+        });
+    });
+    </script>
+</body>
+</html> 
