@@ -188,11 +188,27 @@ section {
 /* Typography */
 .main-header {
     font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    font-size: 76px;
     color: #000000;
     margin-top: 0;
-    line-height: 1.0;
+    line-height: 1.1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.main-header .header-small-text {
+    font-weight: 400;
+    font-size: 22px;
+    color: #000000;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.main-header .header-large-text {
+    font-weight: 600;
+    font-size: 65px;
+    color: #000000;
+    line-height: 1.05;
 }
 
 .highlighted {
@@ -285,7 +301,7 @@ section {
 .learn-more-btn {
     display: flex;
     width: 200px;
-    margin: 32px auto 0;
+    margin: 52px auto 0;
     padding: 14px 30px;
     background-color: #fff;
     color: #1A9CFF;
@@ -474,7 +490,19 @@ section {
     /* End adjustments for #section1 */
 
     .main-header {
-        font-size: 36px;
+        align-items: center;
+    }
+
+    .main-header .header-small-text {
+        font-size: 19px;
+        text-align: center;
+        margin-bottom: 6px;
+    }
+
+    .main-header .header-large-text {
+        font-size: 40px;
+        text-align: center;
+        line-height: 1.1;
     }
 
     .sub-header {
@@ -533,8 +561,15 @@ section {
         margin-right: auto !important;
     }
     .main-header {
-        font-size: 32px;
-        max-width: 95vw;
+        max-width: 95vw !important;
+    }
+
+    .main-header .header-small-text {
+        font-size: 17px;
+    }
+
+    .main-header .header-large-text {
+        font-size: 34px;
     }
 
     .sub-header {
@@ -1143,9 +1178,8 @@ section {
     <div class="container">
         <div class="content-left">
             <h1 class="main-header">
-                Work with <span class="highlighted">professors,</span><br/>
-                <span style="white-space: nowrap;">Ivy League</span> <span class="highlighted" style="margin-top: 10px;">researchers,</span><br/>
-                <span style="white-space: nowrap;"><span class="highlighted">PhDs</span> & more</span>
+                <span class="header-small-text">Research and Passion Project Programs</span>
+                <span class="header-large-text">Uniquely Stand Out<br>to <span class="highlighted">Top 20</span> Universities</span>
             </h1>
             
             <!-- Placeholder image instead of university logos -->
@@ -1161,8 +1195,6 @@ section {
                 <img src="./images/homepage_students_mobile.png" alt="Student images mobile" class="mobile-student-image" style="width: 90%; height: auto; margin: 20px auto 0;">
             </div>
             
-            <!-- Centered subheader and button below the image -->
-            <h2 class="sub-header" style="margin-top: 60px;">Create standout passion projects.<br>Boost your T20 college applications</h2>
             
             <button onclick="document.getElementById('programs-overview').scrollIntoView({behavior: 'smooth'})" class="learn-more-btn">
                 LEARN MORE
