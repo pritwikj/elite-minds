@@ -329,6 +329,65 @@ section {
     transform: translateY(0);
 }
 
+/* Mobile buttons for replacing learn more */
+.mobile-btn-container {
+    display: none;
+    flex-direction: row;
+    width: 100%;
+    gap: 15px;
+    margin: 30px auto 0;
+    justify-content: center;
+}
+
+.mobile-nav-btn {
+    display: flex;
+    flex: 1;
+    max-width: 190px;
+    margin: 0;
+    padding: 6px 18px;
+    background-color: #b0ff64;
+    color: #000;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    border: 2px solid #000;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    text-align: center;
+}
+
+.mobile-nav-btn:hover {
+    background-color: #a0e85a;
+    color: #000;
+    transform: translateY(-2px);
+    border-color: #000;
+}
+
+.mobile-nav-btn:active {
+    background-color: #8fd94e;
+    color: #000;
+    transform: translateY(0);
+    border-color: #000;
+}
+
+@media screen and (max-width: 480px) {
+    .mobile-btn-container {
+        padding: 0 10px;
+        gap: 10px;
+    }
+    
+    .mobile-nav-btn {
+        font-size: 12px;
+        padding: 5px 15px;
+        max-width: 180px;
+        border-radius: 8px;
+    }
+}
+
 /* University Logos Section */
 .mentors-container {
     max-width: 1200px;
@@ -485,8 +544,13 @@ section {
     }
 
     #section1 .learn-more-btn {
-        margin: 20px auto 0;
+        display: none;
     }
+    
+    #section1 .mobile-btn-container {
+        display: flex;
+    }
+    
     /* End adjustments for #section1 */
 
     .main-header {
@@ -1079,6 +1143,9 @@ section {
     .testimonial-card {
         padding: 20px;
     }
+    .offerings-section > h2 {
+        font-size: 32px !important;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -1093,6 +1160,9 @@ section {
     
     .testimonials-grid {
         grid-template-columns: 1fr;
+    }
+    .offerings-section > h2 {
+        font-size: 28px !important;
     }
 }
 
@@ -1195,10 +1265,16 @@ section {
                 <img src="./images/homepage_students_mobile.png" alt="Student images mobile" class="mobile-student-image" style="width: 90%; height: auto; margin: 20px auto 0;">
             </div>
             
-            
+            <!-- Desktop learn more button -->
             <button onclick="document.getElementById('programs-overview').scrollIntoView({behavior: 'smooth'})" class="learn-more-btn">
                 LEARN MORE
             </button>
+            
+            <!-- Mobile navigation buttons -->
+            <div class="mobile-btn-container">
+                <a href="group_programs.html" class="mobile-nav-btn">GROUP PROGRAMS</a>
+                <a href="mentorship.html" class="mobile-nav-btn">1:1 MENTORSHIP</a>
+            </div>
         </div>
     </div>
 </section>
