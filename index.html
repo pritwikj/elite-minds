@@ -764,37 +764,137 @@ section {
 }
 
 /* Student Spotlight Section */
-/*
-<section class="spotlight-section">
-    <h2 class="spotlight-title">Student Spotlights</h2>
-    <div class="spotlight-container">
-        <div class="spotlight-card">
-            <div class="spotlight-image">
-                <img src="./images/student1_video.jpg" alt="Madeline Fong">
-                <div class="spotlight-play">▶</div>
-            </div>
-            <div class="spotlight-name">Madeline Fong</div>
-            <div class="spotlight-desc">Research project examines how lifestyle factors—specifically diet and exercise—affect the onset and severity of eczema symptoms in adolescents.</div>
-        </div>
-        <div class="spotlight-card">
-            <div class="spotlight-image">
-                <img src="./images/student2_video.jpg" alt="Akash Arun Kumar">
-                <div class="spotlight-play">▶</div>
-            </div>
-            <div class="spotlight-name">Akash Arun Kumar</div>
-            <div class="spotlight-desc">An app to help elderly care citizens who are struggling with mental health and find entertaining ways to improve mental health.</div>
-        </div>
-        <div class="spotlight-card">
-            <div class="spotlight-image">
-                <img src="./images/student3_video.jpg" alt="Sia Gullapali">
-                <div class="spotlight-play">▶</div>
-            </div>
-            <div class="spotlight-name">Sia Gullapali</div>
-            <div class="spotlight-desc">Host of an unique women's empowerment podcast called "women in the spotlight" helping promote more women in corporates.</div>
-        </div>
-    </div>
-</section>
-*/
+.spotlight-section {
+    background-color: #1A9CFF; /* Blue background similar to the image */
+    padding: 60px 0;
+    text-align: center;
+}
+
+.spotlight-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 42px;
+    margin-bottom: 50px;
+    color: #fff; /* White title text */
+}
+
+.spotlight-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px; /* Spacing between cards */
+    padding: 0 20px;
+}
+
+.spotlight-card {
+    background-color: #fff; /* White card background */
+    border-radius: 20px; /* Rounded corners for cards */
+    width: calc(33.333% - 20px); /* Three cards per row, accounting for gap */
+    min-width: 300px; /* Minimum width for smaller screens */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    overflow: hidden; /* Ensures content fits within rounded corners */
+    text-align: left;
+    color: #333; /* Dark text for content */
+    padding-bottom: 20px; /* Padding at the bottom of the card */
+    margin-bottom: 20px; /* Space below each card on mobile */
+}
+
+.spotlight-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/5;
+    background: #eee;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 280px;
+    max-width: 100%;
+    margin-bottom: 0;
+}
+
+.spotlight-image video {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+    background: #eee;
+    display: block;
+}
+
+.spotlight-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    z-index: 2;
+}
+.spotlight-play:hover {
+    opacity: 0.8;
+}
+
+.spotlight-play img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+}
+
+.spotlight-name {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    margin: 15px 20px 10px;
+    color: #000; /* Black name text */
+}
+
+.spotlight-desc {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 0 20px;
+    color: #555; /* Grey description text */
+}
+
+/* Responsive adjustments for spotlight section */
+@media screen and (max-width: 992px) {
+    .spotlight-card {
+        width: calc(50% - 15px); /* Two cards per row */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .spotlight-title {
+        font-size: 36px;
+    }
+    .spotlight-card {
+        width: calc(100% - 20px); /* One card per row */
+        min-width: unset;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .spotlight-play {
+        font-size: 40px;
+        width: 56px;
+        height: 56px;
+    }
+    .spotlight-name {
+        font-size: 18px;
+    }
+    .spotlight-desc {
+        font-size: 14px;
+    }
+}
 
 /* Program Benefits Section */
 .program-benefits {
@@ -1230,6 +1330,127 @@ section {
             font-size: 18px !important;
         }
     }
+
+/* Enhanced Spotlight Video Player Styles */
+.spotlight-image {
+    position: relative; /* Already there, good for positioning children */
+    /* aspect-ratio: 4/5; Ensure this is set for initial layout */
+    /* overflow: hidden; Already there */
+}
+
+.spotlight-image video {
+    /* Ensure video fills the container */
+    position: absolute; /* If not already, to fill spotlight-image */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px; /* Match existing */
+    background: #eee; /* Match existing */
+}
+
+.spotlight-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    z-index: 2;
+}
+.spotlight-play:hover {
+    opacity: 0.8;
+}
+
+.spotlight-play img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+}
+
+.spotlight-image .spotlight-video-controls {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 1002; /* Above expanded video */
+    display: none; /* Hidden by default */
+    gap: 10px;
+}
+
+.spotlight-image.expanded .spotlight-video-controls {
+    display: flex; /* Show when expanded */
+}
+
+.spotlight-image .spotlight-close-btn,
+.spotlight-image .spotlight-mute-btn {
+    background: rgba(0,0,0,0.6);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+.spotlight-image .spotlight-close-btn:hover,
+.spotlight-image .spotlight-mute-btn:hover {
+    background: rgba(0,0,0,0.8);
+}
+
+/* Expanded state for .spotlight-image */
+.spotlight-image.expanded {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.85); /* Darker overlay */
+    z-index: 1001; /* High z-index */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: default; /* Reset cursor for the overlay */
+    padding: 20px; /* Add some padding for the video */
+    box-sizing: border-box;
+}
+
+.spotlight-image.expanded video {
+    position: relative; /* Back to relative within the fixed container */
+    width: auto;   /* Let aspect ratio control */
+    height: auto;  /* Let aspect ratio control */
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Contain to see whole video when expanded */
+    border-radius: 8px; /* Optional: smaller radius for expanded video */
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+.spotlight-image.expanded .spotlight-play {
+    opacity: 0;
+    pointer-events: none; /* Hide initial play button when expanded */
+}
+
+/* Accessibility: visually hidden but accessible to screen readers */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
     </style>
 <header class="header">
     <a href="https://elitemindsprogram.com/">
@@ -1357,6 +1578,46 @@ Top 20 university</div>
         <div class="benefit-card">
             <h3>Collaborative Network</h3>
             <p>Join a community of ambitious peers, develop leadership skills through projects, and build lasting connections.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Student Spotlight Section -->
+<section class="spotlight-section">
+    <h2 class="spotlight-title">Student Spotlights</h2>
+    <div class="spotlight-container">
+        <div class="spotlight-card">
+            <div class="spotlight-image">
+                <video src="./images/spotlight1.mp4" alt="Madeline Fong" poster="./images/spotlight1_poster.jpg" preload="metadata" autoplay muted loop playsinline></video>
+                <div class="spotlight-play" aria-label="Play video"><img src="./images/play_button.png" alt="Play"></div>
+                <div class="spotlight-video-controls">
+                    <button class="spotlight-close-btn" aria-label="Close video">&times;<span class="visually-hidden">Close</span></button>
+                </div>
+            </div>
+            <div class="spotlight-name">Madeline Fong</div>
+            <div class="spotlight-desc">Did a research project on how lifestyle factors affect the onset and severity of eczema symptoms in adolescents.</div>
+        </div>
+        <div class="spotlight-card">
+            <div class="spotlight-image">
+                <video src="./images/spotlight2.mp4" alt="Akash Arun Kumar" poster="./images/spotlight2_poster.jpg" preload="metadata" autoplay muted loop playsinline></video>
+                <div class="spotlight-play" aria-label="Play video"><img src="./images/play_button.png" alt="Play"></div>
+                <div class="spotlight-video-controls">
+                    <button class="spotlight-close-btn" aria-label="Close video">&times;<span class="visually-hidden">Close</span></button>
+                </div>
+            </div>
+            <div class="spotlight-name">Akash Arun Kumar</div>
+            <div class="spotlight-desc">Created an app to help elderly care citizens who are struggling with mental health and find entertaining ways to improve mental health.</div>
+        </div>
+        <div class="spotlight-card">
+            <div class="spotlight-image">
+                <video src="./images/spotlight3.mp4" alt="Sia Gullapali" poster="./images/spotlight3_poster.jpg" preload="metadata" autoplay muted loop playsinline></video>
+                <div class="spotlight-play" aria-label="Play video"><img src="./images/play_button.png" alt="Play"></div>
+                <div class="spotlight-video-controls">
+                    <button class="spotlight-close-btn" aria-label="Close video">&times;<span class="visually-hidden">Close</span></button>
+                </div>
+            </div>
+            <div class="spotlight-name">Diya Sami</div>
+            <div class="spotlight-desc">Established a 501(c)3 nonprofit connecting California athletic events with volunteers, directing all donations to athletic training programs in underprivileged communities.</div>
         </div>
     </div>
 </section>
@@ -1509,6 +1770,57 @@ document.addEventListener('DOMContentLoaded', function(){
   var btn = document.querySelector('.menu-toggle');
   var nav = document.querySelector('.header-nav');
   btn.addEventListener('click', function(){ nav.classList.toggle('open'); });
+
+  // Enhanced Spotlight Video Player Logic
+  document.querySelectorAll('.spotlight-card').forEach(function(card) {
+    const videoContainer = card.querySelector('.spotlight-image');
+    const video = card.querySelector('video');
+    const playOverlay = card.querySelector('.spotlight-play');
+    const closeBtn = card.querySelector('.spotlight-close-btn');
+
+    // Autoplay muted (attributes mostly handle this, but ensure it plays)
+    video.play().catch(error => {
+        // Autoplay was prevented. This can happen in some browsers.
+        // The user will need to click the play overlay to start.
+        console.warn('Video autoplay prevented for:', video.src, error);
+    });
+
+    playOverlay.addEventListener('click', () => {
+        videoContainer.classList.add('expanded');
+        video.muted = false;
+        video.currentTime = 0;
+        video.play();
+        document.body.style.overflow = 'hidden'; // Prevent scrolling of page behind modal
+    });
+
+    closeBtn.addEventListener('click', () => {
+        videoContainer.classList.remove('expanded');
+        video.muted = true;
+        video.play(); // Continue playing silently in the small view
+        document.body.style.overflow = ''; // Restore scrolling
+    });
+
+    // Allow exit by clicking outside the video (on the overlay)
+    videoContainer.addEventListener('click', function(e) {
+      if (videoContainer.classList.contains('expanded') && e.target === videoContainer) {
+        videoContainer.classList.remove('expanded');
+        video.muted = true;
+        video.play();
+        document.body.style.overflow = '';
+      }
+    });
+
+    // When expanded video ends, option to replay or keep it paused
+    video.addEventListener('ended', () => {
+        if (videoContainer.classList.contains('expanded')) {
+            // Optionally, could show a replay button or close the modal
+            // For now, it just stops. User can close or mute/unmute then play again via browser controls if enabled
+        }
+    });
+    
+    // Ensure video controls are not shown by default by HTML5 video tag
+    video.controls = false;
+  });
 });
 </script>
 </body>
