@@ -577,6 +577,17 @@
             text-decoration: underline;
             opacity: 0.8;
         }
+
+        @media screen and (max-width: 768px) {
+            .mobile-program-top { display: block !important; margin-bottom: 20px; }
+            .mobile-program-image { width: 100%; height: auto; border-radius: 20px; margin: 10px 0 10px 0; }
+            .mobile-try-free { display: block; margin-bottom: 20px; }
+            .mobile-course-description { margin-bottom: 30px; }
+            .desktop-course-description, .desktop-try-free, .image-container { display: none !important; }
+        }
+        @media screen and (min-width: 769px) {
+            .mobile-program-top { display: none !important; }
+        }
     </style>
     <!-- Meta Pixel Code -->
     <script>
@@ -618,10 +629,19 @@
 
                 <h1 class="course-title">PhD Research Foundations: Design Your Own Neuroscience Study</h1>
                 
-                <p class="course-description">
+                <!-- MOBILE-ONLY: Image, Try Free Banner, Description -->
+                <div class="mobile-program-top" style="display:none;">
+                    <img src="images/neuro_image.jpg" alt="Neuroscience Exploration Program" class="mobile-program-image">
+                    <a href="https://tally.so/r/3jp8pY" target="_blank" class="try-free-message-banner mobile-try-free">Try your first week FREE!</a>
+                    <p class="course-description mobile-course-description">
+                        Explore the human brain through a rigorous, research-based neuroscience program taught by a Yale PhD neuroscientist. Students will culminate their learning by designing and presenting an original neuroscience research proposal—an impressive portfolio piece for top-tier STEM, pre-med, and BS/MD programs.                </p>
+                </div>
+                <!-- END MOBILE-ONLY -->
+
+                <p class="course-description desktop-course-description">
                     Explore the human brain through a rigorous, research-based neuroscience program taught by a Yale PhD neuroscientist. Students will culminate their learning by designing and presenting an original neuroscience research proposal—an impressive portfolio piece for top-tier STEM, pre-med, and BS/MD programs.                </p>
 
-                <a href="https://tally.so/r/3jp8pY" target="_blank" class="try-free-message-banner">Try your first week FREE!</a>
+                <a href="https://tally.so/r/3jp8pY" target="_blank" class="try-free-message-banner desktop-try-free">Try your first week FREE!</a>
 
                 <div class="course-details">
                     <div class="detail-row">
