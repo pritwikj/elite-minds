@@ -418,6 +418,66 @@
             margin-top: 0.3rem;
         }
         
+        .feature div p {
+            font-size: 0.95rem;
+            color: var(--dark-gray);
+        }
+        
+        /* Testimonials Section */
+        .section#testimonials {
+            background-color: var(--light-gray);
+            padding: 3.5rem 2rem;
+        }
+        
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem; 
+        }
+        
+        .testimonial-card {
+            background-color: var(--white); 
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07); 
+            border-left: 5px solid var(--california-gold);
+            display: flex; 
+            flex-direction: column;
+            justify-content: space-between; 
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            color: var(--text-color); 
+            margin-bottom: 1.5rem; 
+            line-height: 1.6;
+            flex-grow: 1; 
+        }
+        
+        .testimonial-text::before {
+            content: '“';
+            font-size: 2.5rem; 
+            color: var(--california-gold);
+            font-weight: bold;
+            line-height: 0; 
+            position: relative;
+            top: 0.3em; 
+            margin-right: 0.2em;
+        }
+        
+        .student-name {
+            font-weight: 600;
+            color: var(--berkeley-blue);
+            text-align: right;
+            margin-top: auto; 
+        }
+        
         /* Registration Section */
         .registration-section {
             background: linear-gradient(45deg, var(--berkeley-blue), var(--secondary-blue));
@@ -618,6 +678,13 @@
             .social-icons {
                 justify-content: center;
             }
+            
+            .section#testimonials {
+                padding: 2.5rem 1.5rem;
+            }
+            .testimonials-grid {
+                 grid-template-columns: 1fr;
+            }
         }
         
         @media (max-width: 576px) {
@@ -650,6 +717,7 @@
                 <a href="#structure">Schedule</a>
                 <a href="#tracks">Tracks</a>
                 <a href="#features">Features</a>
+                <a href="#testimonials">Testimonials</a>
             </div>
             <button class="cta-button">Register Now</button>
             <button class="menu-toggle"><i class="fas fa-bars"></i></button>
@@ -872,6 +940,34 @@
             </div>
         </section>
     </div>
+    
+    <section class="section" id="testimonials">
+        <div class="testimonials-container">
+            <div class="section-header">
+                <h2>What Our Students Say</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div>
+                        <p class="testimonial-text">This workshop was a game-changer! I feel so much more confident about my UC applications.</p>
+                    </div>
+                    <p class="student-name">- Alex P., 12th Grade</p>
+                </div>
+                <div class="testimonial-card">
+                    <div>
+                        <p class="testimonial-text">The Berkeley student mentors gave such practical advice. I finally understand what UCs are looking for.</p>
+                    </div>
+                    <p class="student-name">- Jamie L., 11th Grade</p>
+                </div>
+                <div class="testimonial-card">
+                    <div>
+                        <p class="testimonial-text">As a sophomore, I wasn't sure what to expect, but the track for younger students was incredibly helpful for long-term planning.</p>
+                    </div>
+                    <p class="student-name">- Casey B., 10th Grade</p>
+                </div>
+            </div>
+        </div>
+    </section>
     
     <section class="registration-section" id="registration">
         <h2>Registration</h2>
