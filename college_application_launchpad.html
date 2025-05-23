@@ -115,10 +115,11 @@
         .hero {
             background: linear-gradient(rgba(0, 50, 98, 0.8), rgba(0, 50, 98, 0.9)), url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80') center/cover no-repeat;
             color: var(--white);
-            padding: 8rem 2rem;
+            padding: 8rem 2rem 2rem 2rem;
             text-align: center;
             position: relative;
-            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+            /* Removing the angled clip-path */
+            /* clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); */
         }
         
         .hero h1 {
@@ -133,6 +134,14 @@
             max-width: 800px;
             margin: 0 auto 2.5rem auto;
             opacity: 0.9;
+        }
+        
+        .hero-workshop-date {
+            color: var(--white);
+            font-size: 1.1rem;
+            margin-top: 2rem;
+            opacity: 0.9;
+            font-weight: 500;
         }
         
         .hero-buttons {
@@ -392,35 +401,6 @@
             position: absolute;
             left: 0;
             top: 0.9rem;
-        }
-        
-        /* Features Section */
-        .features {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            justify-content: center;
-            margin-top: 3rem;
-        }
-        
-        .feature {
-            flex: 1;
-            min-width: 220px;
-            max-width: 300px;
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-        }
-        
-        .feature-icon {
-            color: var(--berkeley-blue);
-            font-size: 1.4rem;
-            margin-top: 0.3rem;
-        }
-        
-        .feature div p {
-            font-size: 0.95rem;
-            color: var(--dark-gray);
         }
         
         /* Testimonials Section */
@@ -705,51 +685,406 @@
                 width: 100%;
             }
         }
+
+        /* Booster Highlight Section */
+        .booster-highlight-section {
+            background: var(--white);
+            padding: 4rem 2rem 5rem 2rem;
+            text-align: center;
+        }
+        .booster-highlight-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .booster-highlight-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 2.3rem;
+            font-weight: 700;
+            color: var(--berkeley-blue);
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+        .booster-highlight-underline {
+            width: 120px;
+            height: 4px;
+            background: var(--california-gold);
+            margin: 0 auto 2.5rem auto;
+            border-radius: 2px;
+        }
+        .booster-highlight-grid {
+            display: flex;
+            gap: 3rem;
+            justify-content: center;
+            align-items: flex-start;
+            text-align: left;
+            max-width: 950px;
+            margin: 0 auto;
+        }
+        .booster-highlight-col {
+            flex: 1;
+            min-width: 300px;
+        }
+        .booster-highlight-col h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.35rem;
+            color: var(--berkeley-blue);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        .booster-highlight-col p {
+            font-size: 1.1rem;
+            color: var(--text-color);
+            line-height: 1.7;
+        }
+        .booster-highlight-col ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-top: 0;
+        }
+
+        .booster-highlight-col li {
+            font-size: 1.05rem;
+            color: var(--text-color);
+            line-height: 1.7;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--medium-gray);
+            margin-bottom: 0;
+        }
+
+        .booster-highlight-col li:last-child {
+            border-bottom: none;
+        }
+        .booster-highlight-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            object-fit: cover;
+            max-height: 350px;
+        }
+        @media (max-width: 900px) {
+            .booster-highlight-grid {
+                flex-direction: column;
+                gap: 2.5rem;
+                text-align: left;
+            }
+        }
+
+        /* Success Booster Section */
+        .success-booster-section {
+            background-color: var(--light-gray); /* Matches the provided image background */
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        .success-booster-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .success-booster-title {
+            font-family: 'Inter', sans-serif; /* Matches image font */
+            font-size: 2.3rem; /* Adjusted for closer match to image */
+            font-weight: 700;
+            color: var(--berkeley-blue);
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.5px; /* Adjusted for closer match */
+        }
+        .success-booster-underline {
+            width: 100px; /* Adjusted for closer match */
+            height: 4px;
+            background: var(--california-gold);
+            margin: 0 auto 3rem auto; /* Increased bottom margin for spacing */
+            border-radius: 2px;
+        }
+        .success-booster-grid {
+            display: flex;
+            gap: 3rem;
+            justify-content: center;
+            align-items: center;
+            text-align: left;
+            max-width: 1000px; /* Adjusted for content width */
+            margin: 0 auto;
+        }
+        .success-booster-image-container {
+            flex: 1;
+            min-width: 280px;
+            max-width: 450px;
+        }
+        .success-booster-image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .success-booster-text-container {
+            flex: 1.5;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .success-booster-col {
+            min-width: auto;
+        }
+        .success-booster-col h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.25rem;
+            color: var(--berkeley-blue);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        .success-booster-col h3 i {
+            color: var(--dark-gray);
+            margin-right: 0.75rem;
+            font-size: 1.2rem;
+        }
+        .success-booster-col p {
+            font-size: 1rem;
+            color: var(--text-color);
+            line-height: 1.7;
+        }
+        @media (max-width: 900px) {
+            .success-booster-grid {
+                flex-direction: column;
+                gap: 2.5rem;
+                align-items: center;
+            }
+            .success-booster-title {
+                font-size: 2rem;
+            }
+        }
+        @media (max-width: 768px) {
+             .success-booster-title {
+                font-size: 1.8rem;
+            }
+            .success-booster-col h3 {
+                font-size: 1.15rem;
+            }
+            .success-booster-col p {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* How Does The Program Work? Section */
+        .how-it-works-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .how-it-works-content h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.25rem;
+            color: var(--berkeley-blue);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .how-it-works-content p {
+            font-size: 1rem;
+            color: var(--text-color);
+            line-height: 1.7;
+            margin-bottom: 2.5rem; /* Default bottom margin for paragraphs */
+        }
+        .how-it-works-content .daily-routine-intro { /* Specific class for the paragraph before the list */
+            margin-bottom: 1.5rem;
+        }
+        .how-it-works-content ul {
+            list-style-type: disc;
+            margin-left: 2rem;
+            margin-bottom: 2.5rem;
+            font-size: 1rem;
+            color: var(--text-color);
+            line-height: 1.7;
+        }
+        .how-it-works-content li {
+            margin-bottom: 0.5rem; /* Added for spacing between list items */
+        }
+        .how-it-works-content .concluding-paragraph { /* Specific class for the last paragraph */
+            margin-bottom: 0; /* Remove bottom margin if it's the last element in the container */
+        }
+    </style>
+    <!-- Header Styles from index.html -->
+    <style>
+    .header {
+        background-color: #FFFFFF;
+        padding: 0 24px 0 48px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: none;
+        margin-top: -50px;
+        margin-bottom: -40px; /* Increased negative margin to further reduce spacing */
+        padding-bottom: 0;
+    }
+    .logo {
+        width: 200px;
+        height: auto;
+        margin-left: -30px;
+    }
+    .menu-toggle {
+        display: none;
+    }
+    .header-nav {
+        display: flex;
+        gap: 16px;
+        background-color: transparent !important;
+        box-shadow: none !important;
+        position: static !important;
+        top: auto !important;
+        z-index: auto !important;
+    }
+    .header-button {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        color: #000;
+        text-decoration: none;
+        padding: 8px 18px;
+        border-radius: 22px;
+        transition: all 0.3s ease;
+        background-color: #b0ff64;
+        border: 2px solid #000;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+    .header-button:hover {
+        background-color: #a0e85a;
+        color: #000;
+        border: 2px solid #000;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+    .header-button:active {
+        transform: translateY(0);
+    }
+    .header-button.active {
+        background-color: #8fd94e;
+        color: #000;
+        border: 2px solid #000;
+    }
+    @media screen and (max-width: 768px) {
+        .menu-toggle {
+            display: block;
+            background: transparent;
+            border: none;
+            font-size: 30px;
+            cursor: pointer;
+            z-index: 1000;
+            margin-left: 15px;
+            margin-top: -50px;
+        }
+        .header-nav {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 65px;
+            right: 10px;
+            background-color: #ffffff;
+            padding: 15px 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            z-index: 999;
+            width: calc(100% - 40px);
+            max-width: 300px;
+        }
+        .header-nav.open {
+            display: flex;
+        }
+        .header-button {
+            margin: 8px 0;
+            padding: 10px 15px;
+            background-color: transparent;
+            border: none;
+            box-shadow: none;
+            color: #333;
+            text-align: left;
+            font-weight: 500;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+        }
+        .header-button:hover {
+            background-color: #f0f0f0;
+            color: #000;
+            transform: none;
+            box-shadow: none;
+        }
+    }
     </style>
 </head>
 <body>
-    <nav>
-        <div class="nav-container">
-            <a href="#" class="logo">College<span>LaunchPad</span></a>
-            <div class="nav-links">
-                <a href="#overview">Overview</a>
-                <a href="#benefits">Benefits</a>
-                <a href="#structure">Schedule</a>
-                <a href="#tracks">Tracks</a>
-                <a href="#features">Features</a>
-                <a href="#testimonials">Testimonials</a>
-            </div>
-            <button class="cta-button">Register Now</button>
-            <button class="menu-toggle"><i class="fas fa-bars"></i></button>
-        </div>
-    </nav>
+    <!-- Replaced nav with index.html header -->
+    <header class="header">
+        <a href="https://elitemindsprogram.com/">
+            <img src="./images/EliteMinds logo.png" alt="EliteMinds Logo" class="logo">
+        </a>
+        <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+        <nav class="header-nav">
+            <a href="group_programs.html" class="header-button">Group Programs</a>
+            <a href="fellowships.html" class="header-button">Fellowship Opportunities</a>
+            <a href="mentorship.html" class="header-button">1:1 Mentorship</a>
+            <a href="blog.html" class="header-button">Blog</a>
+        </nav>
+    </header>
 
     <section class="hero">
         <div class="wrapper">
             <h1>The UC Application Launch Pad</h1>
-            <p>Get step-by-step, insider guidance directly from UC Berkeley students and alumni on exactly what it takes to craft a successful UC application. Walk away with a clear, personalized action plan for your journey to a top UC campus.</p>
+            <p>Unlock the insider secrets to UC admissions. Our Launch Pad teaches you the specific strategies to stand out by leveraging your unique strengths and background. Get expert guidance from UC Berkeley insiders and leave with a personalized action plan for your top UC journey.</p>
             <div class="hero-buttons">
                 <a href="#registration" class="btn-primary">Register Now</a>
                 <a href="#structure" class="btn-secondary">View Schedule</a>
+            </div>
+            <div class="hero-workshop-date">
+                <p>Next Workshop: June 14th, 2025</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="success-booster-section" id="boost-success">
+        <div class="success-booster-wrapper">
+            <h2 class="success-booster-title">UNLOCK THE INSIDER SECRETS TO UC ADMISSIONS</h2>
+            <div class="success-booster-underline"></div>
+            <div class="success-booster-grid">
+                <div class="success-booster-image-container">
+                    <img src="https://images.unsplash.com/photo-1523240795610-5717136f9d68?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="Students collaborating on laptops in a bright, modern setting, symbolizing college preparation and success">
+                </div>
+                <div class="success-booster-text-container">
+                    <div class="success-booster-col">
+                        <h3><i class="fas fa-check"></i> Unlock UC Insider Knowledge.</h3>
+                        <p>Get direct guidance from UC Berkeley insiders. Our mentors provide unparalleled insights into the UC-specific strategies and nuances that aren't found elsewhere, helping you navigate the application process like a seasoned pro.</p>
+                    </div>
+                    <div class="success-booster-col">
+                        <h3><i class="fas fa-check"></i> Craft a Standout UC Application.</h3>
+                        <p>Move beyond generic advice. We'll teach you how to leverage your unique story and achievements to create a compelling UC application that grabs attention and showcases your authentic self, especially through powerful Personal Insight Questions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="booster-highlight-section" id="why-us">
+        <div class="booster-highlight-wrapper">
+            <h2 class="booster-highlight-title">OUR UC LAUNCH PAD SELLS OUT EVERY YEAR!</h2>
+            <div class="booster-highlight-underline"></div>
+            <div class="booster-highlight-grid">
+                <div class="booster-highlight-col">
+                    <h3>What Participants Get:</h3>
+                    <ul>
+                        <li><strong>UC Insider Strategies:</strong> Learn the specific tactics to make your application stand out to UC admissions.</li>
+                        <li><strong>Personalized Action Plan:</strong> Leave with a clear roadmap tailored to your UC application goals.</li>
+                        <li><strong>Compelling PIQ & Essay Development:</strong> Master the art of writing powerful Personal Insight Questions and supplemental essays.</li>
+                        <li><strong>Activities & Achievements Optimization:</strong> Strategically develop and showcase your activities and accomplishments.</li>
+                        <li><strong>Direct Mentorship from UC Insiders:</strong> Get personalized guidance from current UC Berkeley students and alumni.</li>
+                    </ul>
+                </div>
+                <div class="booster-highlight-col">
+                    <img src="https://placehold.co/600x400/003262/FDB515?text=Success+Stories&font=playfairdisplay" alt="Placeholder image illustrating student success" class="booster-highlight-image">
+                </div>
             </div>
         </div>
     </section>
 
     <div class="container">
-        <section class="section" id="overview">
-            <div class="section-header">
-                <h2>Program Overview</h2>
-            </div>
-            <p>The UC Application Launch Pad is an intensive, one-day online workshop, fully led by current Cal students and alumni. We'll guide you through every step you need to take to maximize your chances of getting into a top UC campus—sharing the real strategies, mindsets, and timelines that helped us succeed. You'll leave with a personalized roadmap and the confidence to tackle your UC applications head-on.</p>
-        </section>
-
-        <section class="section for-who" id="for-who">
-            <div class="section-header">
-                <h2>Who It's For</h2>
-            </div>
-            <p>Unlike many programs that focus exclusively on rising seniors, this workshop welcomes students from all high school grades (9-12), providing grade-specific tracks that address the unique needs and timelines of each academic year.</p>
-        </section>
-
         <section class="section" id="benefits">
             <div class="section-header">
                 <h2>Key Benefits</h2>
@@ -759,73 +1094,81 @@
                     <div class="benefit-icon">
                         <i class="fas fa-user-graduate"></i>
                     </div>
-                    <h3>UC Berkeley Student Mentors</h3>
-                    <p>Get direct, honest advice from current UC Berkeley students who know what it takes to stand out and get accepted to top UC campuses.</p>
+                    <h3>Direct Mentorship from UC Insiders</h3>
+                    <p>Get direct guidance and mentorship from UC Berkeley insiders (current students and alumni) who have successfully navigated the admissions process and know what it takes to get accepted.</p>
                 </div>
                 
                 <div class="benefit-card">
                     <div class="benefit-icon">
-                        <i class="fas fa-users"></i>
+                        <i class="fas fa-bullseye"></i>
                     </div>
-                    <h3>Step-by-Step Admissions Guidance</h3>
-                    <p>We break down the entire process—so you know exactly what to do, when, and why, no matter your grade level.</p>
+                    <h3>Insider Strategies & Personalized Action Plan</h3>
+                    <p>Learn exclusive UC-specific strategies and receive a personalized action plan tailored to your unique strengths, ensuring your application stands out.</p>
                 </div>
                 
                 <div class="benefit-card">
                     <div class="benefit-icon">
-                        <i class="fas fa-book-open"></i>
+                        <i class="fas fa-pen-alt"></i>
                     </div>
-                    <h3>Insider Strategies & Action Plans</h3>
-                    <p>Learn the proven strategies, timelines, and mindsets that helped UC Berkeley students get into top schools.</p>
+                    <h3>Master Your UC Personal Insight Questions (PIQs)</h3>
+                    <p>Develop compelling Personal Insight Questions (PIQs) and essays that authentically showcase your story and resonate with UC admissions readers.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3>Tailored Grade-Specific Guidance</h3>
+                    <p>Benefit from targeted workshops and advice specific to your high school grade level, from freshman foundation-building to senior application refinement.</p>
                 </div>
                 
                 <div class="benefit-card">
                     <div class="benefit-icon">
                         <i class="fas fa-laptop-house"></i>
                     </div>
-                    <h3>Interactive Online Format</h3>
-                    <p>Engage in a dynamic online workshop from the comfort of your home, with interactive sessions and Q&A.</p>
+                    <h3>Interactive & Convenient Online Format</h3>
+                    <p>Engage in a dynamic online workshop from the comfort of your home, featuring interactive sessions, live Q&A with mentors, and peer collaboration.</p>
                 </div>
                 
                 <div class="benefit-card">
                     <div class="benefit-icon">
-                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-award"></i>
                     </div>
-                    <h3>Personalized Next Steps</h3>
-                    <p>Leave with a clear, actionable plan tailored to your goals and grade level—so you know exactly what to do next.</p>
+                    <h3>Optimize Your Entire UC Application</h3>
+                    <p>Beyond PIQs, learn to strategically develop and showcase your activities, achievements, and overall profile to maximize your chances of UC admission.</p>
                 </div>
             </div>
         </section>
 
         <section class="section" id="structure">
             <div class="section-header">
-                <h2>Program Structure</h2>
+                <h2>Your Day at the UC Launch Pad</h2>
             </div>
             <div class="timeline">
                 <div class="time-container left">
-                    <h3>Morning Session (9 AM - 12 PM)</h3>
+                    <h3>Morning Session: Unlocking UC Insights (9 AM - 12 PM)</h3>
                     <ul>
-                        <li>Welcome and introduction to college admissions landscape</li>
-                        <li>Grade-specific breakout sessions</li>
-                        <li>Application component workshops (Common App, personal statements)</li>
+                        <li><strong>Kick-off:</strong> Dive into the UC admissions landscape & our insider approach.</li>
+                        <li><strong>Targeted Strategy Sessions:</strong> Grade-specific breakouts to focus your efforts.</li>
+                        <li><strong>Application Deep Dive:</strong> Master the Common App & craft compelling personal statements with expert guidance.</li>
                     </ul>
                 </div>
                 
                 <div class="time-container right">
-                    <h3>Lunch Break (12 PM - 1 PM)</h3>
+                    <h3>Strategic Networking Lunch (12 PM - 1 PM)</h3>
                     <ul>
-                        <li>Virtual networking with mentors and peers</li>
+                        <li>Connect with UC Berkeley mentors and ambitious peers in a virtual setting.</li>
                     </ul>
                 </div>
                 
                 <div class="time-container left">
-                    <h3>Afternoon Session (1 PM - 5 PM)</h3>
+                    <h3>Afternoon Session: Building Your Standout Profile (1 PM - 5 PM)</h3>
                     <ul>
-                        <li>Essay development workshops</li>
-                        <li>Activity profile enhancement</li>
-                        <li>School selection strategies</li>
-                        <li>Financial aid overview</li>
-                        <li>Individual consultation blocks</li>
+                        <li><strong>PIQ & Essay Mastery:</strong> Transform your experiences into powerful narratives.</li>
+                        <li><strong>Activities & Impact:</strong> Learn to showcase your achievements for maximum effect.</li>
+                        <li><strong>Smart School Selection:</strong> Identify your best-fit UC campuses.</li>
+                        <li><strong>Financial Aid & Scholarships:</strong> Navigate the funding landscape.</li>
+                        <li><strong>Personalized Feedback Slots:</strong> Opportunity for individual guidance.</li>
                     </ul>
                 </div>
             </div>
@@ -842,11 +1185,11 @@
                     </div>
                     <div class="track-content">
                         <ul>
-                            <li>Foundation building</li>
-                            <li>Long-term planning</li>
-                            <li>Exploratory activities</li>
-                            <li>Academic strategy development</li>
-                            <li>Extracurricular planning</li>
+                            <li>Building a Strong Foundation for UC Success</li>
+                            <li>Developing Your Long-Term UC Admissions Roadmap</li>
+                            <li>Strategic Exploration of Interests and Potential Pathways</li>
+                            <li>Crafting Your Early High School Academic Strategy</li>
+                            <li>Planning Impactful Extracurriculars & Leadership</li>
                         </ul>
                     </div>
                 </div>
@@ -857,11 +1200,11 @@
                     </div>
                     <div class="track-content">
                         <ul>
-                            <li>Test prep strategies</li>
-                            <li>College research methods</li>
-                            <li>Early essay brainstorming</li>
-                            <li>Summer planning</li>
-                            <li>Timeline development</li>
+                            <li>Strategic Approach to Standardized Testing</li>
+                            <li>In-depth UC Campus & Major Research</li>
+                            <li>Developing Your Personal Insight Question (PIQ) Strategy</li>
+                            <li>Planning an Impactful Junior Summer for UC Applications</li>
+                            <li>Building Your Senior Year Application Timeline</li>
                         </ul>
                     </div>
                 </div>
@@ -872,69 +1215,12 @@
                     </div>
                     <div class="track-content">
                         <ul>
-                            <li>Application completion</li>
-                            <li>Essay refinement</li>
-                            <li>Submission timelines</li>
-                            <li>Interview preparation</li>
-                            <li>Decision strategies</li>
+                            <li>Comprehensive UC Application Finalization</li>
+                            <li>Advanced PIQ & Essay Polishing for Submission</li>
+                            <li>Mastering UC Submission Portals & Deadlines</li>
+                            <li>Optimizing Your Activities List & Descriptions for Impact</li>
+                            <li>Final Application Review & Pre-Submission Checklist</li>
                         </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" id="features">
-            <div class="section-header">
-                <h2>What Sets Us Apart</h2>
-            </div>
-            <div class="features">
-                <div class="feature">
-                    <div class="feature-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <div>
-                        <h3>One Powerful Day</h3>
-                        <p>Respects students' busy schedules</p>
-                    </div>
-                </div>
-                
-                <div class="feature">
-                    <div class="feature-icon">
-                        <i class="fas fa-desktop"></i>
-                    </div>
-                    <div>
-                        <h3>Accessible Online</h3>
-                        <p>Join from anywhere with an internet connection</p>
-                    </div>
-                </div>
-                
-                <div class="feature">
-                    <div class="feature-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <div>
-                        <h3>Inclusive Approach</h3>
-                        <p>For all high school grades</p>
-                    </div>
-                </div>
-                
-                <div class="feature">
-                    <div class="feature-icon">
-                        <i class="fas fa-file-download"></i>
-                    </div>
-                    <div>
-                        <h3>Take-Home Resources</h3>
-                        <p>For continued progress</p>
-                    </div>
-                </div>
-                
-                <div class="feature">
-                    <div class="feature-icon">
-                        <i class="fas fa-dollar-sign"></i>
-                    </div>
-                    <div>
-                        <h3>Affordable Alternative</h3>
-                        <p>To multi-day or multi-week programs</p>
                     </div>
                 </div>
             </div>
@@ -947,6 +1233,24 @@
                 <h2>What Our Students Say</h2>
             </div>
             <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div>
+                        <p class="testimonial-text">The insights on crafting a compelling application specifically for UC Berkeley were invaluable. This program directly contributed to my acceptance by helping me highlight my strengths in a way that resonated with the admissions committee.</p>
+                    </div>
+                    <p class="student-name">- Morgan K., UC Berkeley Student</p>
+                </div>
+                <div class="testimonial-card">
+                    <div>
+                        <p class="testimonial-text">I was aiming for UCLA, and this workshop was key to my success. The mentors provided specific strategies for the PIQs that helped my application stand out and ultimately led to my admission.</p>
+                    </div>
+                    <p class="student-name">- Mahika T., UCLA Student</p>
+                </div>
+                <div class="testimonial-card">
+                    <div>
+                        <p class="testimonial-text">This program was fantastic for understanding the entire UC application process. The guidance on choosing the right UCSD college and tailoring my essays made a huge difference. I'm thrilled to be a Triton!</p>
+                    </div>
+                    <p class="student-name">- Jordan S., UCSD Student</p>
+                </div>
                 <div class="testimonial-card">
                     <div>
                         <p class="testimonial-text">This workshop was a game-changer! I feel so much more confident about my UC applications.</p>
@@ -963,7 +1267,7 @@
                     <div>
                         <p class="testimonial-text">As a sophomore, I wasn't sure what to expect, but the track for younger students was incredibly helpful for long-term planning.</p>
                     </div>
-                    <p class="student-name">- Casey B., 10th Grade</p>
+                    <p class="student-name">- Kabir B., 10th Grade</p>
                 </div>
             </div>
         </div>
@@ -971,11 +1275,12 @@
     
     <section class="registration-section" id="registration">
         <h2>Registration</h2>
+        <p>Next Workshop: <strong>June 14th, 2025</strong> &nbsp;|&nbsp; Program Fee: <strong>$350</strong></p>
         <div class="registration-points">
             <div class="reg-point">
-                <i class="fas fa-users"></i>
-                <h3>Limited Capacity</h3>
-                <p>Only 50 students to ensure quality guidance</p>
+                <i class="fas fa-laptop"></i>
+                <h3>Interactive Workshops</h3>
+                <p>Live Q&amp;A with UC Berkeley mentors</p>
             </div>
             
             <div class="reg-point">
@@ -993,5 +1298,13 @@
         <a href="#" class="btn-primary">Register Now</a>
     </section>
 
+    <!-- Added menu-toggle script for header -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      var btn = document.querySelector('.menu-toggle');
+      var nav = document.querySelector('.header-nav');
+      btn.addEventListener('click', function(){ nav.classList.toggle('open'); });
+    });
+    </script>
 </body>
 </html> 
