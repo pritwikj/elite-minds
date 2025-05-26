@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UC Application Launch Pad: One-Day Online Intensive</title>
+    <title>UC Application Booster: One-Day Online Intensive</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -115,7 +115,7 @@
         .hero {
             background: linear-gradient(rgba(0, 50, 98, 0.8), rgba(0, 50, 98, 0.9)), url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80') center/cover no-repeat;
             color: var(--white);
-            padding: 8rem 2rem 2rem 2rem;
+            padding: 6rem 2rem 2rem 2rem;
             text-align: center;
             position: relative;
             /* Removing the angled clip-path */
@@ -593,7 +593,7 @@
         /* Responsive Styles */
         @media (max-width: 992px) {
             .hero {
-                padding: 6rem 2rem;
+                padding: 4rem 2rem;
             }
             
             .hero h1 {
@@ -669,11 +669,19 @@
             .testimonials-grid {
                  grid-template-columns: 1fr;
             }
+            .mobile-hidden-image {
+                display: none !important; /* Hide on screens <= 768px */
+            }
+            
+            /* Reduce space below workshop date text */
+            .hero-workshop-date p {
+                margin-bottom: 0.3rem;
+            }
         }
         
         @media (max-width: 576px) {
             .hero {
-                padding: 5rem 1.5rem;
+                padding: 3rem 1.5rem;
             }
             
             .hero h1 {
@@ -687,6 +695,16 @@
             
             .btn-primary, .btn-secondary {
                 width: 100%;
+            }
+            
+            /* Further reduce space below workshop date text */
+            .hero-workshop-date p {
+                margin-bottom: 0;
+            }
+            
+            /* Further reduce top padding for success-booster-section */
+            .success-booster-section {
+                padding: 2.5rem 1.5rem 3.5rem 1.5rem;
             }
         }
 
@@ -860,6 +878,10 @@
             .success-booster-col p {
                 font-size: 0.95rem;
             }
+            /* Reduce top padding for success-booster-section on mobile */
+            .success-booster-section {
+                padding: 3rem 2rem 4rem 2rem;
+            }
         }
 
         /* How Does The Program Work? Section */
@@ -924,11 +946,11 @@
     .header-nav {
         display: flex;
         gap: 16px;
-        background-color: transparent !important;
-        box-shadow: none !important;
-        position: static !important;
-        top: auto !important;
-        z-index: auto !important;
+        background-color: transparent;
+        box-shadow: none;
+        position: static;
+        top: auto;
+        z-index: auto;
     }
     .header-button {
         font-family: 'Poppins', sans-serif;
@@ -1025,8 +1047,8 @@
 
     <section class="hero">
         <div class="wrapper">
-            <h1>The UC Application Launch Pad</h1>
-            <p>Unlock the insider secrets to UC admissions. Get expert guidance from UC Berkeley insiders and leave with a personalized action plan for your top UC journey. Our Launch Pad teaches you the specific strategies to stand out by leveraging your unique strengths and background.</p>
+            <h1>The UC Application Booster</h1>
+            <p>Unlock the insider secrets to UC admissions. Get expert guidance from UC Berkeley insiders and leave with a personalized action plan for your top UC journey. Our Booster teaches you the specific strategies to stand out by leveraging your unique strengths and background.</p>
             <div class="hero-buttons">
                 <a href="#registration" class="btn-primary">Register Now</a>
                 <a href="#structure" class="btn-secondary">View Schedule</a>
@@ -1066,7 +1088,7 @@
 
     <section class="booster-highlight-section" id="why-us">
         <div class="booster-highlight-wrapper">
-            <h2 class="booster-highlight-title">OUR UC LAUNCH PAD SELLS OUT EVERY YEAR!</h2>
+            <h2 class="booster-highlight-title">OUR UC BOOSTER SELLS OUT EVERY YEAR!</h2>
             <div class="booster-highlight-underline"></div>
             <div class="booster-highlight-grid">
                 <div class="booster-highlight-col">
@@ -1085,8 +1107,8 @@
                 </div>
                 <div class="booster-highlight-col">
                     <img src="https://placehold.co/600x400/003262/FDB515?text=Success+Stories&font=playfairdisplay" alt="Placeholder image illustrating student success" class="booster-highlight-image">
-                    <img src="https://placehold.co/600x400/FDB515/003262?text=More+Success&font=inter" alt="Another placeholder image" class="booster-highlight-image" style="margin-top: 1rem;">
-                    <img src="https://placehold.co/600x400/00254A/FFFFFF?text=Student+Achievements&font=inter" alt="Yet another placeholder image" class="booster-highlight-image" style="margin-top: 1rem;">
+                    <img src="https://placehold.co/600x400/FDB515/003262?text=More+Success&font=inter" alt="Another placeholder image" class="booster-highlight-image mobile-hidden-image" style="margin-top: 1rem;">
+                    <img src="https://placehold.co/600x400/00254A/FFFFFF?text=Student+Achievements&font=inter" alt="Yet another placeholder image" class="booster-highlight-image mobile-hidden-image" style="margin-top: 1rem;">
                 </div>
             </div>
             <div style="text-align: center; margin-top: 3rem;">
@@ -1124,54 +1146,6 @@
                     <h3>Common Application Mistakes</h3>
                     <p>Avoid the most common mistakes students make on their UC applications and ensure your submission is polished and competitive.</p>
                 </div>
-                
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-award"></i>
-                    </div>
-                    <h3>Optimize Your Entire UC Application</h3>
-                    <p>Beyond PIQs, learn to strategically develop and showcase your activities, achievements, and overall profile to maximize your chances of UC admission.</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-bullseye"></i>
-                    </div>
-                    <h3>Insider Strategies & Personalized Action Plan</h3>
-                    <p>Learn exclusive UC-specific strategies and receive a personalized action plan tailored to your unique strengths, ensuring your application stands out.</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-pen-alt"></i>
-                    </div>
-                    <h3>Master Your UC Personal Insight Questions (PIQs)</h3>
-                    <p>Develop compelling Personal Insight Questions (PIQs) and essays that authentically showcase your story and resonate with UC admissions readers.</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-layer-group"></i>
-                    </div>
-                    <h3>Tailored Grade-Specific Guidance</h3>
-                    <p>Benefit from targeted workshops and advice specific to your high school grade level, from freshman foundation-building to senior application refinement.</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-laptop-house"></i>
-                    </div>
-                    <h3>Interactive Online Format</h3>
-                    <p>Engage in a dynamic online workshop, featuring interactive sessions, live Q&A with mentors, and peer collaboration.</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-list-check"></i>
-                    </div>
-                    <h3>Must-Haves Most Students Miss</h3>
-                    <p>Discover the must-have elements for your application that 90% of students leave out, giving you a critical edge in the admissions process.</p>
-                </div>
             </div>
             <div style="text-align: center; margin-top: 3rem;">
                 <a href="#registration" class="btn-primary" style="display: inline-block;">Register Now</a>
@@ -1180,7 +1154,7 @@
 
         <section class="section" id="structure">
             <div class="section-header">
-                <h2>Your Day at the UC Launch Pad</h2>
+                <h2>Your Day at the UC Booster Workshop</h2>
             </div>
             <div class="timeline">
                 <div class="time-container left">
