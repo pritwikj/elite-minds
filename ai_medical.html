@@ -91,6 +91,23 @@
             color: #1A3D6B;
         }
 
+        .try-free-message-banner { /* Style for the new 'Try first week free' banner */
+            display: block; /* Ensure it behaves like a block element */
+            background-color: #e6ffe6; /* Brighter Honeydew */
+            border: 2px dashed #32CD32; /* LimeGreen dashed border */
+            color: #2E8B57; /* SeaGreen text */
+            padding: 12px; /* Reduced padding */
+            margin-top: 25px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600; /* Bolder */
+            font-size: 1.0em; /* Reduced font size */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow */
+            text-decoration: none; /* Remove underline from link */
+            cursor: pointer; /* Indicate it's clickable */
+        }
+
         .course-title {
             font-size: 36px;
             font-weight: 600;
@@ -596,9 +613,21 @@
 
                 <h1 class="course-title">AI + Medical Passion Project with Mayo Clinic Doctor</h1>
                 
-                <p class="course-description">
+                <!-- MOBILE-ONLY: Image, Try Free Banner, Description -->
+                <div class="mobile-program-top" style="display:none;">
+                    <img src="images/ai_med.jpeg" alt="AI in Medicine Program" class="mobile-program-image">
+                    <a href="https://tally.so/r/w2za6g" target="_blank" class="try-free-message-banner mobile-try-free">Try your first week FREE!</a>
+                    <p class="course-description mobile-course-description">
+                        Dive into the intersection of artificial intelligence and medicine under the mentorship of a Mayo Clinic doctor. This program is designed to make high school students on the med school path stand out by equipping them with crucial AI knowledge – a key to the future of the medical industry. Students will explore cutting-edge AI applications in healthcare, culminating in a capstone project that integrates technology and medical innovation.
+                    </p>
+                </div>
+                <!-- END MOBILE-ONLY -->
+
+                <p class="course-description desktop-course-description">
                     Dive into the intersection of artificial intelligence and medicine under the mentorship of a Mayo Clinic doctor. This program is designed to make high school students on the med school path stand out by equipping them with crucial AI knowledge – a key to the future of the medical industry. Students will explore cutting-edge AI applications in healthcare, culminating in a capstone project that integrates technology and medical innovation.
                 </p>
+
+                <a href="https://tally.so/r/w2za6g" target="_blank" class="try-free-message-banner desktop-try-free">Try your first week FREE!</a>
 
                 <div class="course-details">
                     <div class="detail-row">
@@ -646,6 +675,7 @@
                             <a href="https://tally.so/r/w2za6g" target="_blank">
                                 <button class="enroll-button">Enroll Now</button>
                             </a>
+                            <p style="text-align: center; font-size: 14px; color: #000000; margin-top: 5px;">(Try the first week free!)</p>
                         </span>
                     </div>
                 </div>

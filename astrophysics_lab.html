@@ -92,6 +92,23 @@
             color: #1A3D6B;
         }
 
+        .try-free-message-banner { /* Style for the new 'Try first week free' banner */
+            display: block;
+            background-color: #e6ffe6;
+            border: 2px dashed #32CD32;
+            color: #2E8B57;
+            padding: 12px;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.0em;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-decoration: none;
+            cursor: pointer;
+        }
+
         .course-title {
             font-size: 36px;
             font-weight: 600;
@@ -500,6 +517,16 @@
                 transform: none;
                 box-shadow: none;
             }
+
+            .mobile-program-top { display: block !important; margin-bottom: 20px; }
+            .mobile-program-image { width: 100%; height: auto; border-radius: 20px; margin: 10px 0 10px 0; }
+            .mobile-try-free { display: block; margin-bottom: 20px; }
+            .mobile-course-description { margin-bottom: 30px; }
+            .desktop-course-description, .desktop-try-free, .image-container { display: none !important; }
+        }
+
+        @media screen and (min-width: 769px) {
+            .mobile-program-top { display: none !important; }
         }
 
         @media screen and (max-width: 480px) {
@@ -596,9 +623,21 @@
 
                 <h1 class="course-title">Berkeley Astrophysics Blueprint: Space Research Lab</h1>
                 
-                <p class="course-description">
+                <!-- MOBILE-ONLY: Image, Try Free Banner, Description -->
+                <div class="mobile-program-top" style="display:none;">
+                    <img src="images/astro.jpg" alt="Astrophysics Course" class="mobile-program-image">
+                    <a href="https://tally.so/r/mBAqB4" target="_blank" class="try-free-message-banner mobile-try-free">Try your first week FREE!</a>
+                    <p class="course-description mobile-course-description">
+                        Conduct a certified astrophysics research project alongside a UC Berkeley astrophysicist. Students will learn to analyze astronomical data, conduct original research, and complete a mentored project in cutting-edge topics like exoplanets and dark matter.
+                    </p>
+                </div>
+                <!-- END MOBILE-ONLY -->
+
+                <p class="course-description desktop-course-description">
                     Conduct a certified astrophysics research project alongside a UC Berkeley astrophysicist. Students will learn to analyze astronomical data, conduct original research, and complete a mentored project in cutting-edge topics like exoplanets and dark matter.
                 </p>
+
+                <a href="https://tally.so/r/mBAqB4" target="_blank" class="try-free-message-banner desktop-try-free">Try your first week FREE!</a>
 
                 <div class="course-details">
                     <div class="detail-row">
@@ -635,6 +674,7 @@
                             <a href="https://tally.so/r/mBAqB4" target="_blank">
                                 <button class="enroll-button">Enroll Now</button>
                             </a>
+                            <p style="text-align: center; font-size: 14px; color: #000000; margin-top: 5px;">(Try the first week free!)</p>
                         </span>
                     </div>
                 </div>

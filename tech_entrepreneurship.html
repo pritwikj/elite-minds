@@ -421,6 +421,16 @@
                 transform: none;
                 box-shadow: none;
             }
+
+            .mobile-program-top { display: block !important; margin-bottom: 20px; }
+            .mobile-program-image { width: 100%; height: auto; border-radius: 20px; margin: 10px 0 10px 0; }
+            .mobile-try-free { display: block; margin-bottom: 20px; }
+            .mobile-course-description { margin-bottom: 30px; }
+            .desktop-course-description, .desktop-try-free, .image-container { display: none !important; }
+        }
+
+        @media screen and (min-width: 769px) {
+            .mobile-program-top { display: none !important; }
         }
 
         @media screen and (max-width: 480px) {
@@ -519,6 +529,23 @@
             border-radius: 50%;
             overflow: hidden;
         }
+
+        .try-free-message-banner {
+            display: block;
+            background-color: #e6ffe6;
+            border: 2px dashed #32CD32;
+            color: #2E8B57;
+            padding: 12px;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.0em;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-decoration: none;
+            cursor: pointer;
+        }
     </style>
     <!-- Meta Pixel Code (same as healthcare_research.html) -->
     <script>
@@ -557,11 +584,23 @@
                     <span class="pill duration">8-week class</span>
                 </div>
 
+                <!-- MOBILE-ONLY: Image, Try Free Banner, Description -->
+                <div class="mobile-program-top" style="display:none;">
+                    <img src="images/tech_entrepreneurs.png" alt="Tech Entrepreneurship Program" class="mobile-program-image">
+                    <a href="https://tally.so/r/mJZQ8z" target="_blank" class="try-free-message-banner mobile-try-free">Try your first week FREE!</a>
+                    <p class="course-description mobile-course-description">
+                        Students will build business solutions for real-world problems under Cornell business mentor guidance. This program is designed for ambitious students interested in technology, business, and leadership to uniquely stand out to top 20 university programs.
+                    </p>
+                </div>
+                <!-- END MOBILE-ONLY -->
+
                 <h1 class="course-title">Business + Tech Innovation Accelerator</h1>
                 
-                <p class="course-description">
+                <p class="course-description desktop-course-description">
                     Students will build business solutions for real-world problems under Cornell business mentor guidance. This program is designed for ambitious students interested in technology, business, and leadership to uniquely stand out to top 20 university programs.
                 </p>
+
+                <a href="https://tally.so/r/mJZQ8z" target="_blank" class="try-free-message-banner desktop-try-free">Try your first week FREE!</a>
 
                 <div class="course-details">
                     <div class="detail-row">
@@ -583,7 +622,7 @@
                     
                     <div class="detail-row">
                         <span class="detail-label">Tuition</span>
-                        <span class="detail-value">$1000</span>
+                        <span class="detail-value">$900</span>
                     </div>
                     
                     <div class="detail-row">

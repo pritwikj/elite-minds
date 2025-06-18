@@ -557,6 +557,33 @@
             text-decoration: underline;
             opacity: 0.8;
         }
+
+        .try-free-message-banner {
+            display: block;
+            background-color: #e6ffe6;
+            border: 2px dashed #32CD32;
+            color: #2E8B57;
+            padding: 12px;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.0em;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        @media screen and (max-width: 768px) {
+            .mobile-program-top { display: block !important; margin-bottom: 20px; }
+            .mobile-program-image { width: 100%; height: auto; border-radius: 20px; margin: 10px 0 10px 0; }
+            .mobile-try-free { display: block; margin-bottom: 20px; }
+            .mobile-course-description { margin-bottom: 30px; }
+            .desktop-course-description, .desktop-try-free, .image-container { display: none !important; }
+        }
+        @media screen and (min-width: 769px) {
+            .mobile-program-top { display: none !important; }
+        }
     </style>
     <!-- Meta Pixel Code -->
     <script>
@@ -597,12 +624,27 @@
 
                 <h1 class="course-title">Biology Research Paper Program</h1>
                 
-                <p class="course-description">
+                <!-- MOBILE-ONLY: Image, Try Free Banner, Description -->
+                <div class="mobile-program-top" style="display:none;">
+                    <img src="images/bio_research.jpg" alt="Biology Research Paper Program" class="mobile-program-image">
+                    <a href="https://tally.so/r/mRlAvK" target="_blank" class="try-free-message-banner mobile-try-free">Try your first week FREE!</a>
+                    <p class="course-description mobile-course-description">
+                        Led by Dr. Chan- Cancer Biology PhD from USC. An introductory course designed for students to develop the skills needed to read, analyze, and
+                        communicate primary research in life sciences. Students will explore the structure of scientific
+                        papers, assess the validity of findings, understand the peer review process, and present their
+                        understanding to a general audience.
+                    </p>
+                </div>
+                <!-- END MOBILE-ONLY -->
+
+                <p class="course-description desktop-course-description">
                     Led by Dr. Chan- Cancer Biology PhD from USC. An introductory course designed for students to develop the skills needed to read, analyze, and
                     communicate primary research in life sciences. Students will explore the structure of scientific
                     papers, assess the validity of findings, understand the peer review process, and present their
                     understanding to a general audience.
                 </p>
+
+                <a href="https://tally.so/r/mRlAvK" target="_blank" class="try-free-message-banner desktop-try-free">Try your first week FREE!</a>
 
                 <div class="course-details">
                     <div class="detail-row">
@@ -648,6 +690,7 @@
                             <a href="https://tally.so/r/mRlAvK" target="_blank">
                                 <button class="enroll-button">Enroll Now</button>
                             </a>
+                            <p style="text-align: center; font-size: 14px; color: #000000; margin-top: 5px;">(Try the first week free!)</p>
                         </span>
                     </div>
                 </div>
