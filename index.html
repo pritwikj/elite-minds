@@ -1461,6 +1461,34 @@ section {
         top: 0px;
     }
 }
+
+/* Footer link hover effects */
+footer a:hover {
+    color: #1A9CFF !important;
+}
+
+/* Mobile responsive footer */
+@media screen and (max-width: 768px) {
+    footer {
+        padding: 30px 0 15px 0 !important;
+    }
+    
+    footer > div > div:first-child {
+        flex-direction: column !important;
+        gap: 25px !important;
+        text-align: center;
+    }
+    
+    footer > div > div:first-child > div {
+        min-width: auto !important;
+    }
+    
+    footer > div > div:last-child {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 10px !important;
+    }
+}
     </style>
 <header class="header">
     <a href="https://elitemindsprogram.com/">
@@ -1828,4 +1856,43 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 </script>
 </body>
+<!-- Footer Section -->
+<footer style="background: #1a1a1a; color: #ccc; padding: 40px 0 20px 0; font-family: 'Poppins', sans-serif; border-top: 1px solid #333; margin-top: 40px;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+        <!-- Main Footer Content -->
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px; margin-bottom: 30px;">
+            <!-- Company Info -->
+            <div style="flex: 1; min-width: 250px;">
+                <h3 style="color: #fff; font-size: 20px; font-weight: 600; margin-bottom: 15px;">Elite Minds</h3>
+                <p style="font-size: 14px; line-height: 1.6; margin-bottom: 15px; color: #aaa;">Helping students create standout passion projects with mentors from top universities</p>
+            </div>
+            
+            <!-- Quick Links -->
+            <div style="flex: 1; min-width: 200px;">
+                <h4 style="color: #fff; font-size: 16px; font-weight: 600; margin-bottom: 15px;">Programs</h4>
+                <div style="display: flex; flex-direction: column; gap: 8px;">
+                    <a href="group_programs.html" style="color: #ccc; text-decoration: none; font-size: 14px; transition: color 0.2s;">Group Programs</a>
+                    <a href="mentorship.html" style="color: #ccc; text-decoration: none; font-size: 14px; transition: color 0.2s;">1:1 Mentorship</a>
+                    <a href="blog.html" style="color: #ccc; text-decoration: none; font-size: 14px; transition: color 0.2s;">Blog</a>
+                </div>
+            </div>
+            
+            <!-- Contact Info -->
+            <div style="flex: 1; min-width: 200px;">
+                <h4 style="color: #fff; font-size: 16px; font-weight: 600; margin-bottom: 15px;">Contact</h4>
+                <p style="font-size: 14px; color: #aaa; margin-bottom: 8px;">Email: team@elitemindsprogram.com</p>
+            </div>
+        </div>
+        
+        <!-- Footer Bottom -->
+        <div style="border-top: 1px solid #333; padding-top: 20px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 15px;">
+            <div style="color: #888; font-size: 13px;">
+                &copy; 2025 Elite Minds. All rights reserved.
+            </div>
+            <div>
+                <a href="https://prairie-cobalt-adb.notion.site/Elite-Minds-Terms-and-Conditions-15005e0ad5c480b5b667dc8ea6223300" target="_blank" rel="noopener" style="color: #1A9CFF; text-decoration: none; font-size: 13px; font-weight: 500;">Terms and Conditions</a>
+            </div>
+        </div>
+    </div>
+</footer>
 </html>
