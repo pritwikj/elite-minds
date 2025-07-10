@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Science Community Impact - Elite Minds</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="./images/favicon-32x32.png" sizes="32x32" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF;
+            min-height: 100vh;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .logo {
+            position: absolute;
+            top: -60px;
+            left: 30px;
+            width: 200px;
+            height: auto;
+            z-index: 1000;
+        }
+
+        .content-container {
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 140px 48px 0px;
+        }
+
+        .status-pills {
+            margin-top: 0;
+        }
+
+        .pill {
+            display: inline-block;
+            padding: 6px 20px;
+            border-radius: 20px;
+            margin-right: 16px;
+            font-size: 14px;
+        }
+
+        .limited-seats {
+            background-color: #1A3D6B;
+            color: white;
+        }
+
+        .duration {
+            background-color: #CBE1EE;
+            color: #1A3D6B;
+        }
+
+        .course-title {
+            font-size: 36px;
+            font-weight: 600;
+            margin: 24px 0;
+            max-width: 800px;
+            line-height: 1.2;
+        }
+
+        .course-description {
+            font-size: 16px;
+            color: #666;
+            max-width: 600px;
+            margin-bottom: 40px;
+            line-height: 1.5;
+        }
+
+        .course-details {
+            margin-top: 40px;
+        }
+
+        .detail-row {
+            display: flex;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        .detail-label {
+            width: 120px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .detail-value {
+            color: #666;
+            max-width: 439px;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        .detail-value ul {
+            list-style-type: disc;
+            padding-left: 15px;
+            margin: 0;
+        }
+
+        .detail-value li {
+            padding-left: 0;
+            margin-left: 0;
+            margin-bottom: 10px;
+            }
+
+
+        .main-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 60px;
+        }
+
+        .text-content, .image-container {
+            margin-top: 0;
+        }
+
+        .text-content {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .image-container {
+            flex: 1;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+        }
+
+        .partnership-section {
+            margin-top: 0;
+        }
+
+        .partnership-title {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+        }
+
+        .partner-logos {
+            max-width: 100%;
+        }
+
+        .partner-logos img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .contact-info {
+            font-size: 15px;
+            color: #666;
+            margin-top: 25px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .enroll-button {
+            display: inline-block;
+            background-color: #00BF63;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            font-size: 17px;
+            border: none;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: background-color 0.2s ease;
+            width: 250px;
+            margin-left: 0px;
+        }
+
+        .enroll-button:hover {
+            background-color: #15325A;
+        }
+        .instructor-section {
+            padding: 0;
+            margin-top: -70px;
+            background-color: #fff;
+        }
+
+        .instructor-bio {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .instructor-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 40px;
+        }
+
+        .instructor-info {
+            flex: 1;
+        }
+
+        .taught-by {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .instructor-name {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 12px 0;
+        }
+
+        .instructor-description {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .curriculum-section {
+            margin-top: 40px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .weeks-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .week-card {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .week-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #333;
+        }
+
+        .week-card ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .week-card li {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 8px;
+            line-height: 1.5;
+            padding-left: 0;
+        }
+
+        .week-card:nth-child(n+4) {
+            margin-top: 20px;
+        }
+
+        .week-card li:before {
+            content: none;
+        }
+
+        .instructor-image img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .mentors-section {
+            margin-top: 60px;
+        }
+
+        .mentors-section h3 {
+            color: #666;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .hero-image {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hero-image img {
+            border-radius: 20px;
+            background-color: #E1F7DB;
+        }
+
+        .bottom-enroll-container {
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .bottom-enroll-button {
+            display: inline-block;
+            background-color: #00BF63;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            font-size: 17px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            width: 250px;
+        }
+
+        .bottom-enroll-button:hover {
+            background-color: #15325A;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 16px;
+            position: absolute;
+            top: 15px;
+            right: 48px;
+            z-index: 1000;
+        }
+
+        .header-button {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            color: #000;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            background-color: #b0ff64;
+            border: 2px solid #000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-button:hover {
+            background-color: #a0e55a;
+            color: #000;
+            border: 2px solid #000;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .header-button:active {
+            transform: translateY(0);
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+
+        @media screen and (max-width: 768px) {
+            .logo {
+                position: relative;
+                top: 0;
+                left: 0;
+                width: 150px;
+                margin: -25px 0;
+            }
+
+            .menu-toggle {
+                display: block;
+                background: transparent;
+                border: none;
+                font-size: 30px;
+                cursor: pointer;
+                z-index: 1000;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+            
+            .header-nav {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 65px;
+                right: 10px;
+                background-color: #ffffff;
+                padding: 15px 20px;
+                border-radius: 5px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                z-index: 999;
+                width: calc(100% - 40px);
+                max-width: 300px;
+            }
+            
+            .header-nav.open {
+                display: flex;
+            }
+            
+            .header-button {
+                margin: 8px 0;
+                padding: 10px 15px;
+                background-color: transparent;
+                border: none;
+                box-shadow: none;
+                color: #333;
+                text-align: left;
+                font-weight: 500;
+                border-radius: 4px;
+                transition: background-color 0.2s ease;
+            }
+            
+            .header-button:hover {
+                background-color: #f0f0f0;
+                color: #000;
+                transform: none;
+                box-shadow: none;
+            }
+
+            .content-container {
+                padding: 20px 24px;
+            }
+
+            .main-content {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .text-content, .image-container {
+                max-width: 100%;
+            }
+
+            .course-title {
+                font-size: 28px;
+            }
+
+            .detail-row {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .detail-label {
+                width: 100%;
+            }
+
+            .detail-value {
+                width: 100%;
+            }
+
+            .weeks-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .week-card:nth-child(n+4) {
+                margin-top: 0;
+            }
+
+            .partnership-section {
+                margin-bottom: 60px;
+            }
+
+            .instructor-section {
+                margin-top: 0;
+                position: relative;
+            }
+
+            .instructor-bio, .mentors-section .instructor-bio {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+                padding-top: 20px;
+            }
+
+            .instructor-image {
+                margin: 0 auto;
+            }
+
+            .instructor-info {
+                text-align: center;
+            }
+
+            .enroll-button {
+                width: 100%;
+                margin: 30px 0;
+            }
+
+            .bottom-enroll-button {
+                width: 100%;
+                max-width: 250px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .content-container {
+                padding: 20px 16px;
+            }
+
+            .status-pills {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .pill {
+                margin-right: 0;
+                font-size: 12px;
+            }
+
+            .course-title {
+                font-size: 24px;
+            }
+
+            .partnership-section {
+                margin-bottom: 0px;
+            }
+
+            .instructor-image, .instructor-image img {
+                width: 150px;
+                height: 150px;
+            }
+
+            .week-card {
+                padding: 15px;
+            }
+
+            .week-card h3 {
+                font-size: 16px;
+            }
+
+            .week-card li {
+                font-size: 14px;
+            }
+            .bottom-enroll-container {
+                margin: 40px 0;
+             }
+        }
+
+        .contact-info a {
+            color: #0066cc;
+            text-decoration: underline;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+            opacity: 0.8;
+        }
+    </style>
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '3804960976412828');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=3804960976412828&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+</head>
+<body>
+    <a href="https://elitemindsprogram.com/">
+        <img src="./images/EliteMinds logo.png" alt="EliteMinds Logo" class="logo">
+    </a>
+    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    <nav class="header-nav">
+        <a href="group_programs.html" class="header-button">Group Programs</a>
+        <a href="mentorship.html" class="header-button">1:1 Mentorship</a>
+        <a href="blog.html" class="header-button">Blog</a>
+    </nav>
+    
+    <div class="content-container">
+        <div class="main-content">
+            <div class="text-content">
+                <div class="status-pills">
+                    <span class="pill limited-seats">5 seats remaining</span>
+                    <span class="pill duration">6-week class</span>
+                </div>
+
+                <h1 class="course-title">Data Science Community Impact Research</h1>
+                
+                <p class="course-description">
+                    Create your own meaningful research report that uses data science to address real-world social issues. Under expert mentorship, students learn Python programming, data analysis, and visualization while developing critical thinking skills and creating compelling research presentations perfect for college applications.
+                </p>
+
+                <div class="course-details">
+                    <div class="detail-row">
+                        <span class="detail-label">Group Size</span>
+                        <span class="detail-value" style="margin-left: 20px;">10 students</span>
+                    </div>
+                    
+                    <div class="detail-row">
+                        <span class="detail-label">Outcome</span>
+                        <span class="detail-value" style="margin-left: 20px;">
+                            <ul>
+                                <li>Complete original research project and final presentation</li>
+                                <li>Earn Data Science for Impact Certification</li>
+                                <li>Learn data analysis and Python programming fundamentals</li>
+                            </ul>
+                        </span>
+                    </div>
+                    
+                    <div class="detail-row">
+                        <span class="detail-label">Tuition</span>
+                        <span class="detail-value" style="margin-left: 20px;">$850</span>
+                    </div>
+                    
+                    <div class="detail-row">
+                        <span class="detail-label">Dates</span>
+                        <span class="detail-value" style="margin-left: 20px;">
+                            July 20th - August 31st<br>
+                            Weekly on Sunday, 11:00-12:00pm PST<br>
+                        </span>
+                    </div>
+
+                    <div class="detail-row">
+                        <span class="detail-label">Requirements</span>
+                        <span class="detail-value" style="margin-left: 20px;">
+                            <ul>
+                                <li>Students must be in 8th grade or above</li>
+                                <li>Interest in social issues and data analysis</li>
+                                <li>No previous data science experience required</li>
+
+                            </ul>
+                        </span>
+                    </div>
+
+                    <div class="detail-row">
+                        <span class="detail-value" style="text-align: center; width: 100%; margin-top: -20px;">
+                            <a href="https://tally.so/r/mBYJz1" target="_blank">
+                                <button class="enroll-button">Enroll Now</button>
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="image-container">
+                <img src="images/data_science_impact.png" alt="Data Science Community Impact Program">
+                <div class="partnership-section">
+                    <h3 class="partnership-title">In Partnership With</h3>
+                    <div class="partner-logos">
+                        <img src="images/partners.jpeg" alt="Partner Companies">
+                    </div>
+                    <p class="contact-info">For inquiries, please contact: <a href="mailto:team@elitemindsprogram.com">team@elitemindsprogram.com</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="instructor-section">
+        <div class="content-container">
+            <div class="instructor-bio">
+                <div class="instructor-image">
+                    <img src="images/yashita_headshot.png" alt="Yashita Tanwar">
+                </div>
+                <div class="instructor-info">
+                    <span class="taught-by">Taught By</span>
+                    <h2 class="instructor-name">Yashita Tanwar</h2>
+                    <p class="instructor-description">
+                        Yashita Tanwar is an award-winning technologist and Informatics student at the University of Washington, recognized as a SWE Hacks winner for her innovative approach to tech solutions. She conducts AI research at the Allen Institute for Artificial Intelligence (AI2), contributing to real-time platforms supporting global wildlife conservation.
+                        <br><br>
+                        As a software engineering intern at Shades and Quadrant Technologies, Yashita has built full-stack applications, developed misinformation detection features, and engineered automated deployment pipelines. She has held leadership roles across nonprofits and youth organizations, including serving as President of VTSeva's Youth Board, where she led 50+ volunteers in high-impact service initiatives.
+                        <br><br>
+                        A passionate mentor and educator, Yashita has taught coding camps, guided Hack for Social Good teams, and combines technical rigor with a deep commitment to ethical, human-centered innovation.
+                    </p>
+                </div>
+            </div>
+            <div class="curriculum-section">
+                <h2 class="section-title">Week by Week Curriculum</h2>
+                <div class="weeks-grid">
+                    <div class="week-card">
+                        <h3>Week 1: Introduction to Data Science & Social Impact</h3>
+                        <ul>
+                            <li>What is data science?</li>
+                            <li>Overview of social impact research</li>
+                            <li>Project planning and proposal basics</li>
+                        </ul>
+                    </div>
+                    <div class="week-card">
+                        <h3>Week 2: Research Questions & Python Basics</h3>
+                        <ul>
+                            <li>Formulating effective research questions</li>
+                            <li>Introduction to Python and Jupyter Notebooks</li>
+                            <li>Basic programming concepts</li>
+                        </ul>
+                    </div>
+                    <div class="week-card">
+                        <h3>Week 3: Data Collection & Cleaning</h3>
+                        <ul>
+                            <li>Finding and exploring datasets</li>
+                            <li>Data cleaning with pandas</li>
+                            <li>Understanding variables and data structure</li>
+                        </ul>
+                    </div>
+                    <div class="week-card">
+                        <h3>Week 4: Data Visualization</h3>
+                        <ul>
+                            <li>Visualizing data with matplotlib and seaborn</li>
+                            <li>Principles of effective data storytelling</li>
+                        </ul>
+                    </div>
+                    <div class="week-card">
+                        <h3>Week 5: Statistics & Analysis</h3>
+                        <ul>
+                            <li>Descriptive statistics (mean, median, mode, correlation)</li>
+                            <li>Introduction to basic statistical analysis in Python</li>
+                            <li>Optional: Introduction to modeling and regression</li>
+                        </ul>
+                    </div>
+                    <div class="week-card">
+                        <h3>Week 6: Presenting Research & Next Steps</h3>
+                        <ul>
+                            <li>Presenting research findings</li>
+                            <li>Reflecting on impact and learning</li>
+                            <li>Exploring further opportunities in data science</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="curriculum-section">
+                    <h2 class="section-title">Possible Final Project Themes</h2>
+                    <div class="week-card" style="grid-column: 1 / -1; margin-top: 20px;">
+                        <ul style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; list-style-type: disc;">
+                            <li>Education Inequity (using Census or school district data)</li>
+                            <li>Climate Impacts (air pollution, temperature change, flood zones)</li>
+                            <li>Healthcare Access (insurance, hospital density, health outcomes)</li>
+                            <li>Housing & Gentrification (rent prices, evictions, demographics)</li>
+                            <li>Online Misinformation (social media trends, sentiment analysis)</li>
+                            <li>Criminal Justice (incarceration rates, bail reform data)</li>
+                            <li>Mental Health (youth mental health, access to care, stress factors)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="bottom-enroll-container">
+                    <a href="https://tally.so/r/mBYJz1" target="_blank">
+                        <button class="bottom-enroll-button">Enroll Now</button>
+                    </a>
+                </div>
+            </div>                       
+        </div>
+    </section>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      var btn = document.querySelector('.menu-toggle');
+      var nav = document.querySelector('.header-nav');
+      btn.addEventListener('click', function(){ nav.classList.toggle('open'); });
+    });
+    </script>
+</body>
+</html> 
