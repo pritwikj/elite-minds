@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Scholars Fellowship - Elite Minds</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="./images/favicon-32x32.png" sizes="32x32" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            min-height: 100vh;
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+        }
+
+        .logo {
+            position: absolute;
+            top: -42px;
+            left: 0;
+            width: 150px;
+            height: auto;
+            z-index: 1000;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 16px;
+            position: absolute;
+            top: 15px;
+            right: 48px;
+            z-index: 1000;
+        }
+
+        .header-button {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-button:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .header-button:active {
+            transform: translateY(0);
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #1A3D6B 0%, #2A5A9A 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.2;
+            object-fit: cover;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .status-badge {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 500;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .hero-title {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .hero-description {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        .apply-button {
+            display: inline-block;
+            background-color: #00BF63;
+            color: white;
+            padding: 14px 32px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0, 191, 99, 0.3);
+            margin-bottom: 20px;
+        }
+
+        .apply-button:hover {
+            background-color: #00A857;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 191, 99, 0.4);
+        }
+
+        .deadline-badge {
+            background-color: rgba(255, 76, 76, 0.1);
+            color: #FF4C4C;
+            padding: 10px 20px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            display: block;
+            margin: 0 auto;
+            border: 2px solid rgba(255, 76, 76, 0.5);
+            max-width: fit-content;
+        }
+
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 48px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: #1A9CFF;
+            border-radius: 2px;
+        }
+
+        .fellowship-overview {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .overview-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 20px 30px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .overview-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #e9f0f9;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .card-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: #1A3D6B;
+        }
+
+        .card-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1A3D6B;
+        }
+
+        .card-description {
+            color: #666;
+            line-height: 1.6;
+            margin-top: 5px;
+        }
+
+        .benefits-eligibility {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .benefits-list, .eligibility-list {
+            background-color: white;
+            border-radius: 12px;
+            padding: 15px 40px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .benefits-list h3, .eligibility-list h3 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #1A3D6B;
+        }
+
+        .list-item {
+            display: flex;
+            margin-bottom: 15px;
+        }
+
+        .check-icon {
+            color: #00BF63;
+            font-size: 20px;
+            margin-right: 16px;
+            font-weight: bold;
+        }
+
+        .list-text {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .mentor-section {
+            background-color: white;
+            border-radius: 12px;
+            padding: 20px 60px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+            margin-bottom: 60px;
+        }
+
+        .mentor-container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .mentor-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .mentor-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .mentor-info {
+            flex: 1;
+        }
+
+        .mentor-name {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .mentor-bio {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .curriculum-section {
+            margin-bottom: 80px;
+        }
+
+        .weeks-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .week-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 15px 30px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .week-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .week-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1A3D6B;
+        }
+
+        .week-card ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+
+        .week-card li {
+            font-size: 15px;
+            color: #666;
+            margin-bottom: 5px;
+            line-height: 1.5;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .week-card li:before {
+            content: "•";
+            color: #00BF63;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .application-section {
+            background-color: #1A3D6B;
+            color: white;
+            padding: 0px 0;
+            text-align: center;
+        }
+
+        /* Add this rule to reduce footer padding */
+        .application-section .content-container {
+            padding-top: 40px; /* Reduced */
+            padding-bottom: 40px; /* Reduced */
+        }
+
+        .application-title {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .application-subtitle {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+
+        .partners-section {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .partners-title {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .partner-logos {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .partner-logos img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+        }
+
+        .contact-info {
+            text-align: center;
+            font-size: 16px;
+            color: #666;
+            margin-top: 40px;
+        }
+
+        .contact-info a {
+            color: #1A3D6B;
+            text-decoration: underline;
+        }
+
+        .contact-info a:hover {
+            opacity: 0.8;
+        }
+
+        .eligibility-list ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-top: 0;
+        }
+
+        .eligibility-list li {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 12px;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .eligibility-list li::before {
+            content: "•";
+            color: #00BF63;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 1.6;
+        }
+
+        @media screen and (max-width: 992px) {
+            .fellowship-overview {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .benefits-eligibility {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .eligibility-container {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+            }
+            .weeks-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .hero-title {
+                font-size: 32px;
+            }
+
+            .hero-description {
+                font-size: 16px;
+            }
+
+            .content-container {
+                padding: 60px 24px;
+            }
+
+            .fellowship-overview {
+                grid-template-columns: 1fr;
+            }
+
+            .mentor-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .mentor-image {
+                margin: 0 auto;
+            }
+
+            .instructor-info {
+                text-align: center;
+            }
+
+            .weeks-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .mentor-section {
+                padding: 30px;
+            }
+            
+            .menu-toggle {
+                display: block;
+                background: transparent;
+                border: none;
+                font-size: 30px;
+                cursor: pointer;
+                z-index: 1000;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+            
+            .header-nav {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 65px;
+                right: 10px;
+                background-color: #ffffff;
+                padding: 15px 20px;
+                border-radius: 5px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                z-index: 999;
+                width: calc(100% - 40px);
+                max-width: 300px;
+            }
+            
+            .header-nav.open {
+                display: flex;
+            }
+            
+            .header-button {
+                margin: 8px 0;
+                padding: 10px 15px;
+                background-color: transparent;
+                border: none;
+                box-shadow: none;
+                color: #333;
+                text-align: left;
+                font-weight: 500;
+                border-radius: 4px;
+                transition: background-color 0.2s ease;
+            }
+            
+            .header-button:hover {
+                background-color: #f0f0f0;
+                color: #000;
+                transform: none;
+                box-shadow: none;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .hero-section {
+                padding: 120px 0 60px; /* Adjusted top padding */
+            }
+
+            .logo {
+                position: absolute; /* Keep absolute positioning */
+                top: -10px; /* Position slightly above the top edge */
+                left: 0; /* Position from left */
+                width: 150px;
+            }
+
+            .apply-button {
+                width: 100%;
+                padding: 12px 20px;
+                box-sizing: border-box; /* Include padding in width */
+            }
+
+            .deadline-badge {
+                width: 100%;
+                font-size: 14px;
+                box-sizing: border-box; /* Include padding in width */
+                margin-top: 10px; /* Add some space above */
+            }
+        }
+    </style>
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '3804960976412828');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=3804960976412828&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+</head>
+<body>
+    <a href="https://elitemindsprogram.com/">
+        <img src="./images/logo_white.png" alt="EliteMinds Logo" class="logo">
+    </a>
+    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    <nav class="header-nav">
+        <a href="group_programs.html" class="header-button">Group Programs</a>
+        <a href="fellowships.html" class="header-button">UC App Workshop</a>
+        <a href="mentorship.html" class="header-button">1:1 Mentorship</a>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <img src="images/ai_prof2.jpeg" alt="AI Scholars Program" class="hero-image">
+        <div class="hero-content">
+            <div class="status-badge">Application-Based Cohort</div>
+            <h1 class="hero-title">AI/ML Scholars Program with NYU Professor Dr. Tran</h1>
+            <p class="hero-description">
+                An exclusive opportunity for ambitious students to master artificial intelligence under the mentorship of NYU Professor Dr. Hoa Tran. Fellows will develop advanced AI skills, build a professional portfolio, and gain valuable connections in the tech industry.
+            </p>
+            <a href="https://tally.so/r/wgOojl" target="_blank" class="apply-button">Apply for Fellowship</a>
+            <div class="deadline-badge">Application Deadline: May 12th, 2025</div>
+        </div>
+    </section>
+
+    <!-- Fellowship Overview Section -->
+    <div class="content-container">
+        <h2 class="section-title">Fellowship Overview</h2>
+        <div class="fellowship-overview">
+            <div class="overview-card">
+                <h3 class="card-title">Selective Cohort</h3>
+                <p class="card-description">
+                    Up to 10 exceptional students will be selected to join this prestigious fellowship, ensuring personalized mentorship and a collaborative peer network.
+                </p>
+            </div>
+            <div class="overview-card">
+                <h3 class="card-title">Professional Portfolio</h3>
+                <p class="card-description">
+                    Fellows will develop a comprehensive AI analytics project under expert guidance, creating a professional portfolio piece for college and job applications.
+                </p>
+            </div>
+            <div class="overview-card">
+                <h3 class="card-title">AI Scholar Certification</h3>
+                <p class="card-description">
+                    Earn AI Scholar Certification from Elite Minds, validating your skills and knowledge in artificial intelligence upon successful completion.
+                </p>
+            </div>
+        </div>
+
+        <!-- Benefits & Eligibility Section -->
+        <div class="benefits-eligibility">
+            <div class="benefits-list">
+                <h3>Fellowship Benefits</h3>
+                <div class="list-item">
+                    <span class="check-icon">✓</span>
+                    <div class="list-text">Personalized mentorship from NYU Professor Dr. Tran, a renowned AI expert with decades of industry and academic experience</div>
+                </div>
+                <div class="list-item">
+                    <span class="check-icon">✓</span>
+                    <div class="list-text">Hands-on training in Python programming, data analysis, machine learning, and cutting-edge AI technologies</div>
+                </div>
+                <div class="list-item">
+                    <span class="check-icon">✓</span>
+                    <div class="list-text">Develop a professional-quality AI project that will strengthen your college applications and resume</div>
+                </div>
+                <div class="list-item">
+                    <span class="check-icon">✓</span>
+                    <div class="list-text">AI Scholar Certification from Elite Minds and recognition from our partner organizations</div>
+                </div>
+                <div class="list-item">
+                    <span class="check-icon">✓</span>
+                    <div class="list-text">Access to our exclusive network of industry partners, professors, and researchers</div>
+                </div>
+            </div>
+            <div class="eligibility-container">
+                <div class="eligibility-list">
+                    <h3>Eligibility Requirements</h3>
+                    <ul>
+                        <li>High school students with a demonstrated interest in technology, mathematics, or computer science</li>
+                        <li>Strong academic performance and a commitment to learning complex technical concepts</li>
+                        <li>Basic computer skills and access to a computer with reliable internet connection</li>
+                    </ul>
+                </div>
+                <div class="eligibility-list">
+                    <h3>Program Logistics</h3>
+                     <ul>
+                        <li>Weekly sessions on Fridays, 11:00am-12:00pm PST, <br> May 30th to August 1st</li>
+                        <li>Application Deadline: May 12th, 2025</li>
+                        <li>Program Fees*: $2,000</li>
+                    </ul>
+                    <p style="color: #555; font-size: 14px; margin-top: 5px;">* Fees include all instructional materials, certification, mentorship, sessions, software, and activities.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mentor Section -->
+        <div class="mentor-section">
+            <h2 class="section-title">Lead Fellowship Mentor</h2>
+            <div class="mentor-container">
+                <div class="mentor-image">
+                    <img src="images/hoa_tran_mentor.jpeg" alt="Dr. Hoa Tran">
+                </div>
+                <div class="mentor-info">
+                    <h2 class="mentor-name">Professor Hoa Tran, PhD</h2>
+                    <p class="mentor-bio">
+                        Dr. Hoa Tran is a distinguished AI expert and professor at New York University. With a PhD in Computational Mathematics from NYU, Dr. Tran brings over two decades of impressive experience spanning academia and industry, specializing in Machine Learning, Deep Learning, Computer Vision, Robotics, and Natural Language Processing. As the Founder and Executive Chairman of CBD Robotics, he has successfully led groundbreaking projects, including AI-driven cancer detection systems and autonomous vehicles, earning recognition at prestigious technology symposiums. Dr. Tran is also celebrated for his mentorship at Thinkful—named the world's best Data Science bootcamp by Forbes—where 100% of his mentees secured prominent industry positions. His brings his passion to advancing AI education and innovation to guiding high school students toward meaningful careers in artificial intelligence.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Curriculum Section -->
+        <div class="curriculum-section">
+            <h2 class="section-title">Fellowship Curriculum</h2>
+            <div class="weeks-grid">
+                <div class="week-card">
+                    <h3>Week 1: Introduction to AI</h3>
+                    <ul>
+                        <li>Applications in Computer Vision</li>
+                        <li>Applications in Natural Language Processing</li>
+                        <li>Applications in Robotics</li>
+                    </ul>
+                </div>
+                <div class="week-card">
+                    <h3>Week 2: Basic Python</h3>
+                    <ul>
+                        <li>Using Colab as an Editor</li>
+                        <li>Functions & Loops</li>
+                        <li>Data Structures</li>
+                    </ul>
+                </div>
+                <div class="week-card">
+                    <h3>Week 3: Pandas and Visualization</h3>
+                    <ul>
+                        <li>Installing Pandas</li>
+                        <li>DataFrame Manipulations</li>
+                        <li>Visualizations</li>
+                    </ul>
+                </div>
+                <div class="week-card">
+                    <h3>Week 4: Supervised Learning</h3>
+                    <ul>
+                        <li>Linear Regression Model</li>
+                        <li>Coefficients for Fitting a Straight Line</li>
+                        <li>Minimal Errors</li>
+                    </ul>
+                </div>
+                <div class="week-card">
+                    <h3>Week 5: K-Nearest Neighbor</h3>
+                    <ul>
+                        <li>Euclidean Distance</li>
+                        <li>K-Nearest Neighbors Algorithm</li>
+                        <li>Voting for Classification</li>
+                    </ul>
+                </div>
+                <div class="week-card">
+                    <h3>Week 6: Decision Tree/Random Forest</h3>
+                    <ul>
+                        <li>Decision Tree Model</li>
+                        <li>ID3 Algorithm</li>
+                        <li>Random Forest Model</li>
+                    </ul>
+                </div>
+                <div class="week-card">
+                    <h3>Week 7: Deep Learning</h3>
+                    <ul>
+                        <li>Neural Network Architecture</li>
+                        <li>Hidden Nodes</li>
+                        <li>Backpropagation</li>
+                    </ul>
+                </div>
+                <div class="week-card">
+                    <h3>Week 8: Computer Vision - CNN</h3>
+                    <ul>
+                        <li>Convolutional Neural Network</li>
+                        <li>Feature Extraction</li>
+                        <li>Image Detection</li>
+                    </ul>
+                </div>
+                <div class="week-card">
+                    <h3>Week 9: Large Language Model/NLP</h3>
+                    <ul>
+                        <li>Foundations of NLP</li>
+                        <li>Vectorization</li>
+                        <li>Applications in ChatGPT</li>
+                    </ul>
+                </div>
+                <div class="week-card">
+                    <h3>Week 10: Analytic Report Project</h3>
+                    <ul>
+                        <li>Data Exploration</li>
+                        <li>Visualizing & Analyzing Data</li>
+                        <li>Analysis Report</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Partners Section -->
+        <div class="partners-section">
+            <h2 class="section-title">Elite Minds Partners</h2>
+            <p class="partners-title">In Partnership With</p>
+            <div class="partner-logos">
+                <img src="images/partners.jpeg" alt="Partner Companies">
+            </div>
+        </div>
+
+        <p class="contact-info">For fellowship inquiries, please contact: <a href="mailto:team@elitemindsprogram.com">team@elitemindsprogram.com</a></p>
+    </div>
+
+    <!-- Application CTA Section -->
+    <section class="application-section">
+        <div class="content-container">
+            <h2 class="application-title">Apply to the AI Scholars Fellowship</h2>
+            <p class="application-subtitle">Join an elite group of aspiring AI innovators. Applications are reviewed on a rolling basis until all fellowships are filled.</p>
+            <a href="https://tally.so/r/wgOojl" target="_blank" class="apply-button">Start Application</a>
+        </div>
+    </section>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      var btn = document.querySelector('.menu-toggle');
+      var nav = document.querySelector('.header-nav');
+      btn.addEventListener('click', function(){ nav.classList.toggle('open'); });
+    });
+    </script>
+</body>
+</html> 
