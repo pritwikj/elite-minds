@@ -52,7 +52,7 @@ section {
 #section1 {
     background-color: #FFFFFF;
     position: relative;
-    padding: 0 0 20px 0;
+    padding: 0 0 40px 0;
     min-height: auto;
 }
 
@@ -297,11 +297,11 @@ section {
     align-items: center;
     justify-content: space-between;
     box-shadow: none;
-    margin-top: -50px;
+    margin-top: -60px;
 }
 
 .logo {
-    width: 200px;
+    width: 220px;
     height: auto;
     margin-left: -30px;
 }
@@ -598,9 +598,9 @@ section {
     }
 
     .logo {
-        margin-top: -50px !important;
+        margin-top: -60px !important;
         padding-top: 0 !important;
-        max-height: 180px !important; /* Slightly reduced logo height */
+        max-height: 200px !important; /* Adjusted logo height */
         width: auto !important;
         max-width: 500px !important;
         margin-left: -10px;
@@ -647,6 +647,139 @@ section {
 
     .sub-header {
         font-size: 18px;
+    }
+}
+
+/* Mentor Carousel Styles */
+.mentor-carousel {
+    margin-top: 30px;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+.mentor-carousel:before,
+.mentor-carousel:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    z-index: 2;
+}
+
+.mentor-carousel:before {
+    left: 0;
+    background: linear-gradient(to right, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.mentor-carousel:after {
+    right: 0;
+    background: linear-gradient(to left, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.mentor-track {
+    display: flex;
+    width: fit-content;
+    animation: scroll 90s linear infinite;
+}
+
+.mentor-card {
+    width: 250px;
+    margin: 0 15px;
+    text-align: center;
+    flex-shrink: 0;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.mentor-image-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 10px;
+}
+
+.mentor-headshot {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 20%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.college-logo {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background-color: transparent;
+    padding: 0;
+    box-shadow: none;
+    object-fit: contain;
+}
+
+.college-logo[src="images/mentor_college_logos/upenn1.png"],
+.college-logo[src="images/mentor_college_logos/williams1.png"] {
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+}
+
+.mentor-card .mentor-name {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #000;
+}
+
+.mentor-card .mentor-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.3;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+@media screen and (max-width: 768px) {
+    .main-header .header-large-text {
+        font-size: 42px;
+    }
+    .mentor-carousel:before, .mentor-carousel:after {
+        width: 50px;
+    }
+}
+
+.mentor-carousel-title {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 36px;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
     }
 }
 
@@ -1498,6 +1631,40 @@ footer a:hover {
         gap: 10px !important;
     }
 }
+
+.hero-explore-btn {
+    display: flex;
+    width: 240px;
+    margin: 10px auto 0;
+    padding: 14px 0;
+    background-color: #1A9CFF;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    border: 2px solid #1A9CFF;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s, border-color 0.3s;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.hero-explore-btn:hover {
+    background-color: #0077cc;
+    border-color: #0077cc;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.hero-explore-btn:active {
+    background-color: #005fa3;
+    border-color: #005fa3;
+    color: #fff;
+    transform: translateY(0);
+}
     </style>
 <header class="header">
     <a href="https://elitemindsprogram.com/">
@@ -1512,35 +1679,374 @@ footer a:hover {
 </header>
 
 <section id="section1">
-    <div class="container">
-        <div class="content-left">
-            <h1 class="main-header">
+    <div class="container" style="flex-direction: column; text-align: center; gap: 20px; margin-top: -50px;">
+        <div class="hero-content" style="max-width: 800px; margin: 0 auto;">
+            <h1 class="main-header" style="align-items: center;">
                 <span class="header-small-text">Research and Passion Project Programs</span>
-                <span class="header-large-text"><span class="highlighted">Ivy League</span> Ready in<br> <span class="highlighted">10 Weeks</span></span>
+                <span class="header-large-text" style="font-size: 68px;"><span class="highlighted">Ivy League</span> Ready in<br> <span class="highlighted">10 Weeks</span></span>
             </h1>
             
-            <!-- Placeholder image instead of university logos -->
-            <div style="margin-top: 40px; width: 100%; display: flex; justify-content: flex-start;">
-                <img src="./images/uni_logos.jpeg" alt="University logos" style="width: 110%; height: auto; max-width: 800px; margin-left: -15px;">
+            <div style="margin-top: -15px; width: 100%; display: flex; justify-content: center;">
+                <img src="./images/uni_logos2.png" alt="University logos" style="width: 100%; height: auto; max-width: 800px;">
             </div>
+            <a href="group_programs.html" class="hero-explore-btn" target="_blank" rel="noopener noreferrer">Explore our Programs</a>
         </div>
-
-        <div class="content-right">
-            <!-- Single placeholder image for student circles -->
-            <div style="width: 90%; margin: 0 auto; margin-top: -30px;">
-                <img src="./images/home_page_students.png" alt="Student images" class="desktop-student-image" style="width: 100%; height: auto; margin: 0;">
-                <img src="./images/homepage_students_mobile.png" alt="Student images mobile" class="mobile-student-image" style="width: 90%; height: auto; margin: 20px auto 0;">
+    </div>
+    <h2 class="mentor-carousel-title">Our Mentors</h2>
+    <div class="mentor-carousel">
+        <div class="mentor-track">
+            <div class="mentor-card">
+                <div class="mentor-image-container">
+                    <img src="./images/thomas.png" alt="Professor Thomas H." class="mentor-headshot">
+                    <img src="images/mentor_college_logos/purdue1.png" alt="Purdue University logo" class="college-logo">
+                </div>
+                <div class="mentor-name">Professor Thomas H.</div>
+                <div class="mentor-title">Head of Computer Tech Department, Purdue</div>
             </div>
-            
-            <!-- Desktop learn more button -->
-            <button onclick="document.getElementById('programs-overview').scrollIntoView({behavior: 'smooth'})" class="learn-more-btn">
-                LEARN MORE
-            </button>
-            
-            <!-- Mobile navigation buttons -->
-            <div class="mobile-btn-container">
-                <a href="group_programs.html" class="mobile-nav-btn">GROUP PROGRAMS</a>
-                <a href="mentorship.html" class="mobile-nav-btn">1:1 MENTORSHIP</a>
+            <div class="mentor-card">
+                <div class="mentor-image-container">
+                    <img src="./images/mrudula_mentor.JPG" alt="Mrudula N." class="mentor-headshot">
+                    <img src="images/mentor_college_logos/nyu1.png" alt="NYU logo" class="college-logo">
+                </div>
+                <div class="mentor-name">Mrudula N.</div>
+                <div class="mentor-title">PhD, NYU School of Medicine</div>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image-container">
+                    <img src="./images/claire_headshot.png" alt="Claire N." class="mentor-headshot">
+                    <img src="images/mentor_college_logos/upenn1.png" alt="UPenn logo" class="college-logo">
+                </div>
+                <div class="mentor-name">Claire N.</div>
+                <div class="mentor-title">MBA, UPenn Wharton</div>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image-container">
+                    <img src="./images/damian.jpg" alt="Professor Damian T." class="mentor-headshot">
+                    <img src="images/mentor_college_logos/williams1.png" alt="Williams College logo" class="college-logo">
+                </div>
+                <div class="mentor-name">Professor Damian T.</div>
+                <div class="mentor-title">PhD in Immunology, UConn Health</div>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image-container">
+                    <img src="./images/quinyang_x.png" alt="Qingyang X." class="mentor-headshot">
+                    <img src="images/mentor_college_logos/harvard1.png" alt="Harvard University logo" class="college-logo">
+                </div>
+                <div class="mentor-name">Dr. Qingyang X.</div>
+                <div class="mentor-title">Research Scientist, Johns Hopkins | Data Science, Harvard</div>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image-container">
+                    <img src="./images/george_m.png" alt="Dr. George M." class="mentor-headshot">
+                    <img src="images/mentor_college_logos/mayo1.png" alt="Mayo Clinic logo" class="college-logo">
+                </div>
+                <div class="mentor-name">Dr. George M.</div>
+                <div class="mentor-title">MD, Mayo Clinic SOM</div>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image-container">
+                    <img src="./images/isabella_mentor.png" alt="Isabella D." class="mentor-headshot">
+                    <img src="images/mentor_college_logos/berkeley1.png" alt="UC Berkeley logo" class="college-logo">
+                </div>
+                <div class="mentor-name">Isabella D.</div>
+                <div class="mentor-title">Physics, UC Berkeley</div>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image-container">
+                    <img src="./images/Pritwik_headshot.JPG" alt="Pritwik J." class="mentor-headshot">
+                    <img src="images/mentor_college_logos/berkeley1.png" alt="UC Berkeley logo" class="college-logo">
+                </div>
+                <div class="mentor-name">Pritwik J.</div>
+                <div class="mentor-title">Data Science, UC Berkeley</div>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image-container">
+                    <img src="./images/priscilla.png" alt="Dr. Priscilla C." class="mentor-headshot">
+                    <img src="images/mentor_college_logos/usc1.png" alt="USC logo" class="college-logo">
+                </div>
+                <div class="mentor-name">Dr. Priscilla C.</div>
+                <div class="mentor-title">PhD in Cancer Biology & Genomics, USC</div>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image-container">
+                    <img src="./images/hoa_tran.png" alt="Professor Hoa Tran" class="mentor-headshot">
+                    <img src="images/mentor_college_logos/nyu1.png" alt="NYU logo" class="college-logo">
+                </div>
+                <div class="mentor-name">Professor Hoa Tran</div>
+                <div class="mentor-title">PhD in Computational Mathematics, NYU</div>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image-container">
+                    <img src="./images/vibha_headshot.jpg" alt="Vibha S." class="mentor-headshot">
+                    <img src="images/mentor_college_logos/berkeley1.png" alt="UC Berkeley logo" class="college-logo">
+                </div>
+                <div class="mentor-name">Vibha S.</div>
+                <div class="mentor-title">Analytics, UC Berkeley</div>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image-container">
+                    <img src="./images/jocelyne_headshot.png" alt="Jocelyne W." class="mentor-headshot">
+                    <img src="images/mentor_college_logos/princeton1.png" alt="Princeton University logo" class="college-logo">
+                </div>
+                <div class="mentor-name">Jocelyne W.</div>
+                <div class="mentor-title">Pre-Law, Princeton University</div>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image-container">
+                    <img src="./images/osezele_mentor.jpeg" alt="Osezele O." class="mentor-headshot">
+                    <img src="images/mentor_college_logos/dartmouth1.png" alt="Dartmouth College logo" class="college-logo">
+                </div>
+                <div class="mentor-name">Osezele O.</div>
+                <div class="mentor-title">Engineering, Dartmouth | Opus Fellow</div>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image-container">
+                    <img src="./images/Aditya_mentor.jpeg" alt="Aditya J." class="mentor-headshot">
+                    <img src="images/mentor_college_logos/berkeley1.png" alt="UC Berkeley logo" class="college-logo">
+                </div>
+                <div class="mentor-name">Aditya J.</div>
+                <div class="mentor-title">Biology, UC Berkeley</div>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image-container">
+                    <img src="./images/andy_headshot.jpeg" alt="Andy P." class="mentor-headshot">
+                    <img src="images/mentor_college_logos/utaustin1.png" alt="UT Austin logo" class="college-logo">
+                </div>
+                <div class="mentor-name">Andy P.</div>
+                <div class="mentor-title">Computer Science, UT Austin</div>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image-container">
+                    <img src="./images/keerti_mentor.jpeg" alt="Keerti J." class="mentor-headshot">
+                    <img src="images/mentor_college_logos/berkeley1.png" alt="UC Berkeley logo" class="college-logo">
+                </div>
+                <div class="mentor-name">Keerti J.</div>
+                <div class="mentor-title">Computer Science, UC Berkeley</div>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image-container">
+                    <img src="./images/kaitlyn_mentor.jpg" alt="Kaitlyn C." class="mentor-headshot">
+                    <img src="images/mentor_college_logos/ucla1.png" alt="UCLA logo" class="college-logo">
+                </div>
+                <div class="mentor-name">Kaitlyn C.</div>
+                <div class="mentor-title">Physiological Science, UCLA</div>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image-container">
+                    <img src="./images/Aakash_headshot.png" alt="Aakash S." class="mentor-headshot">
+                    <img src="images/mentor_college_logos/berkeley1.png" alt="UC Berkeley logo" class="college-logo">
+                </div>
+                <div class="mentor-name">Aakash S.</div>
+                <div class="mentor-title">EECS & Bioengineering, UC Berkeley</div>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image-container">
+                    <img src="./images/bhaktram_headshot.jpg" alt="Bhaktram J." class="mentor-headshot">
+                    <img src="images/mentor_college_logos/nyu1.png" alt="NYU logo" class="college-logo">
+                </div>
+                <div class="mentor-name">Bhaktram J.</div>
+                <div class="mentor-title">Computer Science, NYU</div>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image-container">
+                    <img src="./images/ayaan_mentor.jpeg" alt="Ayaan P." class="mentor-headshot">
+                    <img src="images/mentor_college_logos/stanford1.png" alt="Stanford University logo" class="college-logo">
+                </div>
+                <div class="mentor-name">Ayaan P.</div>
+                <div class="mentor-title">Pre-Med, Stanford</div>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image-container">
+                    <img src="./images/julia_mentor.jpg" alt="Julia D." class="mentor-headshot">
+                    <img src="images/mentor_college_logos/berkeley1.png" alt="UC Berkeley logo" class="college-logo">
+                </div>
+                <div class="mentor-name">Julia D.</div>
+                <div class="mentor-title">Chemical Biology, UC Berkeley</div>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image-container">
+                    <img src="./images/yashita_headshot.png" alt="Yashita T." class="mentor-headshot">
+                    <img src="images/mentor_college_logos/washington1.png" alt="University of Washington logo" class="college-logo">
+                </div>
+                <div class="mentor-name">Yashita T.</div>
+                <div class="mentor-title">Informatics, University of Washington</div>
+            </div>
+            <!-- Duplicate for infinite scroll -->
+            <div class="mentor-card">
+                <div class="mentor-image-container">
+                    <img src="./images/thomas.png" alt="Professor Thomas H." class="mentor-headshot">
+                    <img src="images/mentor_college_logos/purdue1.png" alt="Purdue University logo" class="college-logo">
+                </div>
+                <div class="mentor-name">Professor Thomas H.</div>
+                <div class="mentor-title">Head of Computer Tech Department, Purdue</div>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image-container">
+                    <img src="./images/mrudula_mentor.JPG" alt="Mrudula N." class="mentor-headshot">
+                    <img src="images/mentor_college_logos/nyu1.png" alt="NYU logo" class="college-logo">
+                </div>
+                <div class="mentor-name">Mrudula N.</div>
+                <div class="mentor-title">PhD, NYU School of Medicine</div>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image-container">
+                    <img src="./images/claire_headshot.png" alt="Claire N." class="mentor-headshot">
+                    <img src="images/mentor_college_logos/upenn1.png" alt="UPenn logo" class="college-logo">
+                </div>
+                <div class="mentor-name">Claire N.</div>
+                <div class="mentor-title">MBA, UPenn Wharton</div>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image-container">
+                    <img src="./images/damian.jpg" alt="Professor Damian T." class="mentor-headshot">
+                    <img src="images/mentor_college_logos/williams1.png" alt="Williams College logo" class="college-logo">
+                </div>
+                <div class="mentor-name">Professor Damian T.</div>
+                <div class="mentor-title">PhD in Immunology, UConn Health</div>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image-container">
+                    <img src="./images/quinyang_x.png" alt="Qingyang X." class="mentor-headshot">
+                    <img src="images/mentor_college_logos/harvard1.png" alt="Harvard University logo" class="college-logo">
+                </div>
+                <div class="mentor-name">Dr. Qingyang X.</div>
+                <div class="mentor-title">Research Scientist, Johns Hopkins | Data Science, Harvard</div>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image-container">
+                    <img src="./images/george_m.png" alt="Dr. George M." class="mentor-headshot">
+                    <img src="images/mentor_college_logos/mayo1.png" alt="Mayo Clinic logo" class="college-logo">
+                </div>
+                <div class="mentor-name">Dr. George M.</div>
+                <div class="mentor-title">MD, Mayo Clinic SOM</div>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image-container">
+                    <img src="./images/isabella_mentor.png" alt="Isabella D." class="mentor-headshot">
+                    <img src="images/mentor_college_logos/berkeley1.png" alt="UC Berkeley logo" class="college-logo">
+                </div>
+                <div class="mentor-name">Isabella D.</div>
+                <div class="mentor-title">Physics, UC Berkeley</div>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image-container">
+                    <img src="./images/Pritwik_headshot.JPG" alt="Pritwik J." class="mentor-headshot">
+                    <img src="images/mentor_college_logos/berkeley1.png" alt="UC Berkeley logo" class="college-logo">
+                </div>
+                <div class="mentor-name">Pritwik J.</div>
+                <div class="mentor-title">Data Science, UC Berkeley</div>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image-container">
+                    <img src="./images/priscilla.png" alt="Dr. Priscilla C." class="mentor-headshot">
+                    <img src="images/mentor_college_logos/usc1.png" alt="USC logo" class="college-logo">
+                </div>
+                <div class="mentor-name">Dr. Priscilla C.</div>
+                <div class="mentor-title">PhD in Cancer Biology & Genomics, USC</div>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image-container">
+                    <img src="./images/hoa_tran.png" alt="Professor Hoa Tran" class="mentor-headshot">
+                    <img src="images/mentor_college_logos/nyu1.png" alt="NYU logo" class="college-logo">
+                </div>
+                <div class="mentor-name">Professor Hoa Tran</div>
+                <div class="mentor-title">PhD in Computational Mathematics, NYU</div>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image-container">
+                    <img src="./images/vibha_headshot.jpg" alt="Vibha S." class="mentor-headshot">
+                    <img src="images/mentor_college_logos/berkeley1.png" alt="UC Berkeley logo" class="college-logo">
+                </div>
+                <div class="mentor-name">Vibha S.</div>
+                <div class="mentor-title">Analytics, UC Berkeley</div>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image-container">
+                    <img src="./images/jocelyne_headshot.png" alt="Jocelyne W." class="mentor-headshot">
+                    <img src="images/mentor_college_logos/princeton1.png" alt="Princeton University logo" class="college-logo">
+                </div>
+                <div class="mentor-name">Jocelyne W.</div>
+                <div class="mentor-title">Pre-Law, Princeton University</div>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image-container">
+                    <img src="./images/osezele_mentor.jpeg" alt="Osezele O." class="mentor-headshot">
+                    <img src="images/mentor_college_logos/dartmouth1.png" alt="Dartmouth College logo" class="college-logo">
+                </div>
+                <div class="mentor-name">Osezele O.</div>
+                <div class="mentor-title">Engineering, Dartmouth | Opus Fellow</div>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image-container">
+                    <img src="./images/Aditya_mentor.jpeg" alt="Aditya J." class="mentor-headshot">
+                    <img src="images/mentor_college_logos/berkeley1.png" alt="UC Berkeley logo" class="college-logo">
+                </div>
+                <div class="mentor-name">Aditya J.</div>
+                <div class="mentor-title">Biology, UC Berkeley</div>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image-container">
+                    <img src="./images/andy_headshot.jpeg" alt="Andy P." class="mentor-headshot">
+                    <img src="images/mentor_college_logos/utaustin1.png" alt="UT Austin logo" class="college-logo">
+                </div>
+                <div class="mentor-name">Andy P.</div>
+                <div class="mentor-title">Computer Science, UT Austin</div>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image-container">
+                    <img src="./images/keerti_mentor.jpeg" alt="Keerti J." class="mentor-headshot">
+                    <img src="images/mentor_college_logos/berkeley1.png" alt="UC Berkeley logo" class="college-logo">
+                </div>
+                <div class="mentor-name">Keerti J.</div>
+                <div class="mentor-title">Computer Science, UC Berkeley</div>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image-container">
+                    <img src="./images/kaitlyn_mentor.jpg" alt="Kaitlyn C." class="mentor-headshot">
+                    <img src="images/mentor_college_logos/ucla1.png" alt="UCLA logo" class="college-logo">
+                </div>
+                <div class="mentor-name">Kaitlyn C.</div>
+                <div class="mentor-title">Physiological Science, UCLA</div>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image-container">
+                    <img src="./images/Aakash_headshot.png" alt="Aakash S." class="mentor-headshot">
+                    <img src="images/mentor_college_logos/berkeley1.png" alt="UC Berkeley logo" class="college-logo">
+                </div>
+                <div class="mentor-name">Aakash S.</div>
+                <div class="mentor-title">EECS & Bioengineering, UC Berkeley</div>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image-container">
+                    <img src="./images/bhaktram_headshot.jpg" alt="Bhaktram J." class="mentor-headshot">
+                    <img src="images/mentor_college_logos/nyu1.png" alt="NYU logo" class="college-logo">
+                </div>
+                <div class="mentor-name">Bhaktram J.</div>
+                <div class="mentor-title">Computer Science, NYU</div>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image-container">
+                    <img src="./images/ayaan_mentor.jpeg" alt="Ayaan P." class="mentor-headshot">
+                    <img src="images/mentor_college_logos/stanford1.png" alt="Stanford University logo" class="college-logo">
+                </div>
+                <div class="mentor-name">Ayaan P.</div>
+                <div class="mentor-title">Pre-Med, Stanford</div>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image-container">
+                    <img src="./images/julia_mentor.jpg" alt="Julia D." class="mentor-headshot">
+                    <img src="images/mentor_college_logos/berkeley1.png" alt="UC Berkeley logo" class="college-logo">
+                </div>
+                <div class="mentor-name">Julia D.</div>
+                <div class="mentor-title">Chemical Biology, UC Berkeley</div>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image-container">
+                    <img src="./images/yashita_headshot.png" alt="Yashita T." class="mentor-headshot">
+                    <img src="images/mentor_college_logos/washington1.png" alt="University of Washington logo" class="college-logo">
+                </div>
+                <div class="mentor-name">Yashita T.</div>
+                <div class="mentor-title">Informatics, University of Washington</div>
             </div>
         </div>
     </div>
