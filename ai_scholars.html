@@ -317,6 +317,45 @@
             background-color: #15325A;
         }
 
+        .header-nav {
+            display: flex;
+            gap: 16px;
+            position: absolute;
+            top: 15px;
+            right: 48px;
+            z-index: 1000;
+        }
+
+        .header-button {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            color: #000;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            background-color: #b0ff64;
+            border: 2px solid #000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-button:hover {
+            background-color: #a0e55a;
+            color: #000;
+            border: 2px solid #000;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .header-button:active {
+            transform: translateY(0);
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+
         .hero-image {
             position: relative;
             display: flex;
@@ -335,6 +374,57 @@
                 left: 0;
                 width: 150px;
                 margin: -25px 0;
+            }
+
+            .menu-toggle {
+                display: block;
+                background: transparent;
+                border: none;
+                font-size: 30px;
+                cursor: pointer;
+                z-index: 1000;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+
+            .header-nav {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 65px;
+                right: 10px;
+                background-color: #ffffff;
+                padding: 15px 20px;
+                border-radius: 5px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                z-index: 999;
+                width: calc(100% - 40px);
+                max-width: 300px;
+            }
+
+            .header-nav.open {
+                display: flex;
+            }
+
+            .header-button {
+                margin: 8px 0;
+                padding: 10px 15px;
+                background-color: transparent;
+                border: none;
+                box-shadow: none;
+                color: #333;
+                text-align: left;
+                font-weight: 500;
+                border-radius: 4px;
+                transition: background-color 0.2s ease;
+            }
+
+            .header-button:hover {
+                background-color: #f0f0f0;
+                color: #000;
+                transform: none;
+                box-shadow: none;
             }
 
             .content-container {
@@ -479,7 +569,12 @@
     <a href="https://elitemindsprogram.com/">
         <img src="./images/EliteMinds logo.png" alt="EliteMinds Logo" class="logo">
     </a>
-
+    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    <nav class="header-nav">
+        <a href="group_programs.html" class="header-button">Group Programs</a>
+        <a href="mentorship.html" class="header-button">1:1 Mentorship</a>
+        <a href="resources.html" class="header-button">T20 Resources</a>
+    </nav>
 
     <div class="content-container">
         <div class="main-content">
@@ -629,5 +724,13 @@
         </div>
         </div>
     </section>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      var btn = document.querySelector('.menu-toggle');
+      var nav = document.querySelector('.header-nav');
+      btn.addEventListener('click', function(){ nav.classList.toggle('open'); });
+    });
+    </script>
 </body>
 </html> 

@@ -42,30 +42,22 @@
         background-color: #f9f9f9;
     }
 
-    /* Header */
-    .header {
-        background-color: #FFFFFF;
-        padding: 0 24px 0 48px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        box-shadow: none;
-        /* margin-top: -50px; */ /* Removed negative margin for consistency */
-        position: relative;
-        z-index: 100;
-        border-bottom: 1px solid #eee; /* Added subtle border */
-    }
-
     .logo {
+        position: absolute;
+        top: -60px;
+        left: 30px;
         width: 200px;
         height: auto;
-        margin-left: -30px;
-        padding: 10px 0; /* Added padding */
+        z-index: 1000;
     }
 
     .header-nav {
         display: flex;
         gap: 16px;
+        position: absolute;
+        top: 15px;
+        right: 48px;
+        z-index: 1000;
     }
 
     .header-button {
@@ -74,8 +66,8 @@
         font-size: 14px;
         color: #000;
         text-decoration: none;
-        padding: 8px 18px;
-        border-radius: 22px;
+        padding: 8px 16px;
+        border-radius: 20px;
         transition: all 0.3s ease;
         background-color: #b0ff64;
         border: 2px solid #000;
@@ -83,7 +75,7 @@
     }
 
     .header-button:hover {
-        background-color: #a0e85a;
+        background-color: #a0e55a;
         color: #000;
         border: 2px solid #000;
         transform: translateY(-2px);
@@ -91,27 +83,17 @@
     }
 
     .header-button:active {
-        transform: scale(0.98);
-    }
-
-    .header-button.active { /* Style for active page link */
-        background-color: #8fd94e;
-        color: #000;
-        border: 2px solid #000;
+        transform: translateY(0);
     }
 
     .menu-toggle {
         display: none;
-        background: none;
-        border: none;
-        font-size: 30px;
-        cursor: pointer;
     }
 
     /* Blog Post Content Area */
     .blog-post-container {
         max-width: 800px; /* Optimized width for reading */
-        margin: 40px auto;
+        margin: 100px auto 40px;
         padding: 40px;
         background-color: #fff;
         border-radius: 8px;
@@ -198,40 +180,39 @@
 
     /* Mobile Styles */
     @media screen and (max-width: 768px) {
-        .header {
-            padding: 15px 20px; /* Adjusted padding */
-            margin-top: 0;
-            position: relative;
-        }
-
         .logo {
-             width: 160px; /* Adjusted size */
-             margin-left: -15px;
-             padding: 0; /* Reset padding */
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 150px;
+            margin: -25px 0;
         }
 
         .menu-toggle {
             display: block;
-            font-size: 28px; /* Adjusted size */
+            background: transparent;
+            border: none;
+            font-size: 30px;
+            cursor: pointer;
             z-index: 1000;
-            margin-left: 0; /* Reset margin */
-            margin-top: 0; /* Reset margin */
+            position: absolute;
+            top: 20px;
+            right: 20px;
         }
 
         .header-nav {
             display: none;
             flex-direction: column;
             position: absolute;
-            top: 100%; /* Position below header */
-            left: 0; /* Align left */
-            right: 0; /* Align right */
+            top: 65px;
+            right: 10px;
             background-color: #ffffff;
             padding: 15px 20px;
-            border-top: 1px solid #eee;
+            border-radius: 5px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             z-index: 999;
-            width: 100%; /* Full width */
-            max-width: none; /* Remove max width */
+            width: calc(100% - 40px);
+            max-width: 300px;
         }
 
         .header-nav.open {
@@ -278,18 +259,15 @@
     </style>
 </head>
 <body>
-    <header class="header">
-        <a href="https://elitemindsprogram.com/">
-            <img src="./images/EliteMinds logo.png" alt="EliteMinds Logo" class="logo">
-        </a>
-        <button class="menu-toggle" aria-label="Toggle menu">☰</button>
-        <nav class="header-nav">
-            <a href="group_programs.html" class="header-button">Group Programs</a>
-            <a href="fellowships.html" class="header-button">Fellowship Opportunities</a>
-            <a href="mentorship.html" class="header-button">1:1 Mentorship</a>
-            <a href="blog.html" class="header-button">Blog</a> <!-- Removed active class -->
-        </nav>
-    </header>
+    <a href="https://elitemindsprogram.com/">
+        <img src="./images/EliteMinds logo.png" alt="EliteMinds Logo" class="logo">
+    </a>
+    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    <nav class="header-nav">
+        <a href="group_programs.html" class="header-button">Group Programs</a>
+        <a href="mentorship.html" class="header-button">1:1 Mentorship</a>
+        <a href="resources.html" class="header-button">T20 Resources</a>
+    </nav>
 
     <div class="blog-post-container">
         <!-- Optional: Add a relevant image -->
@@ -334,18 +312,15 @@
             <h2>How Elite Minds Supports Students in Their Passion Projects</h2>
             <p>At Elite Minds, we help students identify their unique interests and passions, providing mentorship and resources to help them build meaningful projects. Whether they're just starting to brainstorm ideas or are ready to take their projects to the next level, we offer guidance to ensure they're on the right track. Our goal is to help students gain the confidence to explore what excites them and use those experiences to shape their futures.</p>
 
-            <a href="blog.html" class="back-to-blog">← Back to Blog</a>
+            <a href="resources.html" class="back-to-blog">← Back to T20 Resources</a>
         </div>
     </div>
 
     <script>
     document.addEventListener('DOMContentLoaded', function(){
-        const menuToggle = document.querySelector('.menu-toggle');
-        const nav = document.querySelector('.header-nav');
-        
-        menuToggle.addEventListener('click', function() {
-            nav.classList.toggle('open');
-        });
+      var btn = document.querySelector('.menu-toggle');
+      var nav = document.querySelector('.header-nav');
+      btn.addEventListener('click', function(){ nav.classList.toggle('open'); });
     });
     </script>
 </body>
