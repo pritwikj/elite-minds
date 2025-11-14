@@ -121,6 +121,12 @@ section {
     line-height: 1.2;
 }
 
+.stats-get-started-mobile {
+    display: none;
+    text-align: center;
+    padding: 20px 0 10px;
+}
+
 /* Media queries for stats section */
 @media screen and (max-width: 768px) {
     .stats-section {
@@ -151,6 +157,32 @@ section {
     .stat-icon img {
         width: 55px;
         height: 55px;
+    }
+    
+    .stats-get-started-mobile {
+        display: block;
+    }
+
+    .stats-get-started-mobile .button {
+        background-color: white;
+        color: #1A9CFF;
+        font-weight: 600;
+        display: inline-block;
+        padding: 12px 30px;
+        border-radius: 50px;
+        text-decoration: none;
+        transition: background-color 0.3s, transform 0.2s;
+        background-color: #b0ff64;
+        color: #000;
+        font-weight: 600;
+        border: 2px solid #b0ff64;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .stats-get-started-mobile .button:hover {
+        transform: translateY(-2px);
+        background-color: #a0ef54;
+        border-color: #a0ef54;
     }
 }
 
@@ -1004,6 +1036,23 @@ section {
     }
 }
 
+.desktop-only-button {
+    /* This class is used to hide the button on mobile */
+}
+
+@media screen and (max-width: 992px) {
+    .desktop-only-button {
+        display: none !important;
+    }
+}
+
+.mobile-text-about { display: none; }
+
+@media screen and (max-width: 992px) {
+    .desktop-text-about { display: none; }
+    .mobile-text-about { display: block; }
+}
+
 /* Mobile-specific overrides for the "What is Elite Minds?" section */
 @media screen and (max-width: 992px) {
     .about-image {
@@ -1801,6 +1850,19 @@ footer a:hover {
         padding: 11px 0;
     }
 }
+
+@media screen and (max-width: 768px) {
+    #swappable-sections {
+        display: flex;
+        flex-direction: column;
+    }
+    #swappable-sections .program-benefits {
+        order: 2;
+    }
+    #swappable-sections .spotlight-section {
+        order: 1;
+    }
+}
     </style>
 <header class="header">
     <a href="https://elitemindsprogram.com/">
@@ -2231,6 +2293,9 @@ footer a:hover {
             </div>
         </div>
     </div>
+    <div class="stats-get-started-mobile">
+        <a href="#programs-overview" class="button">Get Started</a>
+    </div>
 </section>
 
 <section class="about-section" id="about">
@@ -2240,13 +2305,16 @@ footer a:hover {
         </div>
         <div class="about-content">
             <h2 class="about-title">What is Elite Minds?</h2>
-            <p class="about-text">Elite Minds is the secret weapon to gaining admissions into Top 20 universities. Our expert mentors, including <strong>PhDs and professors from Top 20 universities</strong>, work with students to build unique passion projects that help students stand out.</p>
+            <p class="about-text desktop-text-about">Elite Minds is the secret weapon to gaining admissions into Top 20 universities. Our expert mentors, including <strong>PhDs and professors from Top 20 universities</strong>, work with students to build unique passion projects that help students stand out.</p>
+            <p class="about-text mobile-text-about">Elite Minds pairs students with <strong>PhDs</strong> and <strong>professors</strong> to create unique passion projects.</p>
             <div class="about-highlight">94.4% of our students go on to attend a<br>
 Top 20 university</div>
+            <a href="group_programs.html" class="hero-explore-btn desktop-only-button" style="margin: 35px 0 0 140px;">Get Started</a>
         </div>
     </div>
 </section>
 
+<div id="swappable-sections">
 <!-- Inserted Why Choose Elite Minds section -->
 <section class="program-benefits" id="programs" style="background-color: #f5f5f5;">
     <h2 class="benefits-title">Why Choose Elite Minds?</h2>
@@ -2311,6 +2379,7 @@ Top 20 university</div>
         </div>
     </div>
 </section>
+</div>
 
 <!-- New Our Offerings section with green background -->
 <section class="offerings-section" id="offerings" style="background-color: #b0ff64; padding: 40px 0; text-align: center;">
