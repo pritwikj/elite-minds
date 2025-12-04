@@ -1,0 +1,2 @@
+- Right above pricing page (in the black section), testimonial carousel (rectangles)
+- Optimize for mobile

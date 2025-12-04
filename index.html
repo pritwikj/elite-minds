@@ -804,7 +804,7 @@ section {
 .mentor-track {
     display: flex;
     width: fit-content;
-    animation: scroll 90s linear infinite;
+    animation: scroll 60s linear infinite;
 }
 
 .mentor-card {
@@ -2023,14 +2023,6 @@ footer a:hover {
             </div>
             <div class="mentor-card">
                 <div class="mentor-image-container">
-                    <img src="./images/kaitlyn_mentor.jpg" alt="Kaitlyn C." class="mentor-headshot">
-                    <img src="images/mentor_college_logos/ucla1.png" alt="UCLA logo" class="college-logo">
-                </div>
-                <div class="mentor-name">Kaitlyn C.</div>
-                <div class="mentor-title">Physiological Science, UCLA</div>
-            </div>
-            <div class="mentor-card">
-                <div class="mentor-image-container">
                     <img src="./images/Aakash_headshot.png" alt="Aakash S." class="mentor-headshot">
                     <img src="images/mentor_college_logos/berkeley1.png" alt="UC Berkeley logo" class="college-logo">
                 </div>
@@ -2068,6 +2060,22 @@ footer a:hover {
                 </div>
                 <div class="mentor-name">Yashita T.</div>
                 <div class="mentor-title">Informatics, University of Washington</div>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image-container">
+                    <img src="./images/amina_headshot.jpeg" alt="Amina" class="mentor-headshot">
+                    <img src="images/mentor_college_logos/columbia1.png" alt="Columbia University logo" class="college-logo">
+                </div>
+                <div class="mentor-name">Amina A.</div>
+                <div class="mentor-title">Computer Science, Columbia</div>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image-container">
+                    <img src="./images/perpetual_headshot.jpg" alt="Perpetual" class="mentor-headshot">
+                    <img src="images/mentor_college_logos/upenn2.png" alt="UPenn logo" class="college-logo">
+                </div>
+                <div class="mentor-name">Perpetual B.</div>
+                <div class="mentor-title">Engineering, UPenn</div>
             </div>
             <!-- Duplicate for infinite scroll -->
             <div class="mentor-card">
@@ -2200,14 +2208,6 @@ footer a:hover {
             </div>
             <div class="mentor-card">
                 <div class="mentor-image-container">
-                    <img src="./images/kaitlyn_mentor.jpg" alt="Kaitlyn C." class="mentor-headshot">
-                    <img src="images/mentor_college_logos/ucla1.png" alt="UCLA logo" class="college-logo">
-                </div>
-                <div class="mentor-name">Kaitlyn C.</div>
-                <div class="mentor-title">Physiological Science, UCLA</div>
-            </div>
-            <div class="mentor-card">
-                <div class="mentor-image-container">
                     <img src="./images/Aakash_headshot.png" alt="Aakash S." class="mentor-headshot">
                     <img src="images/mentor_college_logos/berkeley1.png" alt="UC Berkeley logo" class="college-logo">
                 </div>
@@ -2245,6 +2245,22 @@ footer a:hover {
                 </div>
                 <div class="mentor-name">Yashita T.</div>
                 <div class="mentor-title">Informatics, University of Washington</div>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image-container">
+                    <img src="./images/amina_headshot.jpeg" alt="Amina" class="mentor-headshot">
+                    <img src="images/mentor_college_logos/columbia1.png" alt="Columbia University logo" class="college-logo">
+                </div>
+                <div class="mentor-name">Amina A.</div>
+                <div class="mentor-title">Computer Science, Columbia</div>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image-container">
+                    <img src="./images/perpetual_headshot.jpg" alt="Perpetual" class="mentor-headshot">
+                    <img src="images/mentor_college_logos/upenn2.png" alt="UPenn logo" class="college-logo">
+                </div>
+                <div class="mentor-name">Perpetual B.</div>
+                <div class="mentor-title">Engineering, UPenn</div>
             </div>
         </div>
     </div>
@@ -2522,6 +2538,32 @@ document.addEventListener('DOMContentLoaded', function(){
   var btn = document.querySelector('.menu-toggle');
   var nav = document.querySelector('.header-nav');
   btn.addEventListener('click', function(){ nav.classList.toggle('open'); });
+
+  // Randomize mentor carousel order
+  var mentorTrack = document.querySelector('.mentor-track');
+  if (mentorTrack) {
+    var allCards = Array.from(mentorTrack.querySelectorAll('.mentor-card'));
+    // Get only the first half (original cards, before duplication)
+    var uniqueCards = allCards.slice(0, Math.floor(allCards.length / 2));
+
+    // Fisher-Yates shuffle
+    for (var i = uniqueCards.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = uniqueCards[i];
+      uniqueCards[i] = uniqueCards[j];
+      uniqueCards[j] = temp;
+    }
+
+    // Clear the track and rebuild with shuffled cards + duplicates
+    mentorTrack.innerHTML = '';
+    uniqueCards.forEach(function(card) {
+      mentorTrack.appendChild(card);
+    });
+    // Duplicate for infinite scroll
+    uniqueCards.forEach(function(card) {
+      mentorTrack.appendChild(card.cloneNode(true));
+    });
+  }
 
   // Enhanced Spotlight Video Player Logic
   document.querySelectorAll('.spotlight-card').forEach(function(card) {
