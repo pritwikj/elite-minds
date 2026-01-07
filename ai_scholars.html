@@ -17,8 +17,8 @@
 
         .logo {
             position: absolute;
-            top: -40px;
-            left: 48px;
+            top: -60px;
+            left: 30px;
             width: 200px;
             height: auto;
             z-index: 1000;
@@ -44,6 +44,23 @@
         .duration {
             background-color: #CBE1EE;
             color: #1A3D6B;
+        }
+
+        .try-free-message-banner {
+            display: block;
+            background-color: #e6ffe6;
+            border: 2px dashed #32CD32;
+            color: #2E8B57;
+            padding: 12px;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.0em;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-decoration: none;
+            cursor: pointer;
         }
 
         .content-container {
@@ -183,7 +200,7 @@
             font-size: 17px;
             border: none;
             cursor: pointer;
-            margin-top: 30px;
+            margin-top: 15px;
             transition: background-color 0.2s ease;
             width: 250px;
             margin-left: 0px;
@@ -546,6 +563,17 @@
                 margin: 40px 0;
             }
         }
+
+        @media screen and (max-width: 768px) {
+            .mobile-program-top { display: block !important; margin-bottom: 20px; }
+            .mobile-program-image { width: 100%; height: auto; border-radius: 20px; margin: 10px 0 10px 0; }
+            .mobile-try-free { display: block; margin-bottom: 20px; }
+            .mobile-course-description { margin-bottom: 30px; }
+            .desktop-course-description, .desktop-try-free, .image-container { display: none !important; }
+        }
+        @media screen and (min-width: 769px) {
+            .mobile-program-top { display: none !important; }
+        }
     </style>
     <!-- Meta Pixel Code -->
     <script>
@@ -585,10 +613,22 @@
                 </div>
 
                 <h1 class="course-title">AI Passion Project Program with NYU Professor Dr. Tran</h1>
+                
+                <!-- MOBILE-ONLY: Image, Try Free Banner, Description -->
+                <div class="mobile-program-top" style="display:none;">
+                    <img src="images/ai_prof2.jpeg" alt="AI Scholars Program" class="mobile-program-image">
+                    <a href="https://tally.so/r/nPMQeB" target="_blank" class="try-free-message-banner mobile-try-free">Try your first week FREE!</a>
+                    <p class="course-description mobile-course-description">
+                        A NYU professor-led AI program designed for ambitious students targeting top CS schools. Students build a standout capstone AI portfolio project showcasing Python, machine learning, and real-world data analysis.
+                    </p>
+                </div>
+                <!-- END MOBILE-ONLY -->
 
-                <p class="course-description">
-                    Master artificial intelligence under the mentorship of NYU Professor Dr. Hoa Tran and develop advanced AI skills with a university-level project.
+                <p class="course-description desktop-course-description">
+                    A NYU professor-led AI program designed for ambitious students targeting top CS schools. Students build a standout capstone AI portfolio project showcasing Python, machine learning, and real-world data analysis.
                 </p>
+
+                <a href="https://tally.so/r/nPMQeB" target="_blank" class="try-free-message-banner desktop-try-free">Try your first week FREE!</a>
 
                 <div class="course-details">
                     <div class="detail-row">
@@ -630,6 +670,7 @@
                             <a href="https://tally.so/r/nPMQeB" target="_blank">
                                 <button class="enroll-button">Enroll Now</button>
                             </a>
+                            <p style="text-align: center; font-size: 14px; color: #000000; margin-top: 5px;">(Try the first week free!)</p>
                         </span>
                     </div>
                     <p style="color: #666; font-size: 14px; margin-top: -15px;">* Fees include all instructional materials, certification, mentorship, sessions, software, and activities.</p>
