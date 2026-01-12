@@ -91,6 +91,23 @@
             color: #1A3D6B;
         }
 
+        .try-free-message-banner {
+            display: block;
+            background-color: #e6ffe6;
+            border: 2px dashed #32CD32;
+            color: #2E8B57;
+            padding: 12px;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.0em;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-decoration: none;
+            cursor: pointer;
+        }
+
         .course-title {
             font-size: 36px;
             font-weight: 600;
@@ -524,6 +541,17 @@
             }
         }
 
+        @media screen and (max-width: 768px) {
+            .mobile-program-top { display: block !important; margin-bottom: 20px; }
+            .mobile-program-image { width: 100%; height: auto; border-radius: 20px; margin: 10px 0 10px 0; }
+            .mobile-try-free { display: block; margin-bottom: 20px; }
+            .mobile-course-description { margin-bottom: 30px; }
+            .desktop-course-description, .desktop-try-free, .image-container { display: none !important; }
+        }
+        @media screen and (min-width: 769px) {
+            .mobile-program-top { display: none !important; }
+        }
+
         .contact-info a {
             color: #0066cc;
             text-decoration: underline;
@@ -573,9 +601,21 @@
 
                 <h1 class="course-title">Pre-Law Research Passion Project</h1>
                 
-                <p class="course-description">
+                <!-- MOBILE-ONLY: Image, Try Free Banner, Description -->
+                <div class="mobile-program-top" style="display:none;">
+                    <img src="images/law_program_image.jpg" alt="Intro to Law Program" class="mobile-program-image">
+                    <a href="https://tally.so/r/RGKYA9" target="_blank" class="try-free-message-banner mobile-try-free">Try your first week FREE!</a>
+                    <p class="course-description mobile-course-description">
+                        Students create a compelling, university-level legal research memo that makes their college application stand out. In this immersive program, they will analyze real-world cases, practice oral arguments in a mock hearing, and master advanced legal reasoning under the guidance of a Princeton scholar. The final memo serves as a powerful demonstration of the academic rigor and intellectual curiosity that top universities seek.
+                    </p>
+                </div>
+                <!-- END MOBILE-ONLY -->
+
+                <p class="course-description desktop-course-description">
                     Students create a compelling, university-level legal research memo that makes their college application stand out. In this immersive program, they will analyze real-world cases, practice oral arguments in a mock hearing, and master advanced legal reasoning under the guidance of a Princeton scholar. The final memo serves as a powerful demonstration of the academic rigor and intellectual curiosity that top universities seek.
                 </p>
+
+                <a href="https://tally.so/r/RGKYA9" target="_blank" class="try-free-message-banner desktop-try-free">Try your first week FREE!</a>
 
                 <div class="course-details">
                     <div class="detail-row">
@@ -598,13 +638,13 @@
                     
                     <div class="detail-row">
                         <span class="detail-label">Tuition</span>
-                        <span class="detail-value">$1000</span>
+                        <span class="detail-value">$850</span>
                     </div>
                     
                     <div class="detail-row">
                         <span class="detail-label">Dates</span>
                         <span class="detail-value">
-                            Jan 25th, 2025 - March 1st, 2025<br>
+                            Jan 25th, 2025 - March 1st, 2026<br>
                             Weekly on Sunday, 12:00pm PST<br>
                         </span>
                     </div>
@@ -625,6 +665,7 @@
                             <a href="https://tally.so/r/RGKYA9" target="_blank">
                                 <button class="enroll-button">Enroll Now</button>
                             </a>
+                            <p style="text-align: center; font-size: 14px; color: #000000; margin-top: 5px;">(Try the first week free!)</p>
                         </span>
                     </div>
                 </div>
