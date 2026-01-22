@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(du:*)",
+      "Bash(wc:*)",
+      "Bash(identify:*)",
+      "Read(//Users/pritwik/Documents/Elite_Minds/website/**)",
+      "Bash(done)",
+      "Bash(git config:*)",
+      "Bash(grep:*)",
+      "Bash(find:*)",
+      "Bash(sips:*)",
+      "Bash(while read f)",
+      "Bash(for f in wsg3.jpeg ranvir.jpeg ai_practice.jpeg alice3.jpg aziz.jpg andy_headshot.jpeg alice1.jpg bio_research.jpg)",
+      "Bash(do sips:*)",
+      "Bash(for f in mentorship_page4.png mentorship_page2.png ai_prof.png student_mentor_collab.png isabella_mentor.png Keerti.png test_uc.png claire_headshot.png student8.png student1.png)",
+      "Bash(for f in hoa_tran.png george_m.png Keertisqr.png quinyang_x.png home_page_students1.png home_page_students.png t20_logos.png)",
+      "Bash(for f in Pritwik_headshot.JPG george_headshot.JPG boyd_headshot.JPG)",
+      "Bash(for f in isabella_mentor.png claire_headshot.png student_mentor_collab.png student8.png test_uc.png student1.png george_m.png Keertisqr.png hoa_tran.png quinyang_x.png Keerti.png)",
+      "Bash(for f in *.html)",
+      "Bash(do sed -i '' 's/<img /<img loading=\"\"lazy\"\" /g' \"$f\")",
+      "Bash(do sed -i '' 's|<link href=\"\"https://fonts.googleapis.com|<link rel=\"\"preconnect\"\" href=\"\"https://fonts.googleapis.com\"\">    <link rel=\"\"preconnect\"\" href=\"\"https://fonts.gstatic.com\"\" crossorigin>    <link href=\"\"https://fonts.googleapis.com|' \"$f\")",
+      "Bash(do sed -i '' 's/<noscript><img loading=\"\"lazy\"\" height=\"\"1\"\" width=\"\"1\"\"/<noscript><img height=\"\"1\"\" width=\"\"1\"\"/g' \"$f\")"
+    ]
+  }
+}
